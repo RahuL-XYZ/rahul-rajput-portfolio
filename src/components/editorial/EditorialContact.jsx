@@ -98,7 +98,7 @@ EDUCATION
             <a href={linkedinUrl} target="_blank" rel="noreferrer" className="social-link">
               <Linkedin size={15} /> LinkedIn <ArrowUpRight size={12} />
             </a>
-            <a href="https://github.com/" target="_blank" rel="noreferrer" className="social-link">
+            <a href="https://github.com/RahuL-XYZ" target="_blank" rel="noreferrer" className="social-link">
               <Github size={15} /> GitHub <ArrowUpRight size={12} />
             </a>
             <span className="location-pill">

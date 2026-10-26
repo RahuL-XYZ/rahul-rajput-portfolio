@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sun, Moon, ArrowUpRight } from 'lucide-react';
+import { Sun, Moon, ArrowUpRight, Github } from 'lucide-react';
 import FlutterLogo from '../common/FlutterLogo';
 
 export default function EditorialHeader({ theme, isDark, onToggleTheme }) {
@@ -10,7 +10,7 @@ export default function EditorialHeader({ theme, isDark, onToggleTheme }) {
           <FlutterLogo size={18} />
           <span className="brand-name">Rahul Rajput</span>
           <span className="brand-sep">·</span>
-          <span className="brand-handle">rahulrajput</span>
+          <span className="brand-handle">RahuL-XYZ</span>
         </a>
 
         <nav className="ed-nav" aria-label="Main Navigation">
@@ -20,6 +20,17 @@ export default function EditorialHeader({ theme, isDark, onToggleTheme }) {
           <a href="#proof" className="nav-link">Proof</a>
           <a href="#person" className="nav-link">About</a>
           <a href="#contact" className="nav-cta">Work with me</a>
+
+          <a
+            href="https://github.com/RahuL-XYZ"
+            target="_blank"
+            rel="noreferrer"
+            className="theme-switch nav-github-btn"
+            title="GitHub / RahuL-XYZ"
+            aria-label="Rahul Rajput GitHub Profile"
+          >
+            <Github size={15} />
+          </a>
 
           <button
             type="button"

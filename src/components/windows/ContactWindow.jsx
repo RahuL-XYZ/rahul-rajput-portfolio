@@ -78,7 +78,7 @@ export default function ContactWindow({ onClose, onMinimize }) {
             <a href={linkedinUrl} target="_blank" rel="noreferrer">
               <Linkedin size={15} /> LinkedIn Profile <ArrowUpRight size={12} />
             </a>
-            <a href="https://github.com/" target="_blank" rel="noreferrer">
+            <a href="https://github.com/RahuL-XYZ" target="_blank" rel="noreferrer">
               <Github size={15} /> GitHub <ArrowUpRight size={12} />
             </a>
           </div>

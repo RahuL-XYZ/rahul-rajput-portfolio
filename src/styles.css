@@ -1478,6 +1478,16 @@ textarea:focus-visible {
   font-family: var(--font-mono);
 }
 
+.footer-meta-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-meta-link:hover {
+  text-decoration: underline;
+}
+
 .inline-logo {
   vertical-align: -2px;
   margin: 0 2px;
