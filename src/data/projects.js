@@ -8,6 +8,59 @@ import hiregrowwLogo from '../assets/projects/hiregroww_logo.png';
 import fitterloopLogo from '../assets/projects/fitterloop_logo.png';
 import glowpeerLogo from '../assets/projects/glowpeer_logo.png';
 
+// Screenshots
+import baurow1 from '../assets/projects/baurow_screen_1.png';
+import baurow2 from '../assets/projects/baurow_screen_2.png';
+import baurow3 from '../assets/projects/baurow_screen_3.png';
+import baurow4 from '../assets/projects/baurow_screen_4.png';
+import baurow5 from '../assets/projects/baurow_screen_5.png';
+
+import calcounts1 from '../assets/projects/calcounts_screen_1.png';
+import calcounts2 from '../assets/projects/calcounts_screen_2.png';
+import calcounts3 from '../assets/projects/calcounts_screen_3.png';
+import calcounts4 from '../assets/projects/calcounts_screen_4.png';
+
+import calcountsPro1 from '../assets/projects/calcounts_pro_screen_1.png';
+import calcountsPro2 from '../assets/projects/calcounts_pro_screen_2.png';
+import calcountsPro3 from '../assets/projects/calcounts_pro_screen_3.png';
+import calcountsPro4 from '../assets/projects/calcounts_pro_screen_4.png';
+
+import dineVisuals1 from '../assets/projects/dine_visuals_screen_1.png';
+import dineVisuals2 from '../assets/projects/dine_visuals_screen_2.png';
+import dineVisuals3 from '../assets/projects/dine_visuals_screen_3.png';
+import dineVisuals4 from '../assets/projects/dine_visuals_screen_4.png';
+import dineVisuals5 from '../assets/projects/dine_visuals_screen_5.png';
+
+import scribeflo1 from '../assets/projects/scribeflo_screen_1.png';
+import scribeflo2 from '../assets/projects/scribeflo_screen_2.png';
+import scribeflo3 from '../assets/projects/scribeflo_screen_3.png';
+import scribeflo4 from '../assets/projects/scribeflo_screen_4.png';
+import scribeflo5 from '../assets/projects/scribeflo_screen_5.png';
+
+import jainmatri1 from '../assets/projects/jainmatri_screen_1.jpg';
+import jainmatri2 from '../assets/projects/jainmatri_screen_2.png';
+import jainmatri3 from '../assets/projects/jainmatri_screen_3.png';
+import jainmatri4 from '../assets/projects/jainmatri_screen_4.png';
+import jainmatri5 from '../assets/projects/jainmatri_screen_5.png';
+
+import hiregroww1 from '../assets/projects/hiregroww_screen_1.png';
+import hiregroww2 from '../assets/projects/hiregroww_screen_2.png';
+import hiregroww3 from '../assets/projects/hiregroww_screen_3.png';
+import hiregroww4 from '../assets/projects/hiregroww_screen_4.png';
+import hiregroww5 from '../assets/projects/hiregroww_screen_5.png';
+
+import fitterloop1 from '../assets/projects/fitterloop_screen_1.png';
+import fitterloop2 from '../assets/projects/fitterloop_screen_2.png';
+import fitterloop3 from '../assets/projects/fitterloop_screen_3.png';
+import fitterloop4 from '../assets/projects/fitterloop_screen_4.png';
+import fitterloop5 from '../assets/projects/fitterloop_screen_5.png';
+
+import glowpeer1 from '../assets/projects/glowpeer_screen_1.png';
+import glowpeer2 from '../assets/projects/glowpeer_screen_2.png';
+import glowpeer3 from '../assets/projects/glowpeer_screen_3.png';
+import glowpeer4 from '../assets/projects/glowpeer_screen_4.png';
+import glowpeer5 from '../assets/projects/glowpeer_screen_5.png';
+
 export const projects = [
   {
     id: 'baurow',
@@ -18,7 +71,13 @@ export const projects = [
     color: '#40C4FF',
     accent: '#0175C2',
     logo: baurowLogo,
-    screenshots: [],
+    screenshots: [
+      { src: baurow1, title: 'Rent Anything Nearby', caption: 'Peer-to-peer equipment and tool rental onboarding' },
+      { src: baurow2, title: 'Item Listing & Pricing', caption: 'Tiered daily/monthly rates and deposit protection' },
+      { src: baurow3, title: 'Date Booking Calendar', caption: 'Live availability schedule and instant cost calculator' },
+      { src: baurow4, title: 'Map Radius & Reviews', caption: 'Location privacy circle and 5-star verified renter feedback' },
+      { src: baurow5, title: 'Category Marketplace Grid', caption: 'Fast searchable camera and gear listings across cities' }
+    ],
     role: 'Lead Flutter Developer — End-to-end mobile architecture, Firebase real-time sync, and Stripe payments integration.',
     impact: 'Live in production on both Google Play & Apple App Store, handling peer-to-peer item listings, instant chat, and secure bookings.',
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.info.baurow.app&hl=en_IN',
@@ -40,7 +99,12 @@ export const projects = [
     color: '#38BDF8',
     accent: '#0284C7',
     logo: calcountsLogo,
-    screenshots: [],
+    screenshots: [
+      { src: calcounts1, title: 'Daily Calorie Progress', caption: 'Log meals in seconds with live macro breakdown & wellness score' },
+      { src: calcounts2, title: 'AI Food Camera Scanner', caption: 'Real-time computer vision recognition for food items' },
+      { src: calcounts3, title: 'Full Nutrition Breakdown', caption: 'Detailed calorie, carb, protein, and fat cards' },
+      { src: calcounts4, title: 'Weekly Analytics Dashboard', caption: 'Interactive stacked macro chart and weight progress tracker' }
+    ],
     role: 'Mobile Engineer — Food camera scanner integration, macro calculations, and Apple Watch / health sync modules.',
     impact: 'Shipped to both stores with sub-second food barcode lookup, meal logging, and responsive macro breakdown visualizations.',
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.codiant.calcounts&hl=en_IN',
@@ -54,15 +118,48 @@ export const projects = [
     appStore: true
   },
   {
+    id: 'scribeflo',
+    name: 'Scribeflo',
+    category: 'HealthTech & AI',
+    type: 'AI Clinical Scribe for Healthcare',
+    number: '03',
+    color: '#2DD4BF',
+    accent: '#0D9488',
+    logo: scribefloLogo,
+    screenshots: [
+      { src: scribeflo1, title: 'Streaming Audio Encounter', caption: 'Effortless voice recording and structured template selection' },
+      { src: scribeflo2, title: 'Custom Note Formatting', caption: 'Concise, standard, or elaborate clinical documentation' },
+      { src: scribeflo3, title: 'Structured SOAP Notes', caption: 'Subjective, Objective, Assessment, and Plan accordions' },
+      { src: scribeflo4, title: 'Organized Patient History', caption: 'Filterable clinical timeline with date tags' },
+      { src: scribeflo5, title: 'Magic Edit AI Assistant', caption: 'Voice and text prompts to refine medical notes on the fly' }
+    ],
+    role: 'Lead Mobile Developer — Implemented streaming audio recording, real-time transcription status, and structured clinical summary views.',
+    impact: 'Deployed on iOS & Android for clinical practitioners, drastically reducing doctor charting time per patient encounter.',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.codiant.scribeflo&hl=en_IN',
+    appStoreUrl: 'https://apps.apple.com/in/app/scribeflo-ai-medical-scribe/id6749059072',
+    packageId: 'com.codiant.scribeflo',
+    description: 'AI-powered scribe designed for healthcare providers. Records patient encounters, transcribes conversations in real-time, and automatically generates structured clinical notes and documentation with full compliance and accuracy.',
+    stack: ['Flutter', 'Speech-to-Text', 'Generative Clinical AI', 'Audio Recording', 'HIPAA Ready'],
+    icon: 'S',
+    metrics: 'Live on Google Play & Apple App Store · Real-Time Clinical Scribe',
+    playStore: true,
+    appStore: true
+  },
+  {
     id: 'calcounts-pro',
     name: 'CalCounts Pro',
     category: 'Fitness & Health',
     type: 'Tablet-Optimized Instructor Dashboard',
-    number: '03',
+    number: '04',
     color: '#29B6F6',
     accent: '#02569B',
     logo: calcountsProLogo,
-    screenshots: [],
+    screenshots: [
+      { src: calcountsPro1, title: 'Instructor Day Dashboard', caption: 'Manage active, pending, and accepted client training requests' },
+      { src: calcountsPro2, title: 'Client Intake & Burn Table', caption: 'Weekly calories burned vs intake balance matrix' },
+      { src: calcountsPro3, title: 'Member Nutrition Insights', caption: 'Daily target vs intake comparison for protein, carbs, and fats' },
+      { src: calcountsPro4, title: 'Tablet Sign-In Experience', caption: 'Landscape-optimized split layout for fitness professionals' }
+    ],
     role: 'Flutter Developer — Designed tablet-first adaptive layouts and high-performance interactive client progress charts.',
     impact: 'Published on Google Play Store for fitness instructors to seamlessly manage multiple clients across Android tablets and phones.',
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.codiant.calcountsinstructor&hl=en_IN',
@@ -80,11 +177,17 @@ export const projects = [
     name: 'Dine Visuals',
     category: 'AI & Food Media',
     type: 'AI Food Studio & Photography',
-    number: '04',
+    number: '05',
     color: '#FB923C',
     accent: '#EA580C',
     logo: dineVisualsLogo,
-    screenshots: [],
+    screenshots: [
+      { src: dineVisuals1, title: 'Food Studio Splash', caption: 'Studio setup and on-demand AI food enhancement' },
+      { src: dineVisuals2, title: 'Reference Image Upload', caption: 'Choose composition, 45° angle, and custom aspect ratio' },
+      { src: dineVisuals3, title: 'Visual Creation Catalog', caption: 'Grid of generated restaurant-quality dish photos' },
+      { src: dineVisuals4, title: 'Interactive Before & After', caption: 'Direct comparison between raw phone snap and enhanced studio render' },
+      { src: dineVisuals5, title: 'Food Creator Account', caption: 'Profile and cloud sync management for food brands' }
+    ],
     role: 'Flutter Developer — Built dynamic camera UI, image manipulation pipelines, and REST API integration with AI image generation endpoints.',
     impact: 'Live on Google Play & App Store, empowering restaurants and food creators to generate studio-grade menu photos without camera gear.',
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.codiant.dineVisual&hl=en_IN',
@@ -98,28 +201,6 @@ export const projects = [
     appStore: true
   },
   {
-    id: 'scribeflo',
-    name: 'Scribeflo',
-    category: 'HealthTech & AI',
-    type: 'AI Clinical Scribe for Healthcare',
-    number: '05',
-    color: '#2DD4BF',
-    accent: '#0D9488',
-    logo: scribefloLogo,
-    screenshots: [],
-    role: 'Lead Mobile Developer — Implemented streaming audio recording, real-time transcription status, and structured clinical summary views.',
-    impact: 'Deployed on iOS & Android for clinical practitioners, drastically reducing doctor charting time per patient encounter.',
-    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.codiant.scribeflo&hl=en_IN',
-    appStoreUrl: 'https://apps.apple.com/in/app/scribeflo-ai-medical-scribe/id6749059072',
-    packageId: 'com.codiant.scribeflo',
-    description: 'AI-powered scribe designed for healthcare providers. Records patient encounters, transcribes conversations in real-time, and automatically generates structured clinical notes and documentation with full compliance and accuracy.',
-    stack: ['Flutter', 'Speech-to-Text', 'Generative Clinical AI', 'Audio Recording', 'HIPAA Ready'],
-    icon: 'S',
-    metrics: 'Live on Google Play & Apple App Store · Real-Time Clinical Scribe',
-    playStore: true,
-    appStore: true
-  },
-  {
     id: 'jainmatri',
     name: 'Jainmatri',
     category: 'Matrimony & Social',
@@ -128,7 +209,13 @@ export const projects = [
     color: '#F472B6',
     accent: '#DB2777',
     logo: jainmatriLogo,
-    screenshots: [],
+    screenshots: [
+      { src: jainmatri1, title: 'Cultural Onboarding', caption: 'Verified matrimonial networking built for the Jain community' },
+      { src: jainmatri2, title: 'Profile Completeness Engine', caption: 'Score algorithm boosting discovery and matching rate' },
+      { src: jainmatri3, title: 'Real-Time Message Alerts', caption: 'Instant push notifications for mutual interests' },
+      { src: jainmatri4, title: 'Encrypted Chat Flow', caption: 'Secure messaging with photo sharing and privacy rules' },
+      { src: jainmatri5, title: 'ID-Verified Profiles', caption: 'Trust badges, Kundali Milan, and direct interest sending' }
+    ],
     role: 'Mobile Engineer — Built complex verification flows, Kundali astrological matchmaking views, and in-app subscription paywalls.',
     impact: 'Shipped to App Store and Play Store, providing privacy-first matchmaking and verified family profile networking.',
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.jainmatri&hl=en_IN',
@@ -150,7 +237,13 @@ export const projects = [
     color: '#00B4AB',
     accent: '#02569B',
     logo: hiregrowwLogo,
-    screenshots: [],
+    screenshots: [
+      { src: hiregroww1, title: 'Recruitment Hub Launch', caption: 'Next-generation talent screening and interview hub' },
+      { src: hiregroww2, title: 'Fast Biometric & Email Login', caption: 'Secure authentication for HR and candidates' },
+      { src: hiregroww3, title: 'All Interviews at a Glance', caption: 'Upcoming video and face-to-face candidate pipeline' },
+      { src: hiregroww4, title: 'One-Tap Video Recording', caption: 'Async candidate interview questions and video capture' },
+      { src: hiregroww5, title: 'Cloud Interview Storage', caption: 'Automated upload and evaluation report generation' }
+    ],
     role: 'Flutter Developer — Created multilingual localization architecture, async video/audio interview recording, and candidate status tracking.',
     impact: 'Live on both app stores; enables fast candidate screening with localized interfaces across regional markets.',
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.codiant.hiregroww&hl=en_IN',
@@ -172,7 +265,13 @@ export const projects = [
     color: '#54C5F8',
     accent: '#0175C2',
     logo: fitterloopLogo,
-    screenshots: [],
+    screenshots: [
+      { src: fitterloop1, title: 'Workout Readiness Feed', caption: 'Interactive tagging for workout equipment and coach programs' },
+      { src: fitterloop2, title: 'Sub-Second Meal Logger', caption: 'Daily calorie intake vs target progress circle' },
+      { src: fitterloop3, title: 'Coach Matching System', caption: 'Browse certified trainers and custom coaching plans' },
+      { src: fitterloop4, title: 'Unified Health Metrics', caption: 'Single dashboard for BMI, steps, heart rate, and water' },
+      { src: fitterloop5, title: 'Custom Diet Plans', caption: 'Weight loss and weight gain macronutrient recipes' }
+    ],
     role: 'Mobile Engineer — Implemented custom responsive workout interfaces, nutrition logging, and REST backend synchronizers.',
     impact: 'Dual-platform release on Google Play & iOS App Store offering seamless workout and food calorie tracking.',
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.fitterloop&hl=en_IN',
@@ -194,7 +293,13 @@ export const projects = [
     color: '#80D8FF',
     accent: '#02569B',
     logo: glowpeerLogo,
-    screenshots: [],
+    screenshots: [
+      { src: glowpeer1, title: 'AI Face & Product Scan', caption: 'Camera analysis measuring product compatibility and UV safety' },
+      { src: glowpeer2, title: 'Routine Hub', caption: 'Morning, skin diary, and night routine reminders' },
+      { src: glowpeer3, title: 'Step-by-Step Consistency', caption: 'Step tracker for serums, oils, and ceramide barriers' },
+      { src: glowpeer4, title: 'Community Social Feed', caption: 'Real user reviews, skincare journeys, and before/after photos' },
+      { src: glowpeer5, title: 'Skin Profile & Shelf', caption: 'Diagnostic cards for oiliness, sensitivity, and elasticity' }
+    ],
     role: 'Flutter Developer — Designed daily routine streak systems, reminder scheduling, and user community progress sharing feeds.',
     impact: 'Live in production on both stores, driving sustained user habit tracking and skincare routine consistency.',
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.glowpeer&hl=en_IN',

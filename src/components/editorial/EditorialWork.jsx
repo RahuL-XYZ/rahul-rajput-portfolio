@@ -1,9 +1,22 @@
 import React, { useState } from 'react';
-import { ExternalLink, ArrowUpRight, Apple, Smartphone, Sparkles, ShieldCheck } from 'lucide-react';
+import { ExternalLink, ArrowUpRight, Apple, Smartphone, Sparkles, ShieldCheck, Eye, Images } from 'lucide-react';
 import { projects } from '../../data/projects';
+import ProjectDevicePreview from './ProjectDevicePreview';
+import ScreenshotModal from './ScreenshotModal';
 
 export default function EditorialWork() {
   const [filter, setFilter] = useState('all');
+  const [modalProject, setModalProject] = useState(null);
+  const [modalIndex, setModalIndex] = useState(0);
+
+  const handleOpenModal = (project, index = 0) => {
+    setModalProject(project);
+    setModalIndex(index);
+  };
+
+  const handleCloseModal = () => {
+    setModalProject(null);
+  };
 
   const filteredProjects = projects.filter((p) => {
     if (filter === 'dual') return p.playStore && p.appStore;
@@ -96,6 +109,9 @@ export default function EditorialWork() {
                   )}
                 </div>
 
+                {/* Interactive Phone Screenshot Showcase */}
+                <ProjectDevicePreview project={baurow} onOpenModal={handleOpenModal} />
+
                 <div className="work-tags">
                   {baurow.stack.map(s => (
                     <span key={s}>{s}</span>
@@ -142,6 +158,9 @@ export default function EditorialWork() {
                   )}
                 </div>
 
+                {/* Interactive Phone Screenshot Showcase */}
+                <ProjectDevicePreview project={calcounts} onOpenModal={handleOpenModal} />
+
                 <div className="work-tags">
                   {calcounts.stack.map(s => (
                     <span key={s}>{s}</span>
@@ -159,19 +178,19 @@ export default function EditorialWork() {
                   <span className="item-number">03</span>
                   <h3>{scribeflo.name}</h3>
                 </div>
-                <p className="item-timespan">2024 · Clinical AI Medical Scribe</p>
+                <p className="item-timespan">2024 to Present · Generative Clinical Scribe</p>
               </div>
 
               <div className="work-item-body">
                 <p className="work-description">
-                  AI-powered clinical scribe for healthcare providers. Captures doctor-patient encounters, streams audio recording, and automatically generates structured SOAP clinical notes with full accuracy.
+                  Streaming audio capture and automated clinical encounter documentation. Engineered real-time transcription status, multi-role SOAP note generation, and HIPAA-compliant data pipelines.
                 </p>
 
                 <div className="receipt-box">
                   <span className="receipt-tag">The receipt</span>
-                  <div className="receipt-stat">Real-time Audio Stream</div>
+                  <div className="receipt-stat">Zero-Latency Audio Scribe</div>
                   <p className="receipt-detail">
-                    Deployed to clinicians on iOS and Android to cut patient documentation charting time in half.
+                    Active clinical deployment on iOS and Android. Converts live patient visits into formatted medical notes in under 15 seconds.
                   </p>
                 </div>
 
@@ -187,6 +206,9 @@ export default function EditorialWork() {
                     </a>
                   )}
                 </div>
+
+                {/* Interactive Phone Screenshot Showcase */}
+                <ProjectDevicePreview project={scribeflo} onOpenModal={handleOpenModal} />
 
                 <div className="work-tags">
                   {scribeflo.stack.map(s => (
@@ -209,6 +231,18 @@ export default function EditorialWork() {
                     <span className="archive-type">{p.category}</span>
                   </div>
                   <p className="archive-desc">{p.description}</p>
+
+                  {p.screenshots && p.screenshots.length > 0 && (
+                    <button
+                      type="button"
+                      className="archive-screens-btn"
+                      onClick={() => handleOpenModal(p, 0)}
+                    >
+                      <Images size={13} />
+                      <span>View Production Screens ({p.screenshots.length})</span>
+                    </button>
+                  )}
+
                   <div className="archive-store-links">
                     {p.appStoreUrl && (
                       <a href={p.appStoreUrl} target="_blank" rel="noreferrer">
@@ -230,6 +264,16 @@ export default function EditorialWork() {
           </div>
         </div>
       </div>
+
+      {/* Global Screenshot Lightbox Modal */}
+      {modalProject && (
+        <ScreenshotModal
+          project={modalProject}
+          activeIndex={modalIndex}
+          onIndexChange={setModalIndex}
+          onClose={handleCloseModal}
+        />
+      )}
     </section>
   );
 }
