@@ -1,0 +1,121 @@
+/* ==========================================================================
+   EDITORIAL PORTFOLIO DESIGN TOKENS
+   Inspired by akashshivanand.com — Editorial Craft, Restraint & High Contrast
+   ========================================================================== */
+
+:root,
+[data-theme="light"] {
+  --theme-mode: 'light';
+
+  /* Canvas & Editorial Surfaces */
+  --bg-canvas: #F4F3EE;
+  --bg-surface-0: #FFFFFF;
+  --bg-surface-1: #ECEBE5;
+  --bg-surface-2: #E3E1DA;
+  --bg-surface-trans: rgba(244, 243, 238, 0.88);
+  --bg-callout: #EFECE5;
+  --bg-phone-bezel: #16181D;
+
+  /* Inverted Proof & Terminal Canvas */
+  --bg-invert: #111419;
+  --bg-invert-surface: #181C23;
+  --text-invert: #F4F5F7;
+  --text-invert-muted: #9AA0A8;
+  --line-invert: rgba(255, 255, 255, 0.12);
+
+  /* Primary Editorial Accent: Deep Flutter Cobalt / Warm Ink */
+  --accent: #02569B;
+  --accent-warm: #C2410C;
+  --accent-hover: #01437A;
+  --accent-soft: rgba(2, 86, 155, 0.08);
+  --accent-pill: rgba(2, 86, 155, 0.12);
+  --flutter-blue: #0175C2;
+  --flutter-cyan: #29B6F6;
+
+  /* Text & Typographic Scales */
+  --text-heading: #111317;
+  --text-main: #24282F;
+  --text-secondary: #4D545E;
+  --text-muted: #6C7480;
+
+  /* Lines & Borders */
+  --line-subtle: rgba(18, 20, 24, 0.11);
+  --line-border: rgba(18, 20, 24, 0.22);
+  --line-accent: rgba(2, 86, 155, 0.4);
+
+  /* Elevation Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --shadow-elevated: 0 16px 48px rgba(0, 0, 0, 0.1);
+
+  /* Typography */
+  --font-editorial: 'Anek Latin', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'DM Mono', monospace;
+
+  /* Spacing Scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+
+  /* Layout width */
+  --max-width: 1240px;
+}
+
+[data-theme="dark"] {
+  --theme-mode: 'dark';
+
+  /* Dark Obsidian Editorial Surfaces */
+  --bg-canvas: #0E1116;
+  --bg-surface-0: #151921;
+  --bg-surface-1: #1C212B;
+  --bg-surface-2: #242B37;
+  --bg-surface-trans: rgba(14, 17, 22, 0.9);
+  --bg-callout: #191E27;
+  --bg-phone-bezel: #090B0E;
+
+  /* Inverted Proof & Terminal Canvas */
+  --bg-invert: #07090C;
+  --bg-invert-surface: #101319;
+  --text-invert: #F4F5F7;
+  --text-invert-muted: #8E96A2;
+  --line-invert: rgba(255, 255, 255, 0.1);
+
+  /* Accent */
+  --accent: #38BDF8;
+  --accent-warm: #FB923C;
+  --accent-hover: #7DD3FC;
+  --accent-soft: rgba(56, 189, 248, 0.1);
+  --accent-pill: rgba(56, 189, 248, 0.15);
+  --flutter-blue: #38BDF8;
+  --flutter-cyan: #7DD3FC;
+
+  /* Text & Typographic Scales */
+  --text-heading: #F3F5F7;
+  --text-main: #D5DAE1;
+  --text-secondary: #9BA3AF;
+  --text-muted: #6E7785;
+
+  /* Lines & Borders */
+  --line-subtle: rgba(255, 255, 255, 0.1);
+  --line-border: rgba(255, 255, 255, 0.18);
+  --line-accent: rgba(56, 189, 248, 0.4);
+
+  /* Elevation Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.45);
+  --shadow-elevated: 0 16px 48px rgba(0, 0, 0, 0.6);
+}
