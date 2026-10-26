@@ -2,6 +2,8 @@ import React from 'react';
 import { ArrowDown, ArrowUpRight, CheckCircle2, MapPin, Sparkles, Smartphone, Layers } from 'lucide-react';
 import FlutterLogo from '../common/FlutterLogo';
 
+import rahulImg from '../../assets/rahul_rajput.jpg';
+
 export default function EditorialHero() {
   return (
     <section className="ed-hero" id="hero">
@@ -39,12 +41,19 @@ export default function EditorialHero() {
             <span className="status-live">● Available for hire</span>
           </div>
 
-          <div className="card-bio">
-            <h3>Rahul Rajput</h3>
-            <p className="card-role">Specialized Flutter & Mobile Developer</p>
-            <div className="card-loc">
-              <MapPin size={13} />
-              <span>Korba, Chhattisgarh · Remote & Relocation Ready</span>
+          <div className="card-profile-header">
+            <img 
+              src={rahulImg} 
+              alt="Rahul Rajput - Flutter Developer" 
+              className="card-avatar-img"
+            />
+            <div className="card-bio">
+              <h3>Rahul Rajput</h3>
+              <p className="card-role">Specialized Flutter & Mobile Developer</p>
+              <div className="card-loc">
+                <MapPin size={13} />
+                <span>Korba, Chhattisgarh · Remote & Relocation Ready</span>
+              </div>
             </div>
           </div>
 

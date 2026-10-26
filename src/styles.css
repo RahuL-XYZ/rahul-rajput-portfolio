@@ -306,6 +306,24 @@ textarea:focus-visible {
   font-weight: 600;
 }
 
+.card-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 6px;
+}
+
+.card-avatar-img {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-pill);
+  object-fit: cover;
+  object-position: 50% 20%;
+  border: 2px solid var(--accent);
+  box-shadow: 0 4px 14px rgba(2, 86, 155, 0.18);
+  flex-shrink: 0;
+}
+
 .card-bio h3 {
   font-family: var(--font-editorial);
   font-size: 24px;
@@ -1102,11 +1120,78 @@ textarea:focus-visible {
   margin-top: 28px;
 }
 
-.person-lead {
-  font-size: 18px;
-  line-height: 1.65;
+.person-profile-card {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  background: var(--bg-surface-0);
+  border: 1px solid var(--line-subtle);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-card);
+}
+
+.person-photo-frame {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.person-photo {
+  width: 110px;
+  height: 125px;
+  object-fit: cover;
+  object-position: 50% 20%;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--line-border);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  display: block;
+}
+
+.portrait-badge {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-surface-0);
+  border: 1px solid var(--line-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 5px;
   color: var(--text-heading);
-  margin-bottom: 20px;
+}
+
+.portrait-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #16A34A;
+}
+
+.person-profile-intro {
+  flex: 1;
+}
+
+.person-callout-note {
+  font-size: 13px;
+  color: var(--accent);
+  font-weight: 500;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.person-lead {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-heading);
+  margin-bottom: 0;
 }
 
 .person-philosophy {
@@ -1453,6 +1538,12 @@ textarea:focus-visible {
   .sim-phone {
     width: 100%;
     max-width: 280px;
+  }
+  .person-profile-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 18px;
   }
   .footer-meta-row {
     flex-direction: column;

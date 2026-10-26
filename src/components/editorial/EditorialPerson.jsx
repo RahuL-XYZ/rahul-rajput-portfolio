@@ -1,6 +1,7 @@
 import React from 'react';
 import { Briefcase, GraduationCap, MapPin, Award, CheckCircle2 } from 'lucide-react';
 import { experiences, education } from '../../data/experience';
+import rahulImg from '../../assets/rahul_rajput.jpg';
 
 export default function EditorialPerson() {
   return (
@@ -12,9 +13,22 @@ export default function EditorialPerson() {
 
       <div className="person-grid">
         <div className="person-bio-col">
-          <p className="person-lead">
-            Based in Korba, Chhattisgarh. I’ve spent the past 3.8+ years turning sprawling mobile requirements into clean, predictable Dart code that passes Apple App Store and Google Play Console review without friction.
-          </p>
+          <div className="person-profile-card">
+            <div className="person-photo-frame">
+              <img src={rahulImg} alt="Rahul Rajput - Flutter Developer" className="person-photo" />
+              <div className="portrait-badge">
+                <span className="portrait-dot"></span> 3.8+ Yrs Dart Craft
+              </div>
+            </div>
+            <div className="person-profile-intro">
+              <p className="person-lead">
+                Based in Korba, Chhattisgarh. I’ve spent the past 3.8+ years turning sprawling mobile requirements into clean, predictable Dart code that passes Apple App Store and Google Play Console review without friction.
+              </p>
+              <p className="person-callout-note">
+                Full-lifecycle delivery: From Figma specs to App Store Connect, Play Console internal tracks, and production rollouts.
+              </p>
+            </div>
+          </div>
 
           <p className="person-philosophy">
             <strong>Working with me looks like this:</strong> I don’t treat cross-platform development as a shortcut. I write strict Dart type definitions, isolate business logic with Riverpod, and build defensive network handlers so your mobile app never crashes on real-world networks.
