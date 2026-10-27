@@ -2,6 +2,7 @@ import calcountsProLogo from '../assets/projects/calcounts_pro_logo.png';
 import hiregrowwLogo from '../assets/projects/hiregroww_logo.png';
 import baurowLogo from '../assets/projects/baurow_logo.png';
 
+import kharchaPaaniScreen from '../assets/projects/kharcha_paani_admin_screen.png';
 import calcountsPro1 from '../assets/projects/calcounts_pro_screen_1.png';
 import calcountsPro2 from '../assets/projects/calcounts_pro_screen_2.png';
 import calcountsPro3 from '../assets/projects/calcounts_pro_screen_3.png';
@@ -9,11 +10,33 @@ import calcountsPro4 from '../assets/projects/calcounts_pro_screen_4.png';
 
 export const webApplications = [
   {
+    id: 'kharcha-paani-admin',
+    name: 'Kharcha Paani — React Admin Portal',
+    tagline: 'Shared Household Expense & Settlement Administration System',
+    category: 'React 19 & Cloud Firestore',
+    number: 'W-01',
+    color: '#10B981',
+    accent: '#059669',
+    logo: null,
+    browserUrl: 'kharchapaani-890b8.web.app',
+    role: 'Lead Full-Stack Web Engineer — Architecture, Firestore schema & rules, Recharts analytics, and Firebase deployment.',
+    impact: 'Live production admin panel deployed on Firebase Hosting, directly monitoring household expense collections, user accounts, and real-time financial settlement ledgers.',
+    description: 'A modern, production-grade admin panel for Kharcha Paani, the shared household expense and settlement platform. Features Firebase Authentication, real-time Cloud Firestore synchronization with collectionGroup expense querying, Recharts financial trends, React Hook Form validation, and Tailwind CSS v4 design.',
+    stack: ['React 19', 'Vite 8', 'Firebase Auth', 'Cloud Firestore', 'Tailwind CSS v4', 'Recharts', 'React Router v7', 'Zod'],
+    metrics: 'Live on Firebase Hosting · Cross-Household CollectionGroup Auditing · Recharts Analytics',
+    screenshots: [
+      { src: kharchaPaaniScreen, title: 'Kharcha Paani Admin Portal', caption: 'Authentication, household auditing, and cross-group settlement management' }
+    ],
+    liveUrl: 'https://kharchapaani-890b8.web.app/',
+    githubUrl: 'https://github.com/RahuL-XYZ/Kharcha-Paani-Admin',
+    status: 'Live on Firebase'
+  },
+  {
     id: 'calcounts-pro-web',
     name: 'CalCounts Pro — Instructor Dashboard',
     tagline: 'Tablet & Desktop Responsive Analytics Portal',
     category: 'Web & Tablet Dashboard',
-    number: 'W-01',
+    number: 'W-02',
     color: '#0284C7',
     accent: '#02569B',
     logo: calcountsProLogo,
@@ -38,7 +61,7 @@ export const webApplications = [
     name: 'HireGroww — Multilingual Recruitment Portal',
     tagline: 'Enterprise Candidate Evaluation & Hiring Workflows',
     category: 'Web Application & HR Portal',
-    number: 'W-02',
+    number: 'W-03',
     color: '#10B981',
     accent: '#047857',
     logo: hiregrowwLogo,
@@ -58,7 +81,7 @@ export const webApplications = [
     name: 'Baurow — Marketplace Web & Ops Platform',
     tagline: 'Item Catalog, Conflict Resolution & Stripe Escrow Oversight',
     category: 'Marketplace Operations',
-    number: 'W-03',
+    number: 'W-04',
     color: '#06B6D4',
     accent: '#0E7490',
     logo: baurowLogo,
@@ -78,7 +101,7 @@ export const webApplications = [
     name: 'Rahul Rajput — Editorial Portfolio Engine',
     tagline: 'High-Performance React & CSS Design System Portfolio',
     category: 'Modern Web Application',
-    number: 'W-04',
+    number: 'W-05',
     color: '#38BDF8',
     accent: '#0284C7',
     logo: null,

@@ -130,23 +130,23 @@ export default function EditorialWebProjects() {
                         <p className="receipt-detail">{app.impact}</p>
                       </div>
 
-                      {/* CalCounts Pro or image preview */}
+                      {/* Screenshot / Dashboard preview */}
                       {app.screenshots && app.screenshots.length > 0 && (
                         <div className="web-preview-showcase">
                           <div className="web-preview-header">
                             <span className="preview-label">
-                              <LayoutDashboard size={14} /> Production Dashboard Views
+                              <LayoutDashboard size={14} /> Production Interface View{app.screenshots.length > 1 ? 's' : ''}
                             </span>
                             <button
                               type="button"
                               className="view-screens-pill-btn"
                               onClick={() => handleOpenScreens(app, 0)}
                             >
-                              <Images size={13} /> View All 4 High-Res Screens
+                              <Images size={13} /> {app.screenshots.length > 1 ? `View All ${app.screenshots.length} Screens` : 'Enlarge High-Res Screen'}
                             </button>
                           </div>
                           
-                          <div className="web-preview-grid">
+                          <div className={`web-preview-grid ${app.screenshots.length === 1 ? 'single-preview' : ''}`}>
                             {app.screenshots.slice(0, 2).map((s, idx) => (
                               <div 
                                 key={idx} 

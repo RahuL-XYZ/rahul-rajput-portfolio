@@ -1734,6 +1734,14 @@ textarea:focus-visible {
   gap: 12px;
 }
 
+.web-preview-grid.single-preview {
+  grid-template-columns: 1fr;
+}
+
+.web-preview-grid.single-preview .web-preview-thumb {
+  aspect-ratio: 20 / 9;
+}
+
 .web-preview-thumb {
   position: relative;
   border-radius: var(--radius-sm);
