@@ -5,6 +5,7 @@ import EditorialHeader from './components/editorial/EditorialHeader';
 import EditorialHero from './components/editorial/EditorialHero';
 import EditorialBelief from './components/editorial/EditorialBelief';
 import EditorialWork from './components/editorial/EditorialWork';
+import EditorialWebProjects from './components/editorial/EditorialWebProjects';
 import EditorialProof from './components/editorial/EditorialProof';
 import EditorialPerson from './components/editorial/EditorialPerson';
 import EditorialContact from './components/editorial/EditorialContact';
@@ -25,6 +26,7 @@ export default function App() {
         <EditorialHero />
         <EditorialBelief />
         <EditorialWork />
+        <EditorialWebProjects />
         <EditorialProof />
         <EditorialPerson />
         <EditorialContact />
