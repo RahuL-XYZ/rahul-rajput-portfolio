@@ -1,0 +1,102 @@
+/* ==========================================================================
+   SPIDER-VERSE RESPONSIVE SYSTEM
+   ========================================================================== */
+
+/* Large Tablets & Small Laptops (<= 1024px) */
+@media (max-width: 1024px) {
+  :root {
+    --nav-height: 64px;
+  }
+
+  .sv-hero-viewport {
+    height: 440px;
+  }
+
+  .sv-section-title {
+    font-size: 38px;
+  }
+}
+
+/* Tablets & Mobile Screens (<= 768px) */
+@media (max-width: 768px) {
+  .sv-hero-section {
+    padding-top: calc(var(--nav-height) + 20px);
+  }
+
+  .sv-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .sv-hero-quote {
+    font-size: 36px;
+  }
+
+  .sv-hero-viewport {
+    height: 350px;
+  }
+
+  .sv-hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .sv-comic-grid {
+    gap: 18px;
+  }
+
+  .comic-panel-inner {
+    padding: 18px;
+  }
+
+  .sv-categories-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-phone-frame {
+    width: 210px;
+    height: 410px;
+  }
+
+  .sv-modal-dialog {
+    padding: 20px;
+  }
+
+  .sv-form-column {
+    padding: 24px 18px;
+  }
+
+  .sv-terminal-body {
+    height: 300px;
+  }
+}
+
+/* Small Mobiles (<= 480px) */
+@media (max-width: 480px) {
+  .sv-hero-quote {
+    font-size: 28px;
+  }
+
+  .sv-hero-desc {
+    font-size: 14px;
+  }
+
+  .sv-hero-ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .sv-magnetic-btn {
+    width: 100%;
+  }
+
+  .sv-section-title {
+    font-size: 28px;
+  }
+
+  .mission-universe-card {
+    padding: 20px 16px;
+  }
+}
+

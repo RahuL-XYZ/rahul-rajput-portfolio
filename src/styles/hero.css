@@ -1,0 +1,415 @@
+.sv-hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: calc(var(--nav-height) + 40px) 0 60px;
+  overflow: hidden;
+}
+
+.sv-hero-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+/* Copy Column */
+.sv-hero-copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.sv-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 4px;
+  background: rgba(230, 36, 41, 0.12);
+  border: 1px solid rgba(230, 36, 41, 0.4);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--sv-red-bright);
+  width: fit-content;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.sv-hero-quote {
+  font-family: var(--font-impact);
+  font-size: clamp(38px, 5.2vw, 68px);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  color: var(--sv-white);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.sv-hero-quote .accent-red {
+  color: var(--sv-red-bright);
+  text-shadow: 0 0 24px var(--sv-red-glow);
+}
+
+.sv-hero-quote .accent-blue {
+  color: var(--sv-cyan);
+  text-shadow: 0 0 24px var(--sv-cyan-glow);
+}
+
+.sv-hero-bio-strip {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.sv-hero-portrait {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 2px solid var(--sv-cyan);
+  box-shadow: 0 0 16px var(--sv-cyan-glow);
+}
+
+.sv-hero-name-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.sv-hero-name {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--sv-white);
+  line-height: 1.2;
+}
+
+.sv-hero-title {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--sv-cyan);
+}
+
+.sv-hero-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--sv-white-muted);
+  max-width: 540px;
+  margin-bottom: 32px;
+}
+
+.sv-hero-desc strong {
+  color: var(--sv-white);
+}
+
+/* Hero CTAs */
+.sv-hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Stats quick pills */
+.sv-hero-stats {
+  display: flex;
+  gap: 20px;
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sv-hero-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.sv-stat-num {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--sv-white);
+  line-height: 1.1;
+}
+
+.sv-stat-lbl {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--sv-gray-muted);
+  text-transform: uppercase;
+}
+
+/* Holographic Developer Dossier Card (Replaces 3D City) */
+.sv-hero-dossier-card {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--sv-border-bright, rgba(0, 217, 255, 0.35));
+  background: radial-gradient(circle at 50% 20%, rgba(20, 28, 48, 0.8) 0%, rgba(8, 11, 18, 0.92) 100%);
+  backdrop-filter: blur(16px);
+  padding: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 35px var(--sv-cyan-glow, rgba(0, 217, 255, 0.15));
+  transition: all 0.3s ease;
+}
+
+/* Tactical Corner Crosshairs */
+.dossier-bracket {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--sv-cyan);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.dossier-bracket.top-left { top: 8px; left: 8px; }
+.dossier-bracket.top-right { top: 8px; right: 8px; }
+.dossier-bracket.bottom-left { bottom: 8px; left: 8px; }
+.dossier-bracket.bottom-right { bottom: 8px; right: 8px; }
+
+/* Dossier Top Bar */
+.dossier-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dossier-status-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #10B981;
+}
+
+.status-dot-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 10px #10B981;
+  animation: pulse-dot 1.8s infinite;
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.7; }
+}
+
+.dossier-sector-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--sv-cyan);
+}
+
+/* Central Portrait Frame */
+.dossier-portrait-frame {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 18px;
+  background: #080c14;
+}
+
+.dossier-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: contrast(1.05) saturate(1.05);
+  transition: transform 0.4s ease;
+}
+
+.sv-hero-dossier-card:hover .dossier-portrait-img {
+  transform: scale(1.02);
+}
+
+/* Hologram Scanning Beam */
+.dossier-scan-beam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--sv-cyan), transparent);
+  box-shadow: 0 0 16px var(--sv-cyan);
+  animation: scan-vertical 3.5s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes scan-vertical {
+  0% { top: 0%; opacity: 0.3; }
+  50% { opacity: 0.9; }
+  100% { top: 96%; opacity: 0.3; }
+}
+
+.dossier-portrait-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(5, 7, 12, 0.85) 100%);
+  pointer-events: none;
+}
+
+/* Floating Flutter Specialist Badge */
+.dossier-floating-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: rgba(10, 15, 25, 0.88);
+  border: 1px solid var(--sv-border-bright, rgba(0, 217, 255, 0.4));
+  border-radius: 8px;
+  padding: 10px 14px;
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6);
+  z-index: 3;
+}
+
+.floating-badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: rgba(2, 86, 155, 0.2);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  border-radius: 6px;
+}
+
+.floating-badge-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.badge-name {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--sv-white);
+  letter-spacing: 0.04em;
+}
+
+.badge-sub {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--sv-cyan);
+}
+
+/* Metric Matrix Row */
+.dossier-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.dossier-metric-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 8px 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.dossier-metric-num {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--sv-white);
+  line-height: 1.1;
+}
+
+.dossier-metric-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--sv-gray-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+/* Capability Tech Chips */
+.dossier-tech-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.tech-chip {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px 9px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--sv-white-muted);
+  transition: all 0.2s ease;
+}
+
+.tech-chip:hover {
+  color: var(--sv-white);
+  border-color: var(--sv-cyan);
+  background: rgba(0, 217, 255, 0.1);
+}
+
+/* Bottom Terminal Footer */
+.dossier-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 10px;
+  text-align: center;
+}
+
+.dossier-footer-code {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--sv-gray-muted);
+  letter-spacing: 0.12em;
+}
+
+@media (max-width: 990px) {
+  .sv-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .dossier-portrait-frame {
+    height: 280px;
+  }
+}
+

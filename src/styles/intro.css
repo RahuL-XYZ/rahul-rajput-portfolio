@@ -1,0 +1,174 @@
+.sv-intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background-color: var(--sv-black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sv-intro-overlay.is-exiting {
+  opacity: 0;
+  transform: scale(1.08);
+  pointer-events: none;
+}
+
+/* Spider Web Canvas Layer */
+.sv-intro-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Red Glowing Particle in center */
+.sv-intro-particle {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: var(--sv-red-bright);
+  border-radius: 50%;
+  box-shadow: 0 0 40px 15px var(--sv-red), 0 0 90px 40px rgba(230, 36, 41, 0.5);
+  z-index: 3;
+  pointer-events: none;
+  animation: intro-particle-pulse 1.8s infinite alternate ease-in-out;
+}
+
+@keyframes intro-particle-pulse {
+  0% { transform: scale(0.8); opacity: 0.7; }
+  100% { transform: scale(1.5); opacity: 1; }
+}
+
+/* Silhouette & Lighting Backdrop */
+.sv-intro-backdrop {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.sv-intro-backdrop.is-revealed {
+  opacity: 1;
+}
+
+.sv-intro-glow-red {
+  position: absolute;
+  left: 20%;
+  top: 30%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(230, 36, 41, 0.28) 0%, transparent 70%);
+  filter: blur(50px);
+}
+
+.sv-intro-glow-blue {
+  position: absolute;
+  right: 20%;
+  bottom: 25%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(20, 100, 244, 0.28) 0%, transparent 70%);
+  filter: blur(50px);
+}
+
+/* Superhero Silhouette SVG */
+.sv-intro-silhouette {
+  position: absolute;
+  bottom: 0;
+  height: 65vh;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 30px rgba(20, 100, 244, 0.4));
+  pointer-events: none;
+}
+
+/* Center Text Sequence */
+.sv-intro-text-container {
+  position: relative;
+  z-index: 4;
+  text-align: center;
+  padding: 0 24px;
+  max-width: 900px;
+}
+
+.sv-intro-stage-1,
+.sv-intro-stage-2 {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.sv-intro-headline {
+  font-family: var(--font-impact);
+  font-size: clamp(32px, 6vw, 68px);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--sv-white);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.sv-intro-sub {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  color: var(--sv-cyan);
+  margin-top: 14px;
+  text-transform: uppercase;
+}
+
+/* Top Right Controls */
+.sv-intro-controls {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sv-intro-skip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--sv-white);
+  background: rgba(16, 23, 43, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sv-intro-skip:hover {
+  background: var(--sv-red);
+  border-color: var(--sv-red-bright);
+  box-shadow: 0 0 16px var(--sv-red-glow);
+}
+
+/* Progress bar at bottom */
+.sv-intro-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--sv-red), var(--sv-cyan));
+  box-shadow: 0 0 12px var(--sv-red);
+  transition: width 0.1s linear;
+  z-index: 10;
+}
+

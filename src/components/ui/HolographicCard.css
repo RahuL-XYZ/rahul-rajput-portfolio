@@ -1,0 +1,67 @@
+.holo-card-wrapper {
+  position: relative;
+  background: rgba(16, 23, 43, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  transform-style: preserve-3d;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.3s ease, 
+              border-color 0.3s ease;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.holo-card-content {
+  position: relative;
+  z-index: 2;
+  padding: 24px;
+}
+
+.holo-glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  mix-blend-mode: overlay;
+  transition: opacity 0.25s ease;
+}
+
+.holo-border-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Glow Variants */
+.holo-glow-red:hover {
+  border-color: var(--sv-red-bright);
+  box-shadow: 0 0 30px rgba(230, 36, 41, 0.4), inset 0 0 20px rgba(230, 36, 41, 0.15);
+}
+
+.holo-glow-blue:hover {
+  border-color: var(--sv-blue-electric);
+  box-shadow: 0 0 30px rgba(20, 100, 244, 0.4), inset 0 0 20px rgba(20, 100, 244, 0.15);
+}
+
+.holo-glow-cyan:hover {
+  border-color: var(--sv-cyan);
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.4), inset 0 0 20px rgba(0, 217, 255, 0.15);
+}
+
+/* Flutter Featured Card */
+.holo-card-wrapper.is-featured {
+  border: 2px solid var(--sv-cyan);
+  background: linear-gradient(145deg, rgba(20, 27, 45, 0.9) 0%, rgba(8, 12, 22, 0.95) 100%);
+  box-shadow: 0 0 35px rgba(0, 217, 255, 0.25), inset 0 0 25px rgba(0, 217, 255, 0.1);
+}
+
+.holo-card-wrapper.is-featured:hover {
+  border-color: #ffffff;
+  box-shadow: 0 0 50px rgba(0, 217, 255, 0.6), inset 0 0 30px rgba(0, 217, 255, 0.2);
+}
+

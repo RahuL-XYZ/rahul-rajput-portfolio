@@ -1,0 +1,171 @@
+.sv-terminal-section {
+  position: relative;
+  padding: 100px 0;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.sv-terminal-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Terminal Window Frame */
+.sv-terminal-window {
+  background: #090c14;
+  border: 1px solid var(--sv-cyan);
+  border-radius: 8px;
+  box-shadow: 0 0 45px rgba(0, 217, 255, 0.25), inset 0 0 30px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Top Title Bar */
+.sv-terminal-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: #0e1422;
+  border-bottom: 1px solid rgba(0, 217, 255, 0.25);
+}
+
+.sv-terminal-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.sv-term-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.sv-term-btn.red { background: #FF5F56; }
+.sv-term-btn.yellow { background: #FFBD2E; }
+.sv-term-btn.green { background: #27C93F; }
+
+.sv-terminal-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--sv-cyan);
+  letter-spacing: 0.12em;
+}
+
+.sv-terminal-meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--sv-gray-muted);
+}
+
+/* Terminal CRT Scanlines */
+.sv-terminal-window::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 5;
+  opacity: 0.4;
+}
+
+/* Terminal Body & Log */
+.sv-terminal-body {
+  padding: 24px;
+  height: 380px;
+  overflow-y: auto;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  color: #38E5FF;
+  position: relative;
+  z-index: 2;
+}
+
+.terminal-line {
+  margin-bottom: 6px;
+  word-break: break-word;
+}
+
+.terminal-line.cmd-input {
+  color: var(--sv-white);
+  font-weight: 600;
+}
+
+.terminal-line.cmd-response {
+  color: #a4e5ff;
+}
+
+.terminal-line.cmd-prompt-prefix {
+  color: var(--sv-red-bright);
+}
+
+/* Active Command Input Line */
+.sv-terminal-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.sv-prompt-prefix {
+  color: var(--sv-red-bright);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.sv-terminal-input {
+  flex: 1;
+  background: transparent;
+  color: var(--sv-white);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  caret-color: var(--sv-cyan);
+}
+
+.sv-terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background: var(--sv-cyan);
+  vertical-align: middle;
+  animation: term-blink 1s infinite step-start;
+}
+
+@keyframes term-blink {
+  50% { opacity: 0; }
+}
+
+/* Quick Command Pills below terminal */
+.sv-terminal-quick-cmds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.quick-cmd-btn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 4px 10px;
+  background: rgba(16, 23, 43, 0.7);
+  border: 1px dashed rgba(0, 217, 255, 0.35);
+  border-radius: 4px;
+  color: var(--sv-cyan);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quick-cmd-btn:hover {
+  background: var(--sv-cyan);
+  color: var(--sv-black);
+  border-style: solid;
+}
+

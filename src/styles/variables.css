@@ -1,0 +1,57 @@
+/* ==========================================================================
+   SPIDER-VERSE DESIGN TOKENS & SYSTEM VARIABLES
+   ========================================================================== */
+
+:root {
+  /* Core Cinematic Spider-Verse Palette */
+  --sv-black: #08080D;
+  --sv-dark-base: #0B0E14;
+  --sv-deep-navy: #10172B;
+  --sv-card-bg: rgba(16, 23, 43, 0.7);
+  --sv-surface: #141B2D;
+  --sv-surface-hover: #1E2942;
+
+  --sv-red: #E62429;
+  --sv-red-bright: #FF2E36;
+  --sv-red-dark: #9E1014;
+  --sv-red-glow: rgba(230, 36, 41, 0.6);
+  --sv-red-glow-subtle: rgba(230, 36, 41, 0.15);
+
+  --sv-blue: #1464F4;
+  --sv-blue-electric: #2B78FF;
+  --sv-blue-glow: rgba(20, 100, 244, 0.6);
+  --sv-blue-glow-subtle: rgba(20, 100, 244, 0.15);
+
+  --sv-cyan: #00D9FF;
+  --sv-cyan-bright: #38E5FF;
+  --sv-cyan-glow: rgba(0, 217, 255, 0.5);
+
+  --sv-white: #F5F5F5;
+  --sv-white-muted: #D1D5DB;
+  --sv-gray-muted: #8E96A2;
+  --sv-gray-dark: #272E3F;
+
+  --sv-yellow-burst: #FFE600;
+
+  /* Halftone & Grid Patterns */
+  --sv-halftone-dot: radial-gradient(rgba(230, 36, 41, 0.15) 15%, transparent 20%);
+  --sv-halftone-blue: radial-gradient(rgba(20, 100, 244, 0.15) 15%, transparent 20%);
+  --sv-border-line: rgba(255, 255, 255, 0.1);
+  --sv-border-bright: rgba(0, 217, 255, 0.4);
+
+  /* Typography */
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  --font-impact: 'Anek Latin', 'Impact', sans-serif;
+
+  /* Layout */
+  --max-width: 1280px;
+  --nav-height: 72px;
+
+  /* Transitions */
+  --transition-fast: 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+

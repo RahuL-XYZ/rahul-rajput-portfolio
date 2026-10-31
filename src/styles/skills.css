@@ -1,0 +1,221 @@
+.sv-skills-section {
+  position: relative;
+  padding: 100px 0;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.sv-skills-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Flutter Hero Centerpiece Banner */
+.sv-flutter-centerpiece {
+  margin-bottom: 50px;
+}
+
+.flutter-feature-card {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.flutter-feature-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.flutter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background: rgba(0, 217, 255, 0.15);
+  border: 1px solid var(--sv-cyan);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--sv-cyan);
+  width: fit-content;
+  margin-bottom: 16px;
+}
+
+.flutter-title-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.flutter-logo-icon {
+  width: 52px;
+  height: 52px;
+  filter: drop-shadow(0 0 16px var(--sv-cyan));
+}
+
+.flutter-heading {
+  font-family: var(--font-impact);
+  font-size: clamp(34px, 4.5vw, 54px);
+  font-weight: 800;
+  color: var(--sv-white);
+  letter-spacing: -0.01em;
+}
+
+.flutter-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--sv-white-muted);
+  margin-bottom: 24px;
+}
+
+.flutter-desc strong {
+  color: var(--sv-cyan);
+}
+
+.flutter-highlights {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.flutter-highlight-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background: rgba(16, 23, 43, 0.8);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--sv-white);
+}
+
+.flutter-feature-right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(8, 12, 22, 0.6);
+  padding: 24px;
+  border-radius: 6px;
+  border-left: 2px solid var(--sv-cyan);
+}
+
+.spec-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 13px;
+}
+
+.spec-item .label {
+  font-family: var(--font-mono);
+  color: var(--sv-gray-muted);
+}
+
+.spec-item .val {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--sv-cyan);
+}
+
+/* Category Grid */
+.sv-categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 28px;
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 8px;
+}
+
+.category-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--sv-white);
+}
+
+.category-subtitle {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--sv-cyan);
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skill-card-item {
+  background: rgba(14, 20, 36, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 14px 16px;
+  transition: all 0.25s ease;
+}
+
+.skill-card-item:hover {
+  background: rgba(20, 27, 45, 0.9);
+  border-color: var(--sv-red);
+  box-shadow: 0 0 16px rgba(230, 36, 41, 0.25);
+  transform: translateX(4px);
+}
+
+.skill-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.skill-name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--sv-white);
+}
+
+.skill-level-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 2px 6px;
+  border-radius: 2px;
+  background: rgba(230, 36, 41, 0.15);
+  color: var(--sv-red-bright);
+}
+
+.skill-desc {
+  font-size: 12px;
+  color: var(--sv-gray-muted);
+  line-height: 1.45;
+}
+
+@media (max-width: 900px) {
+  .flutter-feature-card {
+    grid-template-columns: 1fr;
+  }
+
+  .sv-categories-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
