@@ -1,23 +1,29 @@
 import React from 'react';
-import { Smartphone, Zap, Sparkles, CheckCircle2, Flame } from 'lucide-react';
+import { Smartphone, Zap, Sparkles, CheckCircle2, Flame, ShieldAlert } from 'lucide-react';
 import GlitchText from '../ui/GlitchText';
 import HolographicCard from '../ui/HolographicCard';
 import FlutterLogo from '../common/FlutterLogo';
 import { skillCategories } from '../../data/skills';
+import { useUniverse } from '../../context/UniverseContext';
 import '../../styles/skills.css';
 
 export default function SkillsSection() {
+  const { universe } = useUniverse();
+  const isBatman = universe === 'batman';
+
   return (
     <section className="sv-skills-section" id="skills">
       <div className="sv-skills-inner">
         {/* Section Heading */}
         <div className="sv-section-header">
-          <span className="sv-section-kicker">CHAPTER 02 // MULTIVERSE CAPABILITIES</span>
+          <span className="sv-section-kicker">
+            {isBatman ? 'WAYNETECH INVENTORY // TECHNICAL ARSENAL' : 'CHAPTER 02 // MULTIVERSE CAPABILITIES'}
+          </span>
           <GlitchText 
-            text="MY SUPERPOWERS." 
+            text={isBatman ? 'MY TECHNOLOGY ARSENAL.' : 'MY SUPERPOWERS.'} 
             as="h2" 
             className="sv-section-title"
-            glow="cyan"
+            glow={isBatman ? 'cyan' : 'cyan'}
           />
         </div>
 
@@ -25,13 +31,13 @@ export default function SkillsSection() {
         <div className="sv-flutter-centerpiece">
           <HolographicCard 
             isFeatured={true}
-            glowColor="cyan"
+            glowColor={isBatman ? 'cyan' : 'cyan'}
           >
             <div className="flutter-feature-card">
               <div className="flutter-feature-left">
                 <span className="flutter-badge">
-                  <Flame size={13} />
-                  <span>PRIMARY DOMAIN SPECIALIZATION</span>
+                  {isBatman ? <ShieldAlert size={13} /> : <Flame size={13} />}
+                  <span>{isBatman ? 'PRIMARY TACTICAL ASSET' : 'PRIMARY DOMAIN SPECIALIZATION'}</span>
                 </span>
                 <div className="flutter-title-row">
                   <div className="flutter-logo-icon">
@@ -62,56 +68,57 @@ export default function SkillsSection() {
                   </span>
                   <span className="flutter-highlight-chip">
                     <CheckCircle2 size={13} color="var(--sv-cyan)" />
-                    <span>Zero-Jank Profiling</span>
+                    <span>Isolates & Background Threading</span>
                   </span>
                 </div>
               </div>
 
               <div className="flutter-feature-right">
-                <div className="spec-item">
-                  <span className="label">Framework Level:</span>
-                  <span className="val">Flutter 3.x Engine</span>
-                </div>
-                <div className="spec-item">
-                  <span className="label">Language Mastery:</span>
-                  <span className="val">Dart 3.x Sound Typing</span>
-                </div>
-                <div className="spec-item">
-                  <span className="label">UI Design Systems:</span>
-                  <span className="val">Material 3 & Cupertino</span>
-                </div>
-                <div className="spec-item">
-                  <span className="label">Target Environments:</span>
-                  <span className="val">Android, iOS, Wearables</span>
-                </div>
-                <div className="spec-item">
-                  <span className="label">Build Orchestration:</span>
-                  <span className="val">Fastlane, Gradle, Xcode</span>
+                <div className="flutter-metrics-box">
+                  <div className="metric-cell">
+                    <span className="metric-val">3.5+</span>
+                    <span className="metric-lbl">Years Full-Time</span>
+                  </div>
+                  <div className="metric-cell">
+                    <span className="metric-val">17+</span>
+                    <span className="metric-lbl">Total Stores Live</span>
+                  </div>
+                  <div className="metric-cell">
+                    <span className="metric-val">60</span>
+                    <span className="metric-lbl">Target FPS</span>
+                  </div>
+                  <div className="metric-cell">
+                    <span className="metric-val">100%</span>
+                    <span className="metric-lbl">Native Polish</span>
+                  </div>
                 </div>
               </div>
             </div>
           </HolographicCard>
         </div>
 
-        {/* 6 Category Holographic Grid */}
-        <div className="sv-categories-grid">
-          {skillCategories.map((cat, idx) => (
+        {/* Secondary Skills Holographic Grid */}
+        <div className="sv-skills-grid">
+          {skillCategories.map((category) => (
             <HolographicCard 
-              key={cat.id} 
-              glowColor={idx % 2 === 0 ? 'red' : 'blue'}
+              key={category.id}
+              className="skill-category-card"
             >
               <div className="category-header">
-                <h4 className="category-title">{cat.title}</h4>
-                <span className="category-subtitle">{cat.subtitle}</span>
+                <span className="category-kicker">{category.kicker}</span>
+                <h4 className="category-title">{category.title}</h4>
               </div>
-              <div className="skills-list">
-                {cat.skills.map((skill) => (
-                  <div key={skill.name} className="skill-card-item">
-                    <div className="skill-top">
+
+              <div className="skills-badge-list">
+                {category.skills.map((skill) => (
+                  <div key={skill.name} className="skill-badge-item">
+                    <div className="skill-badge-top">
                       <span className="skill-name">{skill.name}</span>
                       <span className="skill-level-tag">{skill.level}</span>
                     </div>
-                    <p className="skill-desc">{skill.desc}</p>
+                    {skill.desc && (
+                      <span className="skill-badge-desc">{skill.desc}</span>
+                    )}
                   </div>
                 ))}
               </div>
@@ -122,4 +129,3 @@ export default function SkillsSection() {
     </section>
   );
 }
-

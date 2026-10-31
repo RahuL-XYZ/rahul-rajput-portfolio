@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Download } from 'lucide-react';
+import { Menu, X, ShieldAlert } from 'lucide-react';
 import MagneticButton from '../ui/MagneticButton';
 import SoundToggle from '../ui/SoundToggle';
+import UniverseSwitcher from '../ui/UniverseSwitcher';
+import { useUniverse } from '../../context/UniverseContext';
 import '../../styles/navigation.css';
 
 export default function Navigation({ activeSection, isMuted, onToggleAudio }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { universe } = useUniverse();
+  const isBatman = universe === 'batman';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,7 +20,14 @@ export default function Navigation({ activeSection, isMuted, onToggleAudio }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
+  const navItems = isBatman ? [
+    { label: 'Dossier', href: '#about' },
+    { label: 'Arsenal', href: '#skills' },
+    { label: 'Case Files', href: '#projects' },
+    { label: 'Timeline', href: '#experience' },
+    { label: 'Batcomputer', href: '#terminal' },
+    { label: 'Bat-Signal', href: '#contact' },
+  ] : [
     { label: 'Origin', href: '#about' },
     { label: 'Superpowers', href: '#skills' },
     { label: 'Missions', href: '#projects' },
@@ -33,10 +44,14 @@ export default function Navigation({ activeSection, isMuted, onToggleAudio }) {
     <nav className={`sv-navbar ${isScrolled ? 'is-scrolled' : ''}`}>
       <div className="sv-nav-inner">
         <a href="#hero" className="sv-nav-brand">
-          <div className="sv-nav-spider-mark">RR</div>
+          <div className="sv-nav-spider-mark">
+            {isBatman ? '🦇' : 'RR'}
+          </div>
           <div className="sv-nav-brand-title">
             <span className="sv-nav-name">RAHUL RAJPUT</span>
-            <span className="sv-nav-tag">FLUTTER DEVELOPER</span>
+            <span className="sv-nav-tag">
+              {isBatman ? 'GOTHAM · FLUTTER ARCHITECT' : 'FLUTTER DEVELOPER'}
+            </span>
           </div>
         </a>
 
@@ -53,10 +68,20 @@ export default function Navigation({ activeSection, isMuted, onToggleAudio }) {
               </a>
             </li>
           ))}
+
+          {/* Mobile-only switcher inside drawer */}
+          <li className="mobile-only-switcher" style={{ marginTop: '16px' }}>
+            <UniverseSwitcher />
+          </li>
         </ul>
 
         {/* Right Actions */}
         <div className="sv-nav-actions">
+          {/* Universe Mode Switcher Pill */}
+          <div className="desktop-only-switcher">
+            <UniverseSwitcher />
+          </div>
+
           <SoundToggle isMuted={isMuted} onToggle={onToggleAudio} />
           
           <MagneticButton 
@@ -64,7 +89,7 @@ export default function Navigation({ activeSection, isMuted, onToggleAudio }) {
             variant="primary" 
             className="sv-nav-cta-btn"
           >
-            <span>DISCUSS MISSION</span>
+            <span>{isBatman ? 'ACTIVATE SIGNAL' : 'DISCUSS MISSION'}</span>
           </MagneticButton>
 
           {/* Mobile Hamburger */}
@@ -80,4 +105,3 @@ export default function Navigation({ activeSection, isMuted, onToggleAudio }) {
     </nav>
   );
 }
-

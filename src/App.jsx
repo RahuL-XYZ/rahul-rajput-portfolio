@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import Lenis from 'lenis';
 
+// Universe Context
+import { UniverseProvider, useUniverse } from './context/UniverseContext';
+
 // Layout & Core UI
 import Navigation from './components/layout/Navigation';
 import Footer from './components/layout/Footer';
 import CustomCursor from './components/ui/CustomCursor';
 import MouseLight from './components/ui/MouseLight';
 import WebCanvas from './components/ui/WebCanvas';
+import RainCanvas from './components/ui/RainCanvas';
 
 // Sections
 import IntroSequence from './components/sections/IntroSequence';
@@ -26,7 +30,10 @@ import { useReducedMotion } from './hooks/useReducedMotion';
 import './styles/base.css';
 import './styles/responsive.css';
 
-export default function App() {
+function PortfolioMain() {
+  const { universe } = useUniverse();
+  const isBatman = universe === 'batman';
+
   const [showIntro, setShowIntro] = useState(() => {
     try {
       return sessionStorage.getItem('spiderverse_intro_seen') !== 'true';
@@ -84,7 +91,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="spiderverse-app">
+    <div className={`spiderverse-app ${isBatman ? 'batman-universe' : 'spiderman-universe'}`}>
       {/* Intro sequence overlay (Session-based, skippable) */}
       {showIntro && (
         <IntroSequence 
@@ -94,12 +101,12 @@ export default function App() {
         />
       )}
 
-      {/* Spider-Verse Ambience & Reactive Layers */}
+      {/* Reactive Ambience Layers: WebCanvas for Spiderman, RainCanvas for Batman */}
       <CustomCursor />
       <MouseLight />
-      <WebCanvas />
+      {isBatman ? <RainCanvas /> : <WebCanvas />}
 
-      {/* Main Navigation */}
+      {/* Main Navigation with Top Universe Switcher */}
       <Navigation 
         activeSection={activeSection}
         isMuted={isMuted}
@@ -120,5 +127,13 @@ export default function App() {
       {/* Footer */}
       <Footer />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <UniverseProvider>
+      <PortfolioMain />
+    </UniverseProvider>
   );
 }

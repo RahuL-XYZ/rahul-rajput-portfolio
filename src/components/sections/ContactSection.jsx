@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { Mail, Linkedin, Github, FileText, Send, CheckCircle2, AlertCircle } from 'lucide-react';
 import GlitchText from '../ui/GlitchText';
 import MagneticButton from '../ui/MagneticButton';
+import { useUniverse } from '../../context/UniverseContext';
 import '../../styles/contact.css';
 
 export default function ContactSection({ onPlaySound }) {
+  const { universe } = useUniverse();
+  const isBatman = universe === 'batman';
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [feedback, setFeedback] = useState(null); // { type: 'success' | 'error', message: string }
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -43,12 +46,14 @@ export default function ContactSection({ onPlaySound }) {
       <div className="sv-contact-inner">
         {/* Section Heading */}
         <div className="sv-section-header">
-          <span className="sv-section-kicker">CHAPTER 06 // COMMS FREQUENCY</span>
+          <span className="sv-section-kicker">
+            {isBatman ? 'WAYNETECH COMMS // BAT-SIGNAL UPLINK' : 'CHAPTER 06 // COMMS FREQUENCY'}
+          </span>
           <GlitchText 
-            text="YOUR FRIENDLY NEIGHBORHOOD DEVELOPER IS AVAILABLE." 
+            text={isBatman ? 'THE CITY NEEDS GREAT DEVELOPERS.' : 'YOUR FRIENDLY NEIGHBORHOOD DEVELOPER IS AVAILABLE.'} 
             as="h2" 
             className="sv-section-title"
-            glow="red"
+            glow={isBatman ? 'cyan' : 'red'}
           />
         </div>
 
@@ -56,7 +61,7 @@ export default function ContactSection({ onPlaySound }) {
           {/* Left Column: Direct Comms Nodes */}
           <div className="sv-comms-column">
             <h3 className="sv-comms-headline">
-              INITIATE SECURE COMMS LINK.
+              {isBatman ? 'ACTIVATE THE BAT-SIGNAL OR DIRECT UPLINK.' : 'INITIATE SECURE COMMS LINK.'}
             </h3>
             <p className="sv-comms-desc">
               Whether you are architecting a new mobile flagship, scaling a production cross-platform app, or seeking a dedicated Flutter engineer with 3.5+ years of battle-tested experience — my transmission lines are open.
@@ -145,7 +150,7 @@ export default function ContactSection({ onPlaySound }) {
                   id="name"
                   type="text"
                   className="field-input"
-                  placeholder="e.g. Peter Parker / Tech Lead"
+                  placeholder={isBatman ? 'e.g. Bruce Wayne / Wayne Enterprises' : 'e.g. Peter Parker / Tech Lead'}
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 />

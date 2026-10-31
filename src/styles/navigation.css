@@ -123,6 +123,15 @@
   gap: 16px;
 }
 
+.mobile-only-switcher {
+  display: none;
+}
+
+.desktop-only-switcher {
+  display: flex;
+  align-items: center;
+}
+
 /* Mobile Hamburger Toggle */
 .sv-mobile-toggle {
   display: none;
@@ -131,6 +140,14 @@
 }
 
 @media (max-width: 900px) {
+  .desktop-only-switcher {
+    display: none;
+  }
+
+  .mobile-only-switcher {
+    display: block;
+  }
+
   .sv-nav-links {
     position: fixed;
     top: var(--nav-height);

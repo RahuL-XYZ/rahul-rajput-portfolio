@@ -3,12 +3,15 @@ import { ExternalLink, Smartphone, Tablet, Globe, Lock, X, Layers, ShieldCheck, 
 import GlitchText from '../ui/GlitchText';
 import MagneticButton from '../ui/MagneticButton';
 import { projects } from '../../data/projects';
+import { useUniverse } from '../../context/UniverseContext';
 import '../../styles/projects.css';
 
 export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [showAll, setShowAll] = useState(false);
   const [activeScreens, setActiveScreens] = useState({});
+  const { universe } = useUniverse();
+  const isBatman = universe === 'batman';
 
   // Featured 5 according to spec: Baurow, CalCounts Pro, HireGroww, Fitterloop, Glowpeer
   const featuredIds = ['baurow', 'calcounts-pro', 'hiregroww', 'fitterloop', 'glowpeer'];
@@ -159,12 +162,14 @@ export default function ProjectsSection() {
       <div className="sv-projects-inner">
         {/* Section Heading */}
         <div className="sv-section-header">
-          <span className="sv-section-kicker">CHAPTER 03 // MULTIVERSE MISSIONS</span>
+          <span className="sv-section-kicker">
+            {isBatman ? 'CLASSIFIED ARCHIVES // GOTHAM CASE FILES' : 'CHAPTER 03 // MULTIVERSE MISSIONS'}
+          </span>
           <GlitchText 
-            text="DIFFERENT MISSIONS. ONE DEVELOPER." 
+            text={isBatman ? 'EVERY PROJECT HAS A STORY.' : 'DIFFERENT MISSIONS. ONE DEVELOPER.'} 
             as="h2" 
             className="sv-section-title"
-            glow="red"
+            glow={isBatman ? 'cyan' : 'red'}
           />
         </div>
 
@@ -270,7 +275,11 @@ export default function ProjectsSection() {
             onClick={() => setShowAll(!showAll)}
             variant="secondary"
           >
-            <span>{showAll ? 'COLLAPSE ARCHIVE' : 'ACCESS REMAINING MULTIVERSE MISSIONS (Kharcha Paani Admin, Dine Visuals, Scribeflo, Jainmatri...)'}</span>
+            <span>
+              {showAll 
+                ? (isBatman ? 'CONCEAL CLASSIFIED ARCHIVES' : 'COLLAPSE ARCHIVE') 
+                : (isBatman ? 'DECRYPT ALL CASE FILES (Kharcha Paani Admin, Dine Visuals, Scribeflo, Jainmatri...)' : 'ACCESS REMAINING MULTIVERSE MISSIONS (Kharcha Paani Admin, Dine Visuals, Scribeflo, Jainmatri...)')}
+            </span>
           </MagneticButton>
         </div>
 

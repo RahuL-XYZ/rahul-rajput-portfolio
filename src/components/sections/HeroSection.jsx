@@ -4,17 +4,21 @@ import { ArrowRight, Download, Sparkles, ShieldCheck } from 'lucide-react';
 import MagneticButton from '../ui/MagneticButton';
 import GlitchText from '../ui/GlitchText';
 import CityScene from '../three/CityScene';
+import GothamCityScene from '../three/GothamCityScene';
 import WebParticles from '../three/WebParticles';
 import FloatingLogo from '../three/FloatingLogo';
 import SuperheroAvatar from '../three/SuperheroAvatar';
 import { useMousePosition } from '../../hooks/useMousePosition';
 import { useWebGLSupport } from '../../hooks/useWebGLSupport';
+import { useUniverse } from '../../context/UniverseContext';
 import rahulPortrait from '../../assets/rahul_rajput.jpg';
 import '../../styles/hero.css';
 
 export default function HeroSection() {
   const mouse = useMousePosition();
   const hasWebGL = useWebGLSupport();
+  const { universe } = useUniverse();
+  const isBatman = universe === 'batman';
 
   return (
     <section className="sv-hero-section" id="hero">
@@ -23,13 +27,25 @@ export default function HeroSection() {
         <div className="sv-hero-copy">
           <div className="sv-hero-badge">
             <ShieldCheck size={14} />
-            <span>ORIGINAL PROTOCOL // PRODUCTION ENGINEER</span>
+            <span>
+              {isBatman ? 'WAYNETECH PROTOCOL // PRODUCTION ENGINEER' : 'ORIGINAL PROTOCOL // PRODUCTION ENGINEER'}
+            </span>
           </div>
 
           <h1 className="sv-hero-quote">
-            <span>WITH GREAT CODE</span><br />
-            <span className="accent-red">COMES GREAT</span><br />
-            <span className="accent-blue">APPLICATIONS.</span>
+            {isBatman ? (
+              <>
+                <span>IT'S NOT WHO I AM</span><br />
+                <span className="accent-red">UNDERNEATH THE CODE,</span><br />
+                <span className="accent-blue">BUT WHAT I BUILD DEFINES ME.</span>
+              </>
+            ) : (
+              <>
+                <span>WITH GREAT CODE</span><br />
+                <span className="accent-red">COMES GREAT</span><br />
+                <span className="accent-blue">APPLICATIONS.</span>
+              </>
+            )}
           </h1>
 
           <div className="sv-hero-bio-strip">
@@ -39,13 +55,26 @@ export default function HeroSection() {
               className="sv-hero-portrait" 
             />
             <div className="sv-hero-name-block">
-              <GlitchText text="RAHUL RAJPUT" as="span" className="sv-hero-name" glow="red" />
+              <GlitchText 
+                text="RAHUL RAJPUT" 
+                as="span" 
+                className="sv-hero-name" 
+                glow={isBatman ? 'cyan' : 'red'} 
+              />
               <span className="sv-hero-title">FLUTTER DEVELOPER | MOBILE APP ENGINEER</span>
             </div>
           </div>
 
           <p className="sv-hero-desc">
-            I build <strong>powerful, scalable, and beautifully crafted mobile experiences</strong> for Android and iOS. Specializing in high-performance Flutter architectures, real-time Firebase sync, and intuitive UI interactions.
+            {isBatman ? (
+              <>
+                I engineer <strong>powerful, scalable, and beautifully crafted mobile experiences</strong> for Android and iOS. 3.5+ years of Flutter mastery, clean detective-grade architectures, and uncompromising 60fps performance across the enterprise.
+              </>
+            ) : (
+              <>
+                I build <strong>powerful, scalable, and beautifully crafted mobile experiences</strong> for Android and iOS. Specializing in high-performance Flutter architectures, real-time Firebase sync, and intuitive UI interactions.
+              </>
+            )}
           </p>
 
           <div className="sv-hero-ctas">
@@ -53,7 +82,7 @@ export default function HeroSection() {
               href="#projects" 
               variant="primary"
             >
-              <span>EXPLORE MY UNIVERSE</span>
+              <span>{isBatman ? 'EXPLORE CASE FILES' : 'EXPLORE MY UNIVERSE'}</span>
               <ArrowRight size={16} />
             </MagneticButton>
 
@@ -61,7 +90,7 @@ export default function HeroSection() {
               href="#contact" 
               variant="secondary"
             >
-              <span>DOWNLOAD RESUME</span>
+              <span>{isBatman ? 'DOWNLOAD DOSSIER' : 'DOWNLOAD RESUME'}</span>
               <Download size={16} />
             </MagneticButton>
           </div>
@@ -70,7 +99,7 @@ export default function HeroSection() {
           <div className="sv-hero-stats">
             <div className="sv-hero-stat-item">
               <span className="sv-stat-num">3.5+</span>
-              <span className="sv-stat-lbl">Years Experience</span>
+              <span className="sv-stat-lbl">{isBatman ? 'Years Field Ops' : 'Years Experience'}</span>
             </div>
             <div className="sv-hero-stat-item">
               <span className="sv-stat-num">09</span>
@@ -89,8 +118,12 @@ export default function HeroSection() {
 
         {/* Right Column: 3D Superhero City Viewport */}
         <div className="sv-hero-viewport">
-          <span className="sv-hud-tag-tl">SPIDER-OPTIC // 3D CITY CAM</span>
-          <span className="sv-hud-tag-br">DRAG TO LOOK AROUND // 60 FPS</span>
+          <span className="sv-hud-tag-tl">
+            {isBatman ? 'WAYNETECH // GOTHAM 3D CAM' : 'SPIDER-OPTIC // 3D CITY CAM'}
+          </span>
+          <span className="sv-hud-tag-br">
+            {isBatman ? 'DRAG TO SCAN GOTHAM SKYLINE // 60 FPS' : 'DRAG TO LOOK AROUND // 60 FPS'}
+          </span>
 
           <div className="sv-hero-canvas-frame">
             {hasWebGL ? (
@@ -100,10 +133,19 @@ export default function HeroSection() {
                 gl={{ antialias: true, alpha: true }}
               >
                 <Suspense fallback={null}>
-                  <CityScene mouse={mouse} />
-                  <WebParticles count={140} />
-                  <FloatingLogo position={[2.0, 3.2, 1.5]} />
-                  <SuperheroAvatar mouse={mouse} />
+                  {isBatman ? (
+                    <>
+                      <GothamCityScene mouse={mouse} />
+                      <FloatingLogo position={[2.0, 3.2, 1.5]} />
+                    </>
+                  ) : (
+                    <>
+                      <CityScene mouse={mouse} />
+                      <WebParticles count={140} />
+                      <FloatingLogo position={[2.0, 3.2, 1.5]} />
+                      <SuperheroAvatar mouse={mouse} />
+                    </>
+                  )}
                 </Suspense>
               </Canvas>
             ) : (
@@ -121,4 +163,3 @@ export default function HeroSection() {
     </section>
   );
 }
-

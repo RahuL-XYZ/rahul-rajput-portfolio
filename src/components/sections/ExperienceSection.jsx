@@ -2,20 +2,26 @@ import React from 'react';
 import { Briefcase, GraduationCap, ChevronRight } from 'lucide-react';
 import GlitchText from '../ui/GlitchText';
 import { experiences, education } from '../../data/experience';
+import { useUniverse } from '../../context/UniverseContext';
 import '../../styles/experience.css';
 
 export default function ExperienceSection() {
+  const { universe } = useUniverse();
+  const isBatman = universe === 'batman';
+
   return (
     <section className="sv-experience-section" id="experience">
       <div className="sv-experience-inner">
         {/* Section Heading */}
         <div className="sv-section-header">
-          <span className="sv-section-kicker">CHAPTER 04 // CHRONICLES</span>
+          <span className="sv-section-kicker">
+            {isBatman ? 'FIELD RECORDS // MISSION CHRONOLOGY' : 'CHAPTER 04 // CHRONICLES'}
+          </span>
           <GlitchText 
-            text="THE JOURNEY SO FAR." 
+            text={isBatman ? 'MISSION HISTORY.' : 'THE JOURNEY SO FAR.'} 
             as="h2" 
             className="sv-section-title"
-            glow="red"
+            glow={isBatman ? 'cyan' : 'red'}
           />
         </div>
 
@@ -48,26 +54,19 @@ export default function ExperienceSection() {
         </div>
 
         {/* Academic Foundation Dossier */}
-        <div style={{ marginTop: '60px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
-            <GraduationCap size={20} color="var(--sv-cyan)" />
-            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 800, color: 'var(--sv-white)', letterSpacing: '0.04em' }}>
-              ACADEMIC DOSSIER & CREDENTIALS
-            </h3>
+        <div className="sv-education-card">
+          <div className="education-header">
+            <div className="education-icon-wrap">
+              <GraduationCap size={22} />
+            </div>
+            <div>
+              <h4 className="education-degree">{education.degree}</h4>
+              <p className="education-institution">{education.institution} · {education.period}</p>
+            </div>
           </div>
-
-          <div className="sv-edu-grid">
-            {education.map((edu, idx) => (
-              <div key={idx} className="edu-card">
-                <h4 className="edu-degree">{edu.degree}</h4>
-                <p className="edu-institution">{edu.field ? `${edu.field} · ` : ''}{edu.institution}</p>
-                <span className="edu-period">{edu.period}</span>
-              </div>
-            ))}
-          </div>
+          <p className="education-focus">{education.focus}</p>
         </div>
       </div>
     </section>
   );
 }
-

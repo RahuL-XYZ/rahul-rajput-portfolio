@@ -176,6 +176,24 @@ export function useAudio() {
         filter.connect(gain);
         osc.start();
         osc.stop(ctx.currentTime + 0.14);
+      } else if (type === 'thunder') {
+        // Deep Gotham thunder rumble
+        const osc = ctx.createOscillator();
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(80, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(30, ctx.currentTime + 0.6);
+
+        const filter = ctx.createBiquadFilter();
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(140, ctx.currentTime);
+
+        gain.gain.setValueAtTime(0.08, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.6);
+
+        osc.connect(filter);
+        filter.connect(gain);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.6);
       } else if (type === 'glitch') {
         // High tech glitch chirp
         const osc = ctx.createOscillator();

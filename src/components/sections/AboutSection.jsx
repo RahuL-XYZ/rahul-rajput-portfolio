@@ -1,22 +1,28 @@
 import React from 'react';
-import { Smartphone, Zap, Cpu, Award, Sparkles } from 'lucide-react';
+import { Smartphone, Zap, Cpu, Award } from 'lucide-react';
 import ComicPanel from '../ui/ComicPanel';
 import GlitchText from '../ui/GlitchText';
+import { useUniverse } from '../../context/UniverseContext';
 import rahulPortrait from '../../assets/rahul_rajput.jpg';
 import '../../styles/about.css';
 
 export default function AboutSection() {
+  const { universe } = useUniverse();
+  const isBatman = universe === 'batman';
+
   return (
     <section className="sv-about-section" id="about">
       <div className="sv-about-inner">
         {/* Section Heading */}
         <div className="sv-section-header">
-          <span className="sv-section-kicker">CHAPTER 01 // THE ORIGIN</span>
+          <span className="sv-section-kicker">
+            {isBatman ? 'CLASSIFIED DOSSIER // CHAPTER 01' : 'CHAPTER 01 // THE ORIGIN'}
+          </span>
           <GlitchText 
-            text="EVERY HERO HAS AN ORIGIN STORY." 
+            text={isBatman ? 'EVERY LEGEND HAS AN ORIGIN.' : 'EVERY HERO HAS AN ORIGIN STORY.'} 
             as="h2" 
             className="sv-section-title"
-            glow="red"
+            glow={isBatman ? 'cyan' : 'red'}
           />
         </div>
 
@@ -25,7 +31,7 @@ export default function AboutSection() {
           {/* Panel 1: The Spark & Professional Journey */}
           <ComicPanel 
             className="comic-col-7"
-            kicker="GENESIS & CRAFT"
+            kicker={isBatman ? 'CASE FILE 01 // CRAFT & RIGOR' : 'GENESIS & CRAFT'}
             issueNo="01"
             title="THE PASSION FOR MOBILE RUNTIMES"
             variant="red-accent"
@@ -38,14 +44,16 @@ export default function AboutSection() {
               Over the past <strong>3.5+ years</strong>, that obsession evolved into battle-tested production mastery. As an Associate Software Engineer at <strong>Codiant (A YASH Technologies Company)</strong>, I have designed and delivered end-to-end architectures across food delivery, AI health analysis, peer-to-peer marketplaces, and doctor encounter assistants.
             </p>
             <div className="comic-quote-callout">
-              "Flutter isn't just a toolkit for me — it's the web-shooter that lets me swing across platforms without sacrificing a single frame of performance."
+              {isBatman 
+                ? '"Flutter is my tactical armor — allowing me to deploy mission-critical systems across mobile ecosystems with detective precision and zero dropped frames."'
+                : '"Flutter isn\'t just a toolkit for me — it\'s the web-shooter that lets me swing across platforms without sacrificing a single frame of performance."'}
             </div>
           </ComicPanel>
 
           {/* Panel 2: The Portrait Dossier */}
           <ComicPanel 
             className="comic-col-5"
-            kicker="HERO DOSSIER"
+            kicker={isBatman ? 'DETECTIVE DOSSIER' : 'HERO DOSSIER'}
             issueNo="02"
             title="RAHUL RAJPUT"
             variant="cyan-accent"
@@ -68,7 +76,7 @@ export default function AboutSection() {
           {/* Panel 3: Clean Architecture & Engineering Philosophy */}
           <ComicPanel 
             className="comic-col-6"
-            kicker="CODE DISCIPLINE"
+            kicker={isBatman ? 'SYSTEM INTEGRITY' : 'CODE DISCIPLINE'}
             issueNo="03"
             title="CLEAN ARCHITECTURE & RUNTIME RIGOR"
             variant="blue-accent"
@@ -92,12 +100,12 @@ export default function AboutSection() {
             </ul>
           </ComicPanel>
 
-          {/* Panel 4: Multiverse Toolkit & Mission Philosophy */}
+          {/* Panel 4: Philosophy */}
           <ComicPanel 
             className="comic-col-6"
-            kicker="SUPERHERO CODE"
+            kicker={isBatman ? 'TACTICAL CREED' : 'SUPERHERO CODE'}
             issueNo="04"
-            title="THE DEVELOPER PHILOSOPHY"
+            title={isBatman ? 'THE DARK KNIGHT CODE' : 'THE DEVELOPER PHILOSOPHY'}
             variant="red-accent"
           >
             <p className="comic-body-text">
@@ -109,7 +117,11 @@ export default function AboutSection() {
               </div>
               <div className="sv-philosophy-text">
                 <h4>THE GOLDEN RULE</h4>
-                <p>"Code as if the next developer to maintain your codebase is a superhero who knows where you live."</p>
+                <p>
+                  {isBatman 
+                    ? '"The night is dark. The code is clean."'
+                    : '"Code as if the next developer to maintain your codebase is a superhero who knows where you live."'}
+                </p>
               </div>
             </div>
           </ComicPanel>
@@ -118,4 +130,3 @@ export default function AboutSection() {
     </section>
   );
 }
-
