@@ -1,22 +1,13 @@
-import React, { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { ArrowRight, Download, Sparkles, ShieldCheck } from 'lucide-react';
+import React from 'react';
+import { ArrowRight, Download, ShieldCheck, Activity, Smartphone, Cpu, CheckCircle2 } from 'lucide-react';
 import MagneticButton from '../ui/MagneticButton';
 import GlitchText from '../ui/GlitchText';
-import CityScene from '../three/CityScene';
-import GothamCityScene from '../three/GothamCityScene';
-import WebParticles from '../three/WebParticles';
-import FloatingLogo from '../three/FloatingLogo';
-import SuperheroAvatar from '../three/SuperheroAvatar';
-import { useMousePosition } from '../../hooks/useMousePosition';
-import { useWebGLSupport } from '../../hooks/useWebGLSupport';
+import FlutterLogo from '../common/FlutterLogo';
 import { useUniverse } from '../../context/UniverseContext';
 import rahulPortrait from '../../assets/rahul_rajput.jpg';
 import '../../styles/hero.css';
 
 export default function HeroSection() {
-  const mouse = useMousePosition();
-  const hasWebGL = useWebGLSupport();
   const { universe } = useUniverse();
   const isBatman = universe === 'batman';
 
@@ -116,47 +107,78 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Right Column: 3D Superhero City Viewport */}
-        <div className="sv-hero-viewport">
-          <span className="sv-hud-tag-tl">
-            {isBatman ? 'WAYNETECH // GOTHAM 3D CAM' : 'SPIDER-OPTIC // 3D CITY CAM'}
-          </span>
-          <span className="sv-hud-tag-br">
-            {isBatman ? 'DRAG TO SCAN GOTHAM SKYLINE // 60 FPS' : 'DRAG TO LOOK AROUND // 60 FPS'}
-          </span>
+        {/* Right Column: Holographic Developer Dossier Card */}
+        <div className="sv-hero-dossier-card">
+          {/* Tactical Corner Crosshairs */}
+          <span className="dossier-bracket top-left">+</span>
+          <span className="dossier-bracket top-right">+</span>
+          <span className="dossier-bracket bottom-left">+</span>
+          <span className="dossier-bracket bottom-right">+</span>
 
-          <div className="sv-hero-canvas-frame">
-            {hasWebGL ? (
-              <Canvas
-                camera={{ position: [0, 4.5, 9.5], fov: 48 }}
-                dpr={[1, 2]}
-                gl={{ antialias: true, alpha: true }}
-              >
-                <Suspense fallback={null}>
-                  {isBatman ? (
-                    <>
-                      <GothamCityScene mouse={mouse} />
-                      <FloatingLogo position={[2.0, 3.2, 1.5]} />
-                    </>
-                  ) : (
-                    <>
-                      <CityScene mouse={mouse} />
-                      <WebParticles count={140} />
-                      <FloatingLogo position={[2.0, 3.2, 1.5]} />
-                      <SuperheroAvatar mouse={mouse} />
-                    </>
-                  )}
-                </Suspense>
-              </Canvas>
-            ) : (
-              <div className="sv-hero-fallback">
-                <img 
-                  src={rahulPortrait} 
-                  alt="Rahul Rajput" 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }} 
-                />
+          {/* Top HUD Status Bar */}
+          <div className="dossier-header">
+            <div className="dossier-status-pill">
+              <span className="status-dot-pulse" />
+              <span>{isBatman ? 'WAYNETECH // DETECTIVE LINK' : 'SPIDER-LINK // ACTIVE ONLINE'}</span>
+            </div>
+            <span className="dossier-sector-tag">
+              {isBatman ? 'SECTOR: GOTHAM CENTRAL' : 'DIMENSION: EARTH-616'}
+            </span>
+          </div>
+
+          {/* Central Portrait Frame with Hologram Scan Beam */}
+          <div className="dossier-portrait-frame">
+            <img 
+              src={rahulPortrait} 
+              alt="Rahul Rajput" 
+              className="dossier-portrait-img"
+            />
+            <div className="dossier-scan-beam" />
+            <div className="dossier-portrait-overlay" />
+            
+            {/* Floating Flutter Hologram Badge */}
+            <div className="dossier-floating-badge">
+              <div className="floating-badge-icon">
+                <FlutterLogo size={24} />
               </div>
-            )}
+              <div className="floating-badge-text">
+                <span className="badge-name">FLUTTER SPECIALIST</span>
+                <span className="badge-sub">ANDROID & IOS EXPERT</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Metric Matrix Row */}
+          <div className="dossier-metrics-grid">
+            <div className="dossier-metric-box">
+              <span className="dossier-metric-num">3.5+</span>
+              <span className="dossier-metric-label">Years Experience</span>
+            </div>
+            <div className="dossier-metric-box">
+              <span className="dossier-metric-num">17+</span>
+              <span className="dossier-metric-label">Store Releases</span>
+            </div>
+            <div className="dossier-metric-box">
+              <span className="dossier-metric-num">60</span>
+              <span className="dossier-metric-label">FPS Target</span>
+            </div>
+          </div>
+
+          {/* Capability Tech Chips */}
+          <div className="dossier-tech-strip">
+            <span className="tech-chip">Flutter</span>
+            <span className="tech-chip">Dart</span>
+            <span className="tech-chip">Riverpod</span>
+            <span className="tech-chip">Firebase</span>
+            <span className="tech-chip">REST APIs</span>
+            <span className="tech-chip">Stripe</span>
+          </div>
+
+          {/* Bottom Terminal Status Line */}
+          <div className="dossier-footer">
+            <span className="dossier-footer-code">
+              {isBatman ? '/// SYSTEM: WAYNETECH OS // RUNTIME: OPTIMAL ///' : '/// SYSTEM: SPIDER-VERSE OS // RUNTIME: OPTIMAL ///'}
+            </span>
           </div>
         </div>
       </div>
