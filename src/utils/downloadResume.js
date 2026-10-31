@@ -68,3 +68,4 @@ export function downloadResume() {
   link.click();
   document.body.removeChild(link);
 }
+
