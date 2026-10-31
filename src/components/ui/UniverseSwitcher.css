@@ -8,6 +8,7 @@
   backdrop-filter: blur(12px);
   position: relative;
   z-index: 100;
+  gap: 2px;
   transition: all 0.3s ease;
 }
 
@@ -19,49 +20,47 @@
 .universe-btn {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
   color: var(--sv-gray-muted);
   cursor: pointer;
   background: transparent;
-  border: none;
+  border: 1px solid transparent;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   user-select: none;
+  padding: 0;
 }
 
 .universe-btn:hover {
   color: var(--sv-white);
+  transform: scale(1.08);
+}
+
+.universe-svg-icon {
+  display: block;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.universe-btn:hover .universe-svg-icon {
+  transform: scale(1.15);
 }
 
 /* Active Spider-Verse Mode */
 .universe-btn.active.spiderman {
-  background: rgba(230, 36, 41, 0.18);
-  color: #FFFFFF;
-  border: 1px solid var(--sv-red);
-  box-shadow: 0 0 16px var(--sv-red-glow);
+  background: rgba(230, 36, 41, 0.22);
+  color: #FF2E36;
+  border: 1px solid #FF2E36;
+  box-shadow: 0 0 14px rgba(230, 36, 41, 0.55);
 }
 
 /* Active The Dark Knight / Batman Mode */
 .universe-btn.active.batman {
-  background: rgba(245, 197, 66, 0.2);
+  background: rgba(245, 197, 66, 0.22);
   color: #F5C542;
   border: 1px solid #F5C542;
-  box-shadow: 0 0 18px rgba(245, 197, 66, 0.45);
-}
-
-.universe-icon {
-  font-size: 14px;
-  display: inline-block;
-  transition: transform 0.2s ease;
-}
-
-.universe-btn:hover .universe-icon {
-  transform: scale(1.2);
+  box-shadow: 0 0 16px rgba(245, 197, 66, 0.55);
 }
 
 /* Dimensional Rift Transition Overlay */
@@ -124,7 +123,7 @@
 
 @media (max-width: 768px) {
   .universe-btn {
-    padding: 5px 10px;
-    font-size: 10px;
+    width: 32px;
+    height: 32px;
   }
 }
