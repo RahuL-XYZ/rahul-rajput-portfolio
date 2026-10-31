@@ -4,6 +4,7 @@ import MagneticButton from '../ui/MagneticButton';
 import GlitchText from '../ui/GlitchText';
 import FlutterLogo from '../common/FlutterLogo';
 import { useUniverse } from '../../context/UniverseContext';
+import { downloadResume } from '../../utils/downloadResume';
 import rahulPortrait from '../../assets/rahul_rajput.jpg';
 import '../../styles/hero.css';
 
@@ -78,7 +79,7 @@ export default function HeroSection() {
             </MagneticButton>
 
             <MagneticButton 
-              href="#contact" 
+              onClick={downloadResume}
               variant="secondary"
             >
               <span>{isBatman ? 'DOWNLOAD DOSSIER' : 'DOWNLOAD RESUME'}</span>

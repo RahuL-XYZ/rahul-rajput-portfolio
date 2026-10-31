@@ -3,6 +3,7 @@ import { Terminal as TerminalIcon, Send } from 'lucide-react';
 import GlitchText from '../ui/GlitchText';
 import { terminalCommands } from '../../data/terminal';
 import { useUniverse } from '../../context/UniverseContext';
+import { downloadResume } from '../../utils/downloadResume';
 import '../../styles/terminal.css';
 
 export default function TerminalSection({ onPlaySound }) {
@@ -53,6 +54,10 @@ export default function TerminalSection({ onPlaySound }) {
       return;
     }
 
+    if (cmd === 'resume') {
+      downloadResume();
+    }
+
     const response = terminalCommands[cmd];
     let responseEntries = [];
 
@@ -99,8 +104,8 @@ export default function TerminalSection({ onPlaySound }) {
   };
 
   const quickCmds = isBatman 
-    ? ['help', 'about', 'skills', 'projects', 'experience', 'clear']
-    : ['help', 'about', 'skills', 'projects', 'experience', 'spider-sense', 'clear'];
+    ? ['help', 'about', 'skills', 'projects', 'experience', 'resume', 'clear']
+    : ['help', 'about', 'skills', 'projects', 'experience', 'resume', 'spider-sense', 'clear'];
 
   return (
     <section className="sv-terminal-section" id="terminal">

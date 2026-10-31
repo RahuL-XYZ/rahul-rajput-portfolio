@@ -112,8 +112,10 @@ export default function ContactSection({ onPlaySound }) {
               </a>
 
               <a 
-                href="#hero" 
+                href="/Rahul_Rajput_Resume.pdf" 
+                download="Rahul_Rajput_Flutter_Developer_Resume.pdf"
                 className="contact-card-link blue"
+                title="Download Rahul Rajput's Official Resume PDF"
               >
                 <div className="contact-icon-box">
                   <FileText size={20} />
