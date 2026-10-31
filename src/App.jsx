@@ -1,38 +1,124 @@
-import React from 'react';
-import { useTheme } from './hooks/useTheme';
+import React, { useState, useEffect } from 'react';
+import Lenis from 'lenis';
 
-import EditorialHeader from './components/editorial/EditorialHeader';
-import EditorialHero from './components/editorial/EditorialHero';
-import EditorialBelief from './components/editorial/EditorialBelief';
-import EditorialWork from './components/editorial/EditorialWork';
-import EditorialWebProjects from './components/editorial/EditorialWebProjects';
-import EditorialProof from './components/editorial/EditorialProof';
-import EditorialPerson from './components/editorial/EditorialPerson';
-import EditorialContact from './components/editorial/EditorialContact';
-import EditorialFooter from './components/editorial/EditorialFooter';
+// Layout & Core UI
+import Navigation from './components/layout/Navigation';
+import Footer from './components/layout/Footer';
+import CustomCursor from './components/ui/CustomCursor';
+import MouseLight from './components/ui/MouseLight';
+import WebCanvas from './components/ui/WebCanvas';
+
+// Sections
+import IntroSequence from './components/sections/IntroSequence';
+import HeroSection from './components/sections/HeroSection';
+import AboutSection from './components/sections/AboutSection';
+import SkillsSection from './components/sections/SkillsSection';
+import ProjectsSection from './components/sections/ProjectsSection';
+import ExperienceSection from './components/sections/ExperienceSection';
+import TerminalSection from './components/sections/TerminalSection';
+import ContactSection from './components/sections/ContactSection';
+
+// Hooks
+import { useAudio } from './hooks/useAudio';
+import { useReducedMotion } from './hooks/useReducedMotion';
+
+// Styles
+import './styles/base.css';
+import './styles/responsive.css';
 
 export default function App() {
-  const { theme, isDark, toggleTheme } = useTheme();
+  const [showIntro, setShowIntro] = useState(() => {
+    try {
+      return sessionStorage.getItem('spiderverse_intro_seen') !== 'true';
+    } catch {
+      return true;
+    }
+  });
+
+  const [activeSection, setActiveSection] = useState('hero');
+  const { isMuted, toggleMute, playSound } = useAudio();
+  const prefersReduced = useReducedMotion();
+
+  // Initialize Lenis smooth scroll
+  useEffect(() => {
+    if (prefersReduced) return;
+
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, [prefersReduced]);
+
+  // Track active section for navigation
+  useEffect(() => {
+    const sections = ['hero', 'about', 'skills', 'projects', 'experience', 'terminal', 'contact'];
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <div className="editorial-shell" data-theme={theme}>
-      <EditorialHeader
-        theme={theme}
-        isDark={isDark}
-        onToggleTheme={toggleTheme}
+    <div className="spiderverse-app">
+      {/* Intro sequence overlay (Session-based, skippable) */}
+      {showIntro && (
+        <IntroSequence 
+          onComplete={() => setShowIntro(false)}
+          isMuted={isMuted}
+          onToggleAudio={toggleMute}
+        />
+      )}
+
+      {/* Spider-Verse Ambience & Reactive Layers */}
+      <CustomCursor />
+      <MouseLight />
+      <WebCanvas />
+
+      {/* Main Navigation */}
+      <Navigation 
+        activeSection={activeSection}
+        isMuted={isMuted}
+        onToggleAudio={toggleMute}
       />
 
-      <main id="content" className="editorial-main">
-        <EditorialHero />
-        <EditorialBelief />
-        <EditorialWork />
-        <EditorialWebProjects />
-        <EditorialProof />
-        <EditorialPerson />
-        <EditorialContact />
+      {/* Cinematic Main Flow */}
+      <main id="main-content">
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <ExperienceSection />
+        <TerminalSection onPlaySound={playSound} />
+        <ContactSection onPlaySound={playSound} />
       </main>
 
-      <EditorialFooter />
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

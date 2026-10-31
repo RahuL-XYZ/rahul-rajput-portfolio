@@ -1,0 +1,121 @@
+.sv-magnetic-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--sv-white);
+  cursor: pointer;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+  will-change: transform;
+  overflow: hidden;
+  user-select: none;
+}
+
+.sv-btn-content {
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sv-btn-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  transition: opacity 0.3s ease, background 0.3s ease;
+}
+
+/* Spider-Verse laser scan effect */
+.sv-btn-scanner {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.4), 
+    transparent
+  );
+  transform: skewX(-25deg);
+  z-index: 2;
+  pointer-events: none;
+  transition: left 0.6s ease;
+}
+
+.sv-magnetic-btn:hover .sv-btn-scanner {
+  left: 140%;
+}
+
+/* Button Variants */
+/* Primary: Spider-Verse Red with Neon Cyan Glow */
+.sv-btn-primary {
+  border: 1px solid var(--sv-red-bright);
+  box-shadow: 0 0 20px rgba(230, 36, 41, 0.35);
+}
+
+.sv-btn-primary .sv-btn-backdrop {
+  background: linear-gradient(135deg, var(--sv-red) 0%, #aa1418 100%);
+}
+
+.sv-btn-primary:hover {
+  box-shadow: 0 0 30px var(--sv-red-glow), 0 0 10px var(--sv-cyan);
+}
+
+/* Secondary: Dark Navy with Red/Blue Edge */
+.sv-btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.sv-btn-secondary .sv-btn-backdrop {
+  background: rgba(16, 23, 43, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+.sv-btn-secondary:hover {
+  border-color: var(--sv-cyan);
+  box-shadow: 0 0 24px rgba(0, 217, 255, 0.35);
+}
+
+/* Cyan: Electric Blue / Cyan Hologram */
+.sv-btn-cyan {
+  border: 1px solid var(--sv-cyan);
+  color: var(--sv-black);
+  box-shadow: 0 0 20px var(--sv-cyan-glow);
+}
+
+.sv-btn-cyan .sv-btn-backdrop {
+  background: var(--sv-cyan);
+}
+
+.sv-btn-cyan:hover {
+  background: #ffffff;
+  box-shadow: 0 0 35px var(--sv-cyan);
+}
+
+/* Ghost variant */
+.sv-btn-ghost {
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+.sv-btn-ghost .sv-btn-backdrop {
+  background: transparent;
+}
+
+.sv-btn-ghost:hover {
+  border-color: var(--sv-red);
+  color: var(--sv-red-bright);
+}
+

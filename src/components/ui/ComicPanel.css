@@ -1,0 +1,113 @@
+.comic-panel-wrapper {
+  position: relative;
+  background: var(--sv-deep-navy);
+  border: 2px solid #1f2a44;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.35s ease, 
+              border-color 0.25s ease;
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.7);
+}
+
+.comic-panel-inner {
+  position: relative;
+  padding: 24px;
+  z-index: 2;
+}
+
+/* Angles */
+.comic-angle-left {
+  transform: rotate(-1.2deg);
+}
+
+.comic-angle-right {
+  transform: rotate(1.2deg);
+}
+
+.comic-panel-wrapper:hover {
+  transform: translateY(-4px) rotate(0deg);
+  border-color: var(--sv-red);
+  box-shadow: 10px 10px 0px var(--sv-red-dark), 0 0 25px rgba(230, 36, 41, 0.3);
+}
+
+/* Comic Header */
+.comic-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+  padding-bottom: 8px;
+}
+
+.comic-badge-kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--sv-cyan);
+  text-transform: uppercase;
+}
+
+.comic-badge-issue {
+  font-family: var(--font-impact);
+  font-size: 13px;
+  background: var(--sv-red);
+  color: var(--sv-white);
+  padding: 2px 8px;
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+}
+
+.comic-panel-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--sv-white);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+/* Halftone Texture Overlay inside panel */
+.comic-panel-halftone {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 140px;
+  height: 140px;
+  background-image: radial-gradient(rgba(0, 217, 255, 0.12) 1.5px, transparent 1.5px);
+  background-size: 8px 8px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+/* Corner Pins */
+.panel-corner {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  z-index: 3;
+}
+
+.corner-tl { top: 8px; left: 8px; }
+.corner-tr { top: 8px; right: 8px; }
+.corner-bl { bottom: 8px; left: 8px; }
+.corner-br { bottom: 8px; right: 8px; }
+
+/* Variants */
+.comic-variant-red-accent {
+  border-left: 4px solid var(--sv-red);
+}
+
+.comic-variant-blue-accent {
+  border-left: 4px solid var(--sv-blue);
+}
+
+.comic-variant-cyan-accent {
+  border-left: 4px solid var(--sv-cyan);
+}
+

@@ -7,6 +7,7 @@ import jainmatriLogo from '../assets/projects/jainmatri_logo.png';
 import hiregrowwLogo from '../assets/projects/hiregroww_logo.png';
 import fitterloopLogo from '../assets/projects/fitterloop_logo.png';
 import glowpeerLogo from '../assets/projects/glowpeer_logo.png';
+import kharchaPaaniLogo from '../assets/projects/kharcha_paani_logo.png';
 
 // Screenshots
 import baurow1 from '../assets/projects/baurow_screen_1.png';
@@ -60,6 +61,12 @@ import glowpeer2 from '../assets/projects/glowpeer_screen_2.png';
 import glowpeer3 from '../assets/projects/glowpeer_screen_3.png';
 import glowpeer4 from '../assets/projects/glowpeer_screen_4.png';
 import glowpeer5 from '../assets/projects/glowpeer_screen_5.png';
+import kharchaPaaniScreen from '../assets/projects/kharcha_paani_admin_screen.png';
+import kharcha1 from '../assets/projects/kharcha_paani_screen_1.jpg';
+import kharcha2 from '../assets/projects/kharcha_paani_screen_2.jpg';
+import kharcha3 from '../assets/projects/kharcha_paani_screen_3.jpg';
+import kharcha4 from '../assets/projects/kharcha_paani_screen_4.jpg';
+import kharcha5 from '../assets/projects/kharcha_paani_screen_5.jpg';
 
 export const projects = [
   {
@@ -331,6 +338,62 @@ export const projects = [
     stack: ['Flutter', 'Multi-Role Architecture', 'REST APIs', 'Customer & Shop Modules', 'Delivery Tracking'],
     icon: '🍽️',
     metrics: 'Multi-Role Architecture (Customer / Merchant / Driver)',
+    playStore: false,
+    appStore: false
+  },
+  {
+    id: 'kharcha-paani',
+    name: 'Kharcha Paani',
+    category: 'Fintech & Shared Living',
+    type: 'Flutter Mobile App · iOS & Android',
+    number: '11',
+    color: '#10B981',
+    accent: '#059669',
+    logo: kharchaPaaniLogo,
+    screenshots: [
+      { src: kharcha1, title: 'Households & Net Standing', caption: 'Real-time overview of active rooms ("3 Monkeys", "Ham Do"), net balances, and overall debt standing' },
+      { src: kharcha2, title: 'Optimal Debt Settlement ("Who Owes Whom")', caption: 'Graph algorithm minimizing payments needed to settle all group debts' },
+      { src: kharcha3, title: 'Add Expense & Multi-Payer Split', caption: 'Categorized expense entry (Grocery, Rent, Wi-Fi, Electricity) with custom share breakdown' },
+      { src: kharcha4, title: 'Searchable Expense Ledger', caption: 'Chronological activity stream tracking who paid and exact debt shares' },
+      { src: kharcha5, title: 'Visual Expense Report & Donut Chart', caption: 'Interactive breakdown charts displaying total group expenditure by member' }
+    ],
+    role: 'Lead Flutter Developer — Built the complete mobile application in Dart & Flutter with Riverpod state management, offline-first Cloud Firestore local caching, debt optimization graph solver, and custom dark UI.',
+    impact: 'Engineered a standalone cross-platform mobile client enabling roommates to eliminate ledger disputes through automated minimum-transaction settlement calculation and real-time synchronization.',
+    playStoreUrl: null,
+    appStoreUrl: null,
+    packageId: null,
+    liveUrl: null,
+    adminUrl: null,
+    githubUrl: null,
+    description: 'A dedicated cross-platform Flutter mobile application designed for roommates and shared households to manage collective living expenses. Features real-time multi-household rooms, automatic debt minimization calculating the fewest transactions needed to settle all balances ("Who Owes Whom"), split categorization (Grocery, Rent, Wi-Fi, Electricity), and interactive donut chart financial reports.',
+    stack: ['Flutter', 'Dart', 'Riverpod', 'Cloud Firestore', 'Debt Minimization Algorithm', 'Firebase Auth', 'Charts & Analytics'],
+    icon: '💰',
+    metrics: 'Cloud Firestore Real-Time Sync · Minimum Debt Settlement Algorithm',
+    playStore: false,
+    appStore: false
+  },
+  {
+    id: 'kharcha-paani-admin',
+    name: 'Kharcha Paani — Web Admin Portal',
+    category: 'Web Platform & Cloud Operations',
+    type: 'React 19 & Tailwind Web Admin Dashboard',
+    number: '12',
+    color: '#059669',
+    accent: '#10B981',
+    logo: kharchaPaaniLogo,
+    isWeb: true,
+    browserUrl: 'https://kharchapaani-890b8.web.app/login',
+    liveUrl: 'https://kharchapaani-890b8.web.app/login',
+    githubUrl: 'https://github.com/RahuL-XYZ/Kharcha-Paani-Admin',
+    screenshots: [
+      { src: kharchaPaaniScreen, title: 'Kharcha Paani Web Admin Portal', caption: 'Administrative authentication, household auditing, and cross-group settlement management' }
+    ],
+    role: 'Full-Stack Web Engineer — Engineered the companion web administration portal for auditing household rooms, managing collectionGroup Firestore queries, and monitoring cross-group settlements.',
+    impact: 'Live production admin portal deployed on Firebase Hosting, actively managing shared household expense collections, user accounts, and financial settlement ledgers.',
+    description: 'A separate web administration portal built specifically to oversee and manage the Kharcha Paani ecosystem. Deployed on Firebase Hosting, it provides administrators with cross-household auditing, user account controls, and financial settlement ledgers.',
+    stack: ['React 19', 'Vite', 'Firebase Auth', 'Cloud Firestore', 'Tailwind CSS', 'Recharts', 'React Router'],
+    icon: '📊',
+    metrics: 'Live on Firebase Hosting · Real-Time Firestore Sync & Analytics',
     playStore: false,
     appStore: false
   }
