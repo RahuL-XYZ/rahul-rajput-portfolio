@@ -32,7 +32,7 @@ export default function AboutWindow({ onClose, onMinimize }) {
         </p>
 
         <p className="notes-body">
-          Known for strong problem-solving skills with a relentless focus on clean architecture, smooth user-friendly experiences, and robust offline capabilities.
+          Specialized in Clean Architecture, modular state management with Riverpod and Provider, defensive network handling, and local offline persistence using SQLite and Hive.
         </p>
 
         <div className="about-stat-grid">
@@ -53,7 +53,7 @@ export default function AboutWindow({ onClose, onMinimize }) {
         </div>
 
         <div className="quote-card">
-          “Strong problem-solving skills with a focus on clean architecture and smooth, user-friendly experiences.”
+          “Good mobile architecture isn’t just how an app looks; it’s how cleanly it handles flaky networks, background lifecycles, and asynchronous state.”
         </div>
 
         <div className="about-highlights">

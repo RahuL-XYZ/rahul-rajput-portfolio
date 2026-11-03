@@ -16,8 +16,8 @@ export default function EditorialHero() {
         </div>
 
         <h1 className="hero-disp">
-          <span>I build cross-platform</span>
-          <span>mobile apps that <span className="accent-text">survive the real world.</span></span>
+          <span>Cross-platform mobile apps</span>
+          <span>engineered for <span className="accent-text">production stability.</span></span>
         </h1>
 
         <p className="hero-sub">
@@ -37,7 +37,7 @@ export default function EditorialHero() {
       <div className="ed-hero-aside">
         <div className="credential-card">
           <div className="card-topline">
-            <span className="card-badge">VERIFIED PRODUCTION ENGINEER</span>
+            <span className="card-badge">PRODUCTION MOBILE ENGINEER</span>
             <span className="status-live">● Available for hire</span>
           </div>
 

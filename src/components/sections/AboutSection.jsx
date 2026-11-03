@@ -38,15 +38,15 @@ export default function AboutSection() {
             angle="left"
           >
             <p className="comic-body-text">
-              My engineering journey began with an obsession: <strong>how do you craft mobile experiences so smooth, responsive, and seamless that the interface vanishes between the user and their intent?</strong>
+              My core focus in mobile engineering has always been responsiveness and predictability: <strong>building apps that react immediately without dropping frames, leaking memory, or desynchronizing state.</strong>
             </p>
             <p className="comic-body-text">
-              Over the past <strong>3.5+ years</strong>, that obsession evolved into battle-tested production mastery. As an Associate Software Engineer at <strong>Codiant (A YASH Technologies Company)</strong>, I have designed and delivered end-to-end architectures across food delivery, AI health analysis, peer-to-peer marketplaces, and doctor encounter assistants.
+              Over the past <strong>3.8+ years</strong> as an Associate Software Engineer at <strong>Codiant (A YASH Technologies Company)</strong>, I have engineered full-lifecycle applications across peer-to-peer rental marketplaces, clinical AI transcription assistants, fitness analytics dashboards, and on-demand delivery platforms.
             </p>
             <div className="comic-quote-callout">
               {isBatman 
-                ? '"Flutter is my tactical armor — allowing me to deploy mission-critical systems across mobile ecosystems with detective precision and zero dropped frames."'
-                : '"Flutter isn\'t just a toolkit for me — it\'s the web-shooter that lets me swing across platforms without sacrificing a single frame of performance."'}
+                ? '"Flutter provides the architectural rigor needed to build cross-platform apps with native 60fps stability and predictable state."'
+                : '"Flutter lets me build cross-platform applications without sacrificing native 60fps performance, crisp UI, or reliable state."'}
             </div>
           </ComicPanel>
 
@@ -109,7 +109,7 @@ export default function AboutSection() {
             variant="red-accent"
           >
             <p className="comic-body-text">
-              Every release is a commitment to the user. Whether engineering an AI food scanner or processing secure Stripe deposits, every screen is treated with the precision of a high-stakes mission.
+              Every release is built for production reliability. From camera-based food scanners to secure Stripe checkouts, each flow is engineered for high performance, data consistency, and edge-case handling.
             </p>
             <div className="sv-philosophy-banner">
               <div className="sv-philosophy-icon">

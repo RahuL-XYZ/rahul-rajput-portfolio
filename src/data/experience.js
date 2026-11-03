@@ -6,11 +6,11 @@ export const experiences = [
     period: 'APR 2023 — JUN 2026',
     current: true,
     highlights: [
-      'Baurow App: Built a peer-to-peer rental marketplace application using Flutter and Firebase. Implemented item listings, booking workflows, real-time chat, push notifications, and Stripe payment integration.',
-      'CalCounts Pro (Instructor Dashboard): Engineered a tablet-optimized instructor dashboard enabling trainers to monitor client performance, nutrition metrics, and progress insights through responsive data visualizations.',
-      'HireGroww App: Created a multilingual recruitment platform with interview recording and hiring workflow management. Integrated AI-powered candidate evaluation, localization, and scalable REST APIs.',
-      'Fitterloop App: Designed and implemented UI components, integrated food scanning capabilities, and connected backend APIs to deliver a responsive user experience.',
-      'Glowpeer App: Developed a skincare tracking and community platform featuring routine management, product tracking, reminders, and social engagement features, helping users organize routines and monitor progress.'
+      'Baurow: Architected cross-platform rental marketplace in Flutter and Firebase; engineered calendar availability booking, in-app messaging, push notifications, and native Stripe payment sheet checkout.',
+      'CalCounts Pro: Developed tablet-responsive instructor dashboards featuring multi-client nutrition analytics, calorie burn matrices, and offline-first Firestore data caching.',
+      'HireGroww: Built multilingual recruitment client with localized UI strings, in-app video interview recording, and asynchronous cloud upload queues.',
+      'Fitterloop: Engineered workout logging flows and camera food scanning with Riverpod state management, connected to REST APIs for live trainer synchronizations.',
+      'Glowpeer: Implemented multi-step routine tracking, local push notification scheduling, shelf inventory management, and community progress feeds.'
     ]
   },
   {
@@ -20,7 +20,7 @@ export const experiences = [
     period: 'MAY 2022 — NOV 2022',
     current: false,
     highlights: [
-      'FoodIngram App: Worked on UI and API integration for a multi-role food delivery app, including separate modules for customers, shops, and delivery drivers.'
+      'FoodIngram: Implemented mobile UI flows and REST API integrations for a multi-role on-demand food delivery system spanning customer ordering, merchant management, and driver dispatch views.'
     ]
   }
 ];

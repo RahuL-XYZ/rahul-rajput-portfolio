@@ -72,7 +72,7 @@ EDUCATION
       <div className="contact-grid">
         <div className="contact-info-col">
           <p className="contact-lead">
-            Whether you are launching a dual-store mobile app from scratch, migrating an existing codebase to clean architecture, or untangling complex real-time Firebase & Stripe integrations, I would love to hear from you.
+            I help teams launch dual-store mobile apps, migrate existing codebases to Clean Architecture, and build reliable real-time Firebase and Stripe integrations. Let's discuss your project.
           </p>
 
           <div className="contact-direct-actions">

@@ -9,7 +9,7 @@ Korba, Chhattisgarh – 495447 | rahul77478@gmail.com | +91 7000036929
 LinkedIn: https://www.linkedin.com/in/rahul-rajput-155616188
 
 PROFESSIONAL SUMMARY
-Flutter Developer with 3.8+ years of experience building and shipping scalable, cross-platform mobile applications for Android and iOS. Skilled in Flutter, Dart, REST API integration, Firebase, and modern state management (Riverpod, Provider). Delivered 9 apps published on the Google Play Store and 8 on the Apple App Store, from UI development through backend integration, payments, and real-time features. Strong problem-solving skills with a focus on clean architecture and smooth, user-friendly experiences.
+Flutter Developer with 3.8+ years of experience building and shipping scalable, cross-platform mobile applications for Android and iOS. Skilled in Flutter, Dart, REST API integration, Firebase, and modern state management (Riverpod, Provider). Delivered 9 apps published on the Google Play Store and 8 on the Apple App Store, with a focus on clean architecture, responsive 60fps UI, and robust offline caching.
 
 SKILLS
 - Languages & Frameworks: Flutter, Dart
@@ -21,15 +21,15 @@ SKILLS
 EXPERIENCE
 Codiant — A YASH Technologies Company
 Associate Software Engineer | Apr 2023 – Jun 2026
-- Baurow App: Built a peer-to-peer rental marketplace application using Flutter and Firebase. Implemented item listings, booking workflows, real-time chat, push notifications, and Stripe payment integration.
-- CalCounts Pro (Instructor Dashboard): Engineered a tablet-optimized instructor dashboard enabling trainers to monitor client performance, nutrition metrics, and progress insights through responsive data visualizations.
-- HireGroww App: Created a multilingual recruitment platform with interview recording and hiring workflow management. Integrated AI-powered candidate evaluation, localization, and scalable REST APIs.
-- Fitterloop App: Designed and implemented UI components, integrated food scanning capabilities, and connected backend APIs to deliver a responsive user experience.
-- Glowpeer App: Developed a skincare tracking and community platform featuring routine management, product tracking, reminders, and social engagement features, helping users organize routines and monitor progress.
+- Baurow: Architected cross-platform rental marketplace in Flutter and Firebase; engineered calendar availability booking, in-app messaging, push notifications, and native Stripe payment sheet checkout.
+- CalCounts Pro: Developed tablet-responsive instructor dashboards featuring multi-client nutrition analytics, calorie burn matrices, and offline-first Firestore data caching.
+- HireGroww: Built multilingual recruitment client with localized UI strings, in-app video interview recording, and asynchronous cloud upload queues.
+- Fitterloop: Engineered workout logging flows and camera food scanning with Riverpod state management, connected to REST APIs for live trainer synchronizations.
+- Glowpeer: Implemented multi-step routine tracking, local push notification scheduling, shelf inventory management, and community progress feeds.
 
 Imaginar Technologies
 Associate Software Engineer | May 2022 – Nov 2022
-- FoodIngram App: Worked on UI and API integration for a multi-role food delivery app, including separate modules for customers, shops, and delivery drivers.
+- FoodIngram: Implemented mobile UI flows and REST API integrations for a multi-role on-demand food delivery system spanning customer ordering, merchant management, and driver dispatch views.
 
 EDUCATION
 - Master of Business Administration (MBA) — Human Resources and Financial Management
@@ -89,7 +89,7 @@ EDUCATION
           <div className="resume-section">
             <h4>PROFESSIONAL SUMMARY</h4>
             <p>
-              Flutter Developer with <strong>3.8+ years of experience</strong> building and shipping scalable, cross-platform mobile applications for Android and iOS. Skilled in Flutter, Dart, REST API integration, Firebase, and modern state management (Riverpod, Provider). Delivered <strong>9 apps published on the Google Play Store</strong> and <strong>8 on the Apple App Store</strong>, from UI development through backend integration, payments, and real-time features. Strong problem-solving skills with a focus on clean architecture and smooth, user-friendly experiences.
+              Flutter Developer with <strong>3.8+ years of experience</strong> building and shipping scalable, cross-platform mobile applications for Android and iOS. Skilled in Flutter, Dart, REST API integration, Firebase, and modern state management (Riverpod, Provider). Delivered <strong>9 apps published on the Google Play Store</strong> and <strong>8 on the Apple App Store</strong>, with a focus on clean architecture, responsive 60fps UI, and robust offline caching.
             </p>
           </div>
 
@@ -128,11 +128,11 @@ EDUCATION
               <strong>Codiant — A YASH Technologies Company</strong>
               <div className="resume-exp-meta">Associate Software Engineer | Apr 2023 – Jun 2026</div>
               <ul className="resume-bullets">
-                <li><strong>Baurow App:</strong> Built a peer-to-peer rental marketplace application using Flutter and Firebase. Implemented item listings, booking workflows, real-time chat, push notifications, and Stripe payment integration.</li>
-                <li><strong>CalCounts Pro (Instructor Dashboard):</strong> Engineered a tablet-optimized instructor dashboard enabling trainers to monitor client performance, nutrition metrics, and progress insights through responsive data visualizations.</li>
-                <li><strong>HireGroww App:</strong> Created a multilingual recruitment platform with interview recording and hiring workflow management. Integrated AI-powered candidate evaluation, localization, and scalable REST APIs.</li>
-                <li><strong>Fitterloop App:</strong> Designed and implemented UI components, integrated food scanning capabilities, and connected backend APIs to deliver a responsive user experience.</li>
-                <li><strong>Glowpeer App:</strong> Developed a skincare tracking and community platform featuring routine management, product tracking, reminders, and social engagement features, helping users organize routines and monitor progress.</li>
+                <li><strong>Baurow:</strong> Architected cross-platform rental marketplace in Flutter and Firebase; engineered calendar availability booking, in-app messaging, push notifications, and native Stripe payment sheet checkout.</li>
+                <li><strong>CalCounts Pro:</strong> Developed tablet-responsive instructor dashboards featuring multi-client nutrition analytics, calorie burn matrices, and offline-first Firestore data caching.</li>
+                <li><strong>HireGroww:</strong> Built multilingual recruitment client with localized UI strings, in-app video interview recording, and asynchronous cloud upload queues.</li>
+                <li><strong>Fitterloop:</strong> Engineered workout logging flows and camera food scanning with Riverpod state management, connected to REST APIs for live trainer synchronizations.</li>
+                <li><strong>Glowpeer:</strong> Implemented multi-step routine tracking, local push notification scheduling, shelf inventory management, and community progress feeds.</li>
               </ul>
             </div>
 
@@ -140,7 +140,7 @@ EDUCATION
               <strong>Imaginar Technologies</strong>
               <div className="resume-exp-meta">Associate Software Engineer | May 2022 – Nov 2022</div>
               <ul className="resume-bullets">
-                <li><strong>FoodIngram App:</strong> Worked on UI and API integration for a multi-role food delivery app, including separate modules for customers, shops, and delivery drivers.</li>
+                <li><strong>FoodIngram:</strong> Implemented mobile UI flows and REST API integrations for a multi-role on-demand food delivery system spanning customer ordering, merchant management, and driver dispatch views.</li>
               </ul>
             </div>
           </div>

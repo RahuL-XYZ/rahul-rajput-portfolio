@@ -28,8 +28,8 @@ export default function EditorialProof() {
 
           <div className="proof-card">
             <strong className="proof-number">100%</strong>
-            <span className="proof-label">Native Uniformity</span>
-            <p className="proof-sub">Unified state, routing & assets with zero platform drift</p>
+            <span className="proof-label">Unified Codebase</span>
+            <p className="proof-sub">Shared business logic, state, and assets with platform-adaptive navigation</p>
           </div>
 
           <div className="proof-card">

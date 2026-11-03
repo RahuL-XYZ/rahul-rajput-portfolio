@@ -14,14 +14,14 @@ export const terminalCommands = {
   about: [
     '=== RAHUL RAJPUT // ORIGIN STORY ===',
     'Identity: Flutter Developer | Mobile Application Engineer',
-    'Experience: 3.5+ Years in production mobile engineering',
+    'Experience: 3.8+ Years in production mobile engineering',
     'Mission: Building scalable, high-performance Android & iOS experiences.',
     'Status: Associate Software Engineer at Codiant (A YASH Technologies Company)',
     'Philosophy: "With great code comes great applications."'
   ],
   skills: [
     '=== SUPERPOWERS & TECH STACK ===',
-    '[PRIMARY] Flutter, Dart (Cross-platform 60fps Native Mastery)',
+    '[PRIMARY] Flutter, Dart (Cross-platform 60fps Native Rendering)',
     '[STATE]   Riverpod, Provider, GetX, Clean Architecture',
     '[BACKEND] Firebase (Auth, Firestore, FCM), REST APIs, Dio, WebSockets',
     '[PAYMENT] Stripe, RevenueCat, In-App Purchases (IAP)',
@@ -45,8 +45,8 @@ export const terminalCommands = {
   experience: [
     '=== PROFESSIONAL TIMELINE ===',
     '2023 - PRESENT: Flutter Developer @ Codiant (A YASH Technologies Company)',
-    '   - Architected 6+ production mobile apps across Play Store & App Store',
-    '   - Integrated Stripe payments, Firebase cloud mesh, and Riverpod architecture',
+    '   - Built and shipped 9 Play Store & 8 App Store releases across consumer and health domains',
+    '   - Integrated Stripe payments, Firebase cloud services, and Riverpod architecture',
     '2022 - 2022:    Flutter Developer @ Imaginar Technologies',
     '   - Developed multi-role on-demand food delivery architecture'
   ],

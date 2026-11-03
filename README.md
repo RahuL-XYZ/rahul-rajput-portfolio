@@ -1,6 +1,6 @@
-# 🕷️ Rahul Rajput — Spider-Verse Interactive Developer Portfolio
+# 🕷️ Rahul Rajput — Interactive Developer Portfolio
 
-An award-winning, cinematic Spider-Verse-inspired developer portfolio designed and engineered for **Rahul Rajput** — **Flutter Developer & Mobile Application Engineer**.
+Cinematic, Spider-Verse-inspired portfolio showcasing production mobile applications, architecture case studies, and engineering experience by **Rahul Rajput** — **Flutter Developer & Mobile Application Engineer**.
 
 Built with **React, Vite, Three.js / React Three Fiber, GSAP, Framer Motion, Lenis Smooth Scroll**, and custom WebGL shaders.
 
@@ -11,11 +11,11 @@ Built with **React, Vite, Three.js / React Three Fiber, GSAP, Framer Motion, Len
 - **Spider-Verse Cinematic Visuals**: Halftone comic-book overlays, chromatic glitch effects, dynamic neon lighting in Spider-Red (`#E62429`), Electric Blue (`#1464F4`), and Neon Cyan (`#00D9FF`).
 - **Intro Sequence**: Procedurally animated spider-web canvas, glowing particle birth, superhero silhouette reveal, and session-remembered skip controls (`sessionStorage`).
 - **Interactive 3D Night City Hero**: Three.js procedural skyscrapers with illuminated windows, floating holographic Flutter logo, interactive web particles, and a stylized superhero avatar on a high-rise ledge (ready for personal GLB drop-in).
-- **Comic-Panel Origin Story**: Manga/comic angled panels with halftone dot gradients, highlighting 3.5+ years of Flutter engineering, clean architecture, and reactive state management.
-- **Holographic 3D Skill Superpowers**: 6 specialized multiverse categories featuring 3D tilt, magnetic hover physics, and Flutter as the dominant centerpiece.
+- **Comic-Panel Origin Story**: Comic-styled angled panels with halftone dot gradients, detailing 3.8+ years of Flutter engineering, clean architecture, and reactive state management.
+- **Interactive 3D Skill Matrix**: 6 categorized technical domains with 3D tilt interactions and physics-driven hover states, highlighting Flutter and Dart.
 - **Multiverse Missions (Projects)**: 5 featured flagship apps (Baurow, CalCounts Pro, HireGroww, Fitterloop, Glowpeer) displayed in mobile device mockups with real store links, plus an expandable archive for remaining production releases (Dine Visuals, Scribeflo, Jainmatri, etc.) and deep case-study modals.
 - **Chronicle Timeline**: Animated vertical neon spine with milestone nodes detailing professional experience at Codiant (A YASH Technologies Company) and Imaginar Technologies.
-- **Spider-Verse Terminal**: Interactive hacker terminal with live commands (`help`, `about`, `skills`, `projects`, `experience`, `spider-sense`, `clear`), command history, and audio clicks.
+- **Spider-Verse Terminal**: Interactive terminal emulator with live commands (`help`, `about`, `skills`, `projects`, `experience`, `spider-sense`, `clear`), command history, and audio clicks.
 - **Ambient Audio Engine**: Zero-asset Web Audio API atmospheric drone and sound effects (web-thwip, glitch pulse, click) with instant mute controls and tab-visibility auto-pause.
 - **Performance & Accessibility**: Respects `prefers-reduced-motion`, WebGL fallback support, Lenis smooth scrolling, DPR capping, and full touch responsiveness.
 

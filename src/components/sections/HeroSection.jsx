@@ -60,11 +60,11 @@ export default function HeroSection() {
           <p className="sv-hero-desc">
             {isBatman ? (
               <>
-                I engineer <strong>powerful, scalable, and beautifully crafted mobile experiences</strong> for Android and iOS. 3.5+ years of Flutter mastery, clean detective-grade architectures, and uncompromising 60fps performance across the enterprise.
+                Mobile engineer specializing in <strong>production Flutter architectures</strong> for Android and iOS. 3.8+ years building clean, resilient codebases with 60fps native rendering, offline-first caching, and zero tolerance for dropped frames.
               </>
             ) : (
               <>
-                I build <strong>powerful, scalable, and beautifully crafted mobile experiences</strong> for Android and iOS. Specializing in high-performance Flutter architectures, real-time Firebase sync, and intuitive UI interactions.
+                Flutter developer specializing in <strong>production Android and iOS applications</strong>. 3.8+ years building reactive architectures with Riverpod, real-time Firebase sync, smooth animations, and clean, maintainable code.
               </>
             )}
           </p>
@@ -90,7 +90,7 @@ export default function HeroSection() {
           {/* Quick Stats Grid */}
           <div className="sv-hero-stats">
             <div className="sv-hero-stat-item">
-              <span className="sv-stat-num">3.5+</span>
+              <span className="sv-stat-num">3.8+</span>
               <span className="sv-stat-lbl">{isBatman ? 'Years Field Ops' : 'Years Experience'}</span>
             </div>
             <div className="sv-hero-stat-item">
@@ -152,7 +152,7 @@ export default function HeroSection() {
           {/* Metric Matrix Row */}
           <div className="dossier-metrics-grid">
             <div className="dossier-metric-box">
-              <span className="dossier-metric-num">3.5+</span>
+              <span className="dossier-metric-num">3.8+</span>
               <span className="dossier-metric-label">Years Experience</span>
             </div>
             <div className="dossier-metric-box">

@@ -2,10 +2,10 @@ export const skillCategories = [
   {
     id: 'mobile',
     title: 'MOBILE DEVELOPMENT',
-    subtitle: 'Primary Domain Superpower',
+    subtitle: 'Cross-Platform iOS & Android',
     accent: '#00D9FF',
     skills: [
-      { name: 'Flutter', isPrimary: true, level: 'Expert', desc: 'Core framework for cross-platform Android & iOS engineering with 60fps native feel' },
+      { name: 'Flutter', isPrimary: true, level: 'Expert', desc: 'Core framework for cross-platform iOS & Android engineering with native 60fps rendering' },
       { name: 'Dart', isPrimary: true, level: 'Advanced', desc: 'Strong typed asynchronous programming, isolates, custom rendering' }
     ]
   },
@@ -23,11 +23,11 @@ export const skillCategories = [
   {
     id: 'backend',
     title: 'BACKEND & INTEGRATION',
-    subtitle: 'Cloud & Network Mesh',
+    subtitle: 'Cloud Services & APIs',
     accent: '#1464F4',
     skills: [
       { name: 'Firebase', isPrimary: false, level: 'Advanced', desc: 'Auth, Firestore, Cloud Functions, FCM Push Notifications, Analytics' },
-      { name: 'REST APIs', isPrimary: false, level: 'Advanced', desc: 'High-throughput contract consumption, serialization, error interceptors' },
+      { name: 'REST APIs', isPrimary: false, level: 'Advanced', desc: 'Data serialization, model parsing, pagination, and error interceptors' },
       { name: 'Dio', isPrimary: false, level: 'Advanced', desc: 'Custom interceptors, token refresh queues, caching policies' },
       { name: 'WebSockets', isPrimary: false, level: 'Proficient', desc: 'Real-time bidirectional event streaming and instant chat' }
     ]
@@ -35,10 +35,10 @@ export const skillCategories = [
   {
     id: 'payments',
     title: 'PAYMENTS & MONETIZATION',
-    subtitle: 'Transactional Pipelines',
+    subtitle: 'In-App Purchases & Gateways',
     accent: '#FFE600',
     skills: [
-      { name: 'Stripe', isPrimary: false, level: 'Advanced', desc: 'Custom payment sheets, webhook verification, customer escrow' },
+      { name: 'Stripe', isPrimary: false, level: 'Advanced', desc: 'Payment sheet integration, webhook verification, and checkout flows' },
       { name: 'RevenueCat', isPrimary: false, level: 'Proficient', desc: 'Cross-platform subscriptions, paywalls, entitlement sync' },
       { name: 'In-App Purchases', isPrimary: false, level: 'Advanced', desc: 'Native Apple StoreKit and Google Play Billing flows' }
     ]
@@ -46,7 +46,7 @@ export const skillCategories = [
   {
     id: 'tools',
     title: 'ENGINEERING TOOLS',
-    subtitle: 'Battle-Tested Workflows',
+    subtitle: 'Version Control & Profiling',
     accent: '#00D9FF',
     skills: [
       { name: 'Git & GitHub', isPrimary: false, level: 'Advanced', desc: 'Gitflow, semantic commits, PR reviews, CI/CD pipelines' },
@@ -58,7 +58,7 @@ export const skillCategories = [
   {
     id: 'additional',
     title: 'ADDITIONAL TECHNOLOGIES',
-    subtitle: 'Multiverse Capabilities',
+    subtitle: 'Web Platforms & Backend APIs',
     accent: '#E62429',
     skills: [
       { name: 'React', isPrimary: false, level: 'Proficient', desc: 'Interactive SPA development, hooks, state synchronization' },

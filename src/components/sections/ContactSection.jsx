@@ -15,14 +15,14 @@ export default function ContactSection({ onPlaySound }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
-      setFeedback({ type: 'error', message: 'Please complete all mission payload fields.' });
+      setFeedback({ type: 'error', message: 'Please fill out your name, email, and message.' });
       if (onPlaySound) onPlaySound('glitch');
       return;
     }
 
     // Basic email pattern check
     if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      setFeedback({ type: 'error', message: 'Please provide a valid transmission email address.' });
+      setFeedback({ type: 'error', message: 'Please provide a valid email address.' });
       return;
     }
 
@@ -34,7 +34,7 @@ export default function ContactSection({ onPlaySound }) {
       setIsSubmitting(false);
       setFeedback({
         type: 'success',
-        message: 'Transmission dispatched! Opening your comms client to complete transfer.'
+        message: 'Message prepared. Opening your email client to send.'
       });
       const mailtoUrl = `mailto:rahulrajput.dev@gmail.com?subject=Mission%20Inquiry%20from%20${encodeURIComponent(formData.name)}&body=${encodeURIComponent(`From: ${formData.name} (${formData.email})\n\nMessage:\n${formData.message}`)}`;
       window.location.href = mailtoUrl;
@@ -61,10 +61,10 @@ export default function ContactSection({ onPlaySound }) {
           {/* Left Column: Direct Comms Nodes */}
           <div className="sv-comms-column">
             <h3 className="sv-comms-headline">
-              {isBatman ? 'ACTIVATE THE BAT-SIGNAL OR DIRECT UPLINK.' : 'INITIATE SECURE COMMS LINK.'}
+              {isBatman ? 'DIRECT LINE & CONTACT.' : 'GET IN TOUCH.'}
             </h3>
             <p className="sv-comms-desc">
-              Whether you are architecting a new mobile flagship, scaling a production cross-platform app, or seeking a dedicated Flutter engineer with 3.5+ years of battle-tested experience — my transmission lines are open.
+              Looking for a dedicated Flutter engineer to ship a dual-store mobile app, migrate an existing codebase to Clean Architecture, or integrate real-time Firebase and Stripe payments? Let's talk.
             </p>
 
             <div className="sv-contact-cards-list">
