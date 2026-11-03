@@ -1,0 +1,97 @@
+.glitch-text {
+  position: relative;
+  display: inline-block;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--sv-white);
+}
+
+.glitch-text-base {
+  position: relative;
+  z-index: 2;
+}
+
+.glitch-text-glitch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glitch-text-glitch.red {
+  color: var(--sv-red);
+  transform: translate(-2px, -1px);
+}
+
+.glitch-text-glitch.blue {
+  color: var(--sv-blue);
+  transform: translate(2px, 1px);
+}
+
+.glitch-text-glitch.cyan {
+  color: var(--sv-cyan);
+  transform: translate(1px, -1px);
+}
+
+/* Glitch animation on hover or constant when intensity=high */
+.glitch-text:hover .glitch-text-glitch,
+.glitch-text.intensity-high .glitch-text-glitch {
+  opacity: 0.85;
+  animation: spider-glitch-cycle 2.4s infinite steps(2, start);
+}
+
+.glitch-text:hover .glitch-text-glitch.blue,
+.glitch-text.intensity-high .glitch-text-glitch.blue {
+  animation-delay: 0.05s;
+}
+
+.glitch-text:hover .glitch-text-glitch.cyan,
+.glitch-text.intensity-high .glitch-text-glitch.cyan {
+  animation-delay: 0.1s;
+}
+
+@keyframes spider-glitch-cycle {
+  0% {
+    clip-path: inset(40% 0 61% 0);
+    transform: translate(-3px, -1px) skew(-2deg);
+  }
+  20% {
+    clip-path: inset(92% 0 1% 0);
+    transform: translate(3px, 1px) skew(2deg);
+  }
+  40% {
+    clip-path: inset(10% 0 80% 0);
+    transform: translate(-2px, 2px);
+  }
+  60% {
+    clip-path: inset(60% 0 10% 0);
+    transform: translate(2px, -2px);
+  }
+  80% {
+    clip-path: inset(25% 0 58% 0);
+    transform: translate(-1px, 1px);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    transform: translate(0, 0);
+    opacity: 0.2;
+  }
+}
+
+.glow-red {
+  text-shadow: 0 0 20px rgba(230, 36, 41, 0.4);
+}
+
+.glow-blue {
+  text-shadow: 0 0 20px rgba(20, 100, 244, 0.4);
+}
+
+.glow-cyan {
+  text-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+}
+

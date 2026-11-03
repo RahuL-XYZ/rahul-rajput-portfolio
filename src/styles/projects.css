@@ -1,0 +1,531 @@
+.sv-projects-section {
+  position: relative;
+  padding: 100px 0;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.sv-projects-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Featured 5 Projects Big Grid */
+.sv-featured-missions-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-bottom: 70px;
+}
+
+.mission-universe-card {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 36px;
+  background: rgba(14, 20, 36, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 32px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.mission-universe-card:hover {
+  border-color: var(--sv-cyan);
+  box-shadow: 0 0 35px rgba(0, 217, 255, 0.25);
+  transform: translateY(-4px);
+}
+
+/* Left: Mission Info */
+.mission-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.mission-top-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.mission-num {
+  font-family: var(--font-impact);
+  font-size: 20px;
+  color: var(--sv-red-bright);
+}
+
+.mission-category {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--sv-cyan);
+  text-transform: uppercase;
+}
+
+.mission-title-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.mission-app-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 16px rgba(0, 217, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+}
+
+.mission-app-logo.in-modal {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+}
+
+.mission-title {
+  font-family: var(--font-impact);
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 800;
+  color: var(--sv-white);
+  line-height: 1.1;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+.mission-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--sv-white-muted);
+  margin-bottom: 20px;
+}
+
+.mission-role-highlight {
+  background: rgba(8, 12, 22, 0.6);
+  border-left: 3px solid var(--sv-red);
+  padding: 12px 14px;
+  font-size: 13px;
+  color: var(--sv-white);
+  line-height: 1.5;
+  margin-bottom: 20px;
+  border-radius: 0 4px 4px 0;
+}
+
+.mission-stack-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.stack-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--sv-white);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mission-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.store-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background: rgba(230, 36, 41, 0.15);
+  border: 1px solid var(--sv-red);
+  color: var(--sv-white);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.store-pill-btn:hover {
+  background: var(--sv-red);
+  box-shadow: 0 0 16px var(--sv-red-glow);
+  transform: translateY(-2px);
+}
+
+.store-pill-btn.app-store {
+  background: rgba(20, 100, 244, 0.15);
+  border-color: var(--sv-blue);
+}
+
+.store-pill-btn.app-store:hover {
+  background: var(--sv-blue);
+  box-shadow: 0 0 16px var(--sv-blue-glow);
+}
+
+/* Right: Visual Device Mockup Screen */
+.mission-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+/* Tablet & Web Card Custom Layout */
+.mission-universe-card.is-tablet,
+.mission-universe-card.is-web {
+  grid-template-columns: 1fr 1.35fr;
+  align-items: center;
+}
+
+/* Web Browser Mockup (For Admin Portals like Kharcha Paani) */
+.mission-browser-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.mission-browser-frame {
+  width: 100%;
+  max-width: 540px;
+  background: #0d1322;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 217, 255, 0.4);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.9), 0 0 35px rgba(16, 185, 129, 0.25);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mission-browser-frame:hover {
+  border-color: #10B981;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.95), 0 0 45px rgba(16, 185, 129, 0.45);
+}
+
+.browser-topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: #151d30;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.browser-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.browser-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.browser-dot.red { background: #FF5F56; }
+.browser-dot.yellow { background: #FFBD2E; }
+.browser-dot.green { background: #27C93F; }
+
+.browser-address-bar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(8, 12, 20, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #10B981;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.browser-address-bar span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mission-browser-screen {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.store-pill-btn.live-web {
+  background: rgba(16, 185, 129, 0.18);
+  border-color: #10B981;
+  color: #34D399;
+}
+
+.store-pill-btn.live-web:hover {
+  background: #10B981;
+  color: #08080D;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+}
+
+.store-pill-btn.github-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: var(--sv-white);
+}
+
+.store-pill-btn.github-btn:hover {
+  background: #ffffff;
+  color: #08080D;
+}
+
+.modal-screen-thumb.is-web {
+  width: 560px;
+  height: 350px;
+  object-fit: cover;
+  aspect-ratio: 16 / 10;
+}
+
+/* Mobile Phone Mockup */
+.mission-phone-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.mission-phone-frame {
+  width: 250px;
+  height: 480px;
+  background: #000;
+  border-radius: 36px;
+  border: 4px solid #222938;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(20, 100, 244, 0.25);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.mission-phone-notch {
+  width: 90px;
+  height: 16px;
+  background: #181d28;
+  border-radius: 0 0 12px 12px;
+  margin: 0 auto;
+  z-index: 5;
+}
+
+.mission-phone-screen {
+  flex: 1;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Tablet Landscape Mockup (For CalCounts Pro) */
+.mission-tablet-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.mission-tablet-frame {
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 16 / 10.5;
+  background: #080c14;
+  border-radius: 20px;
+  border: 10px solid #1c2436;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.9), 0 0 35px rgba(41, 182, 246, 0.3);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mission-tablet-frame:hover {
+  border-color: #26334d;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.95), 0 0 45px rgba(0, 217, 255, 0.45);
+}
+
+.mission-tablet-camera {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #06090f;
+  border: 1px solid #384869;
+  z-index: 10;
+}
+
+.tablet-hud-badge {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--sv-cyan);
+  background: rgba(8, 12, 20, 0.85);
+  border: 1px solid rgba(0, 217, 255, 0.4);
+  padding: 3px 8px;
+  border-radius: 4px;
+  backdrop-filter: blur(8px);
+  z-index: 8;
+  pointer-events: none;
+}
+
+.mission-tablet-screen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* Tablet Screenshot Thumbnails Bar */
+.tablet-screens-selector {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.tablet-thumb-btn {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 4px 10px;
+  background: rgba(16, 23, 43, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  color: var(--sv-gray-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tablet-thumb-btn:hover {
+  border-color: var(--sv-cyan);
+  color: var(--sv-white);
+}
+
+.tablet-thumb-btn.active {
+  background: rgba(0, 217, 255, 0.2);
+  border-color: var(--sv-cyan);
+  color: var(--sv-cyan);
+  font-weight: 700;
+}
+
+/* Interactive Case Study Modal Overlay */
+.sv-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(8, 8, 13, 0.92);
+  backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.sv-modal-dialog {
+  background: var(--sv-surface);
+  border: 1px solid var(--sv-cyan);
+  box-shadow: 0 0 50px rgba(0, 217, 255, 0.35);
+  border-radius: 8px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 36px;
+  position: relative;
+}
+
+.sv-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sv-modal-close:hover {
+  background: var(--sv-red);
+  border-color: var(--sv-red-bright);
+}
+
+.modal-screenshots-carousel {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 16px 0;
+  margin: 20px 0;
+}
+
+.modal-screen-thumb {
+  width: 200px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.modal-screen-thumb.is-tablet {
+  width: 520px;
+  height: 330px;
+  object-fit: cover;
+  aspect-ratio: 16 / 10.5;
+}
+
+@media (max-width: 960px) {
+  .mission-universe-card,
+  .mission-universe-card.is-tablet {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-right {
+    margin-top: 20px;
+  }
+
+  .modal-screen-thumb.is-tablet {
+    width: 300px;
+    height: 195px;
+  }
+}
+
