@@ -1,9 +1,11 @@
 import React from 'react';
-import { Briefcase, GraduationCap, MapPin, Award, CheckCircle2 } from 'lucide-react';
+import { Briefcase, GraduationCap, MapPin, Award, CheckCircle2, Sparkles } from 'lucide-react';
 import { experiences, education } from '../../data/experience';
 import rahulImg from '../../assets/rahul_rajput.jpg';
+import { usePortfolioMode } from '../../context/PortfolioModeContext';
 
 export default function EditorialPerson() {
+  const { switchToSpiderVerse } = usePortfolioMode();
   return (
     <section className="ed-section person-sec" id="person">
       <div className="section-head">
@@ -14,7 +16,12 @@ export default function EditorialPerson() {
       <div className="person-grid">
         <div className="person-bio-col">
           <div className="person-profile-card">
-            <div className="person-photo-frame">
+            <div 
+              className="person-photo-frame"
+              onClick={switchToSpiderVerse}
+              style={{ cursor: 'pointer' }}
+              title="Click avatar to explore interactive Multiverse Mode"
+            >
               <img src={rahulImg} alt="Rahul Rajput - Flutter Developer" className="person-photo" />
               <div className="portrait-badge">
                 <span className="portrait-dot"></span> 3.8+ Yrs Dart Craft
@@ -27,6 +34,18 @@ export default function EditorialPerson() {
               <p className="person-callout-note">
                 Full-lifecycle delivery: From Figma specs to App Store Connect, Play Console internal tracks, and production rollouts.
               </p>
+              
+              {/* Discreet Multiverse Mode Easter Egg Trigger */}
+              <button
+                type="button"
+                onClick={switchToSpiderVerse}
+                className="multiverse-lab-trigger"
+                title="Secret Easter Egg: Explore Interactive Multiverse Mode"
+              >
+                <Sparkles size={13} color="var(--accent)" />
+                <span>Explore Interactive Multiverse Mode</span>
+                <span className="easter-pill">3D Lab</span>
+              </button>
             </div>
           </div>
 

@@ -1,10 +1,11 @@
 import React from 'react';
 import { ArrowDown, ArrowUpRight, CheckCircle2, MapPin, Sparkles, Smartphone, Layers } from 'lucide-react';
 import FlutterLogo from '../common/FlutterLogo';
-
 import rahulImg from '../../assets/rahul_rajput.jpg';
+import { usePortfolioMode } from '../../context/PortfolioModeContext';
 
 export default function EditorialHero() {
+  const { switchToSpiderVerse } = usePortfolioMode();
   return (
     <section className="ed-hero" id="hero">
       <div className="ed-hero-copy">
@@ -46,6 +47,9 @@ export default function EditorialHero() {
               src={rahulImg} 
               alt="Rahul Rajput - Flutter Developer" 
               className="card-avatar-img"
+              onClick={switchToSpiderVerse}
+              style={{ cursor: 'pointer' }}
+              title="Click avatar to explore interactive Multiverse Mode"
             />
             <div className="card-bio">
               <h3>Rahul Rajput</h3>

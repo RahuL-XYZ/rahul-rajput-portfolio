@@ -22,17 +22,16 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+/* Spider-Verse Specific App Wrapper Styling */
+.spiderverse-app {
   min-height: 100vh;
   background-color: var(--sv-black);
   color: var(--sv-white);
-  overflow-x: hidden;
   position: relative;
-  line-height: 1.6;
 }
 
-/* Halftone Comic Texture Background */
-body::before {
+/* Halftone Comic Texture Background for Spider-Verse */
+.spiderverse-app::before {
   content: '';
   position: fixed;
   inset: 0;
@@ -46,7 +45,7 @@ body::before {
 }
 
 /* Spider-Verse Vignette Edge Lighting */
-body::after {
+.spiderverse-app::after {
   content: '';
   position: fixed;
   inset: 0;

@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Lenis from 'lenis';
 
-// Universe Context
+// Portfolio Mode & Universe Contexts
+import { PortfolioModeProvider, usePortfolioMode } from './context/PortfolioModeContext';
 import { UniverseProvider, useUniverse } from './context/UniverseContext';
 
-// Layout & Core UI
+// Client-Facing Editorial Portfolio (Default)
+import EditorialPortfolio from './components/editorial/EditorialPortfolio';
+import ReturnToEditorialBanner from './components/common/ReturnToEditorialBanner';
+
+// Spider-Verse / Batman Components & Layout
 import Navigation from './components/layout/Navigation';
 import Footer from './components/layout/Footer';
 import CustomCursor from './components/ui/CustomCursor';
@@ -13,7 +18,7 @@ import WebCanvas from './components/ui/WebCanvas';
 import RainCanvas from './components/ui/RainCanvas';
 import ErrorBoundary from './components/common/ErrorBoundary';
 
-// Sections
+// Spider-Verse Sections
 import IntroSequence from './components/sections/IntroSequence';
 import HeroSection from './components/sections/HeroSection';
 import AboutSection from './components/sections/AboutSection';
@@ -31,7 +36,7 @@ import { useReducedMotion } from './hooks/useReducedMotion';
 import './styles/base.css';
 import './styles/responsive.css';
 
-function PortfolioMain() {
+function SpiderVerseMain() {
   const { universe } = useUniverse();
   const isBatman = universe === 'batman';
 
@@ -93,7 +98,10 @@ function PortfolioMain() {
 
   return (
     <div className={`spiderverse-app ${isBatman ? 'batman-universe' : 'spiderman-universe'}`}>
-      {/* Skip to Main Content Link for Keyboard / Screen Reader Accessibility */}
+      {/* Return to Executive Portfolio floating pill */}
+      <ReturnToEditorialBanner />
+
+      {/* Skip to Main Content Link */}
       <a href="#main-content" className="sv-skip-link">
         Skip to main content
       </a>
@@ -107,12 +115,12 @@ function PortfolioMain() {
         />
       )}
 
-      {/* Reactive Ambience Layers: WebCanvas for Spiderman, RainCanvas for Batman */}
+      {/* Reactive Ambience Layers */}
       <CustomCursor />
       <MouseLight />
       {isBatman ? <RainCanvas /> : <WebCanvas />}
 
-      {/* Main Navigation with Top Universe Switcher */}
+      {/* Navigation */}
       <Navigation 
         activeSection={activeSection}
         isMuted={isMuted}
@@ -136,12 +144,32 @@ function PortfolioMain() {
   );
 }
 
+function PortfolioRoot() {
+  const { isEditorial, isTransitioning } = usePortfolioMode();
+
+  return (
+    <>
+      {/* Mode transition rift flash overlay */}
+      {isTransitioning && <div className="mode-rift-overlay" />}
+
+      {/* Primary Experience */}
+      {isEditorial ? (
+        <EditorialPortfolio />
+      ) : (
+        <UniverseProvider>
+          <SpiderVerseMain />
+        </UniverseProvider>
+      )}
+    </>
+  );
+}
+
 export default function App() {
   return (
     <ErrorBoundary>
-      <UniverseProvider>
-        <PortfolioMain />
-      </UniverseProvider>
+      <PortfolioModeProvider>
+        <PortfolioRoot />
+      </PortfolioModeProvider>
     </ErrorBoundary>
   );
 }

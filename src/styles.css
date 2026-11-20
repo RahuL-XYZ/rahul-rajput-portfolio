@@ -1,7 +1,10 @@
 /* ==========================================================================
-   RAHUL RAJPUT // SPIDER-VERSE MASTER STYLESHEET ENTRY
+   RAHUL RAJPUT // PORTFOLIO MASTER STYLESHEET
+   Supports Executive Editorial Theme (Default) and Multiverse Mode
    ========================================================================== */
 
+@import './theme/tokens.css';
+@import './styles/editorial.css';
 @import './styles/variables.css';
 @import './styles/base.css';
 @import './styles/responsive.css';
