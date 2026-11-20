@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Maximize2, ChevronLeft, ChevronRight, Eye } from 'lucide-react';
+import { Maximize2, Sparkles, CheckCircle2 } from 'lucide-react';
 
 export default function ProjectDevicePreview({ project, onOpenModal }) {
   const [activeIdx, setActiveIdx] = useState(0);
@@ -10,78 +10,64 @@ export default function ProjectDevicePreview({ project, onOpenModal }) {
   const isTablet = project.id === 'calcounts-pro';
 
   return (
-    <div className={`project-device-showcase ${isTablet ? 'is-tablet-showcase' : ''}`}>
-      <div className="showcase-header">
-        <div className="showcase-tabs" role="tablist">
-          {project.screenshots.map((s, idx) => (
-            <button
-              key={idx}
-              type="button"
-              role="tab"
-              aria-selected={idx === activeIdx}
-              className={`showcase-tab ${idx === activeIdx ? 'active' : ''}`}
-              onClick={() => setActiveIdx(idx)}
-            >
-              <span className="tab-idx">0{idx + 1}</span>
-              <span className="tab-name">{s.title}</span>
-            </button>
-          ))}
-        </div>
-
-        <button
-          type="button"
-          className="showcase-expand-btn"
-          onClick={() => onOpenModal(project, activeIdx)}
-          title="Open high-resolution gallery"
-        >
-          <Eye size={14} />
-          <span>View All ({project.screenshots.length})</span>
-        </button>
-      </div>
-
-      <div className="showcase-screen-wrap">
+    <div className={`modern-project-preview ${isTablet ? 'is-tablet-preview' : ''}`}>
+      {/* Phone / Tablet Bezel Frame */}
+      <div className="preview-device-container">
         <div
-          className={`device-mockup ${isTablet ? 'tablet-mockup' : 'phone-mockup'}`}
+          className={`modern-device-frame ${isTablet ? 'modern-tablet-frame' : 'modern-phone-frame'}`}
           onClick={() => onOpenModal(project, activeIdx)}
+          title="Click to view full-resolution screenshot"
         >
-          <div className="device-screen-glass">
+          {/* Dynamic Island / Camera Notch */}
+          {!isTablet && <div className="device-dynamic-island" />}
+          {isTablet && <div className="tablet-camera-notch" />}
+
+          {/* Screen Content */}
+          <div className="device-screen-viewport">
             <img
               src={current.src}
-              alt={`${project.name} - ${current.title}`}
-              className="device-screenshot-img"
+              alt={`${project.name} — ${current.title}`}
+              className="device-active-screen"
               loading="lazy"
+              decoding="async"
             />
-            <div className="device-overlay-hint">
-              <Maximize2 size={18} />
-              <span>Click to view full screen</span>
+            {/* Hover overlay hint */}
+            <div className="device-hover-glass">
+              <div className="hover-pill">
+                <Maximize2 size={14} />
+                <span>Enlarge Full Resolution</span>
+              </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="showcase-caption-bar">
-          <div className="caption-text">
-            <strong>{current.title}</strong>
-            <p>{current.caption}</p>
-          </div>
-          <div className="caption-nav">
-            <button
-              type="button"
-              className="cap-nav-btn"
-              onClick={() => setActiveIdx((activeIdx - 1 + project.screenshots.length) % project.screenshots.length)}
-              aria-label="Previous image"
-            >
-              <ChevronLeft size={16} />
-            </button>
-            <span className="cap-counter">{activeIdx + 1} / {project.screenshots.length}</span>
-            <button
-              type="button"
-              className="cap-nav-btn"
-              onClick={() => setActiveIdx((activeIdx + 1) % project.screenshots.length)}
-              aria-label="Next image"
-            >
-              <ChevronRight size={16} />
-            </button>
-          </div>
+      {/* Screen Title & Interactive Screen Switcher Pills (Replaces clunky < > buttons) */}
+      <div className="preview-navigation-dock">
+        <div className="preview-caption-headline">
+          <span className="caption-screen-title">{current.title}</span>
+          <span className="caption-screen-desc">{current.caption}</span>
+        </div>
+
+        {/* Thumbnail Selector Pills */}
+        <div className="preview-pills-row" role="tablist" aria-label="Select screen preview">
+          {project.screenshots.map((s, idx) => {
+            const isActive = idx === activeIdx;
+            return (
+              <button
+                key={idx}
+                type="button"
+                role="tab"
+                aria-selected={isActive}
+                className={`preview-selector-pill ${isActive ? 'is-active' : ''}`}
+                onClick={() => setActiveIdx(idx)}
+                title={`Switch to screen ${idx + 1}: ${s.title}`}
+              >
+                <span className="pill-dot" />
+                <span className="pill-label">{s.title || `Screen ${idx + 1}`}</span>
+              </button>
+            );
+          })}
         </div>
       </div>
     </div>
