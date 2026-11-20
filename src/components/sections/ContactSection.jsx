@@ -147,35 +147,35 @@ export default function ContactSection({ onPlaySound }) {
 
             <form onSubmit={handleSubmit}>
               <div className="form-field-group">
-                <label className="field-label" htmlFor="name">Your Name / Agency</label>
+                <label className="field-label" htmlFor="name">Your Name or Company</label>
                 <input
                   id="name"
                   type="text"
                   className="field-input"
-                  placeholder={isBatman ? 'e.g. Bruce Wayne / Wayne Enterprises' : 'e.g. Peter Parker / Tech Lead'}
+                  placeholder={isBatman ? 'e.g. Bruce Wayne / Wayne Enterprises' : 'e.g. Alex Morgan / Engineering Lead'}
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 />
               </div>
 
               <div className="form-field-group">
-                <label className="field-label" htmlFor="email">Return Frequency (Email)</label>
+                <label className="field-label" htmlFor="email">Your Email Address</label>
                 <input
                   id="email"
                   type="email"
                   className="field-input"
-                  placeholder="e.g. contact@domain.com"
+                  placeholder="e.g. contact@company.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 />
               </div>
 
               <div className="form-field-group">
-                <label className="field-label" htmlFor="message">Mission Scope & Specifications</label>
+                <label className="field-label" htmlFor="message">Project Scope or Inquiry</label>
                 <textarea
                   id="message"
                   className="field-textarea"
-                  placeholder="Describe your project, timeline, or engineering role..."
+                  placeholder="Describe your project goals, timeline, or engineering role..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 />

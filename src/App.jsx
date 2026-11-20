@@ -11,6 +11,7 @@ import CustomCursor from './components/ui/CustomCursor';
 import MouseLight from './components/ui/MouseLight';
 import WebCanvas from './components/ui/WebCanvas';
 import RainCanvas from './components/ui/RainCanvas';
+import ErrorBoundary from './components/common/ErrorBoundary';
 
 // Sections
 import IntroSequence from './components/sections/IntroSequence';
@@ -92,6 +93,11 @@ function PortfolioMain() {
 
   return (
     <div className={`spiderverse-app ${isBatman ? 'batman-universe' : 'spiderman-universe'}`}>
+      {/* Skip to Main Content Link for Keyboard / Screen Reader Accessibility */}
+      <a href="#main-content" className="sv-skip-link">
+        Skip to main content
+      </a>
+
       {/* Intro sequence overlay (Session-based, skippable) */}
       {showIntro && (
         <IntroSequence 
@@ -132,8 +138,10 @@ function PortfolioMain() {
 
 export default function App() {
   return (
-    <UniverseProvider>
-      <PortfolioMain />
-    </UniverseProvider>
+    <ErrorBoundary>
+      <UniverseProvider>
+        <PortfolioMain />
+      </UniverseProvider>
+    </ErrorBoundary>
   );
 }

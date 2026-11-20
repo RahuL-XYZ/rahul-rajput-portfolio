@@ -62,8 +62,10 @@ export default function AboutSection() {
             <div className="comic-portrait-wrap">
               <img 
                 src={rahulPortrait} 
-                alt="Rahul Rajput" 
+                alt="Rahul Rajput - Associate Software Engineer & Flutter Specialist" 
                 className="comic-portrait-img" 
+                loading="lazy"
+                decoding="async"
               />
               <div className="comic-portrait-overlay" />
               <span className="comic-portrait-caption">STATUS: 9 PLAY STORE · 8 APP STORE RELEASES</span>

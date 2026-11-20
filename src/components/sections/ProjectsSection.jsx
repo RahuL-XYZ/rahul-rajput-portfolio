@@ -196,6 +196,8 @@ export default function ProjectsSection() {
                         src={proj.logo} 
                         alt={`${proj.name} Logo`} 
                         className="mission-app-logo" 
+                        loading="lazy"
+                        decoding="async"
                       />
                     )}
                     <h3 className="mission-title">{proj.name}</h3>
@@ -306,6 +308,8 @@ export default function ProjectsSection() {
                         src={proj.logo} 
                         alt={`${proj.name} Logo`} 
                         className="mission-app-logo" 
+                        loading="lazy"
+                        decoding="async"
                       />
                     )}
                     <h3 className="mission-title">{proj.name}</h3>
@@ -424,6 +428,8 @@ export default function ProjectsSection() {
                             src={s.src} 
                             alt={s.title} 
                             className={`modal-screen-thumb ${isModalTablet ? 'is-tablet' : ''} ${isModalWeb ? 'is-web' : ''}`} 
+                            loading="lazy"
+                            decoding="async"
                           />
                           <span style={{ fontSize: '11px', color: 'var(--sv-gray-muted)', maxWidth: isModalTablet || isModalWeb ? '500px' : '200px' }}>
                             {s.title} — {s.caption}

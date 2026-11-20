@@ -41,7 +41,7 @@ export default function Navigation({ activeSection, isMuted, onToggleAudio }) {
   };
 
   return (
-    <nav className={`sv-navbar ${isScrolled ? 'is-scrolled' : ''}`}>
+    <nav className={`sv-navbar ${isScrolled ? 'is-scrolled' : ''}`} role="navigation" aria-label="Main Navigation">
       <div className="sv-nav-inner">
         <a href="#hero" className="sv-nav-brand">
           <div className="sv-nav-spider-mark">
@@ -96,7 +96,8 @@ export default function Navigation({ activeSection, isMuted, onToggleAudio }) {
           <button 
             className="sv-mobile-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle navigation menu"
+            aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

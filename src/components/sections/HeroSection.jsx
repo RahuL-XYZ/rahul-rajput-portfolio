@@ -43,8 +43,12 @@ export default function HeroSection() {
           <div className="sv-hero-bio-strip">
             <img 
               src={rahulPortrait} 
-              alt="Rahul Rajput" 
+              alt="Rahul Rajput - Flutter Developer" 
               className="sv-hero-portrait" 
+              width="48"
+              height="48"
+              fetchPriority="high"
+              decoding="async"
             />
             <div className="sv-hero-name-block">
               <GlitchText 
@@ -131,8 +135,10 @@ export default function HeroSection() {
           <div className="dossier-portrait-frame">
             <img 
               src={rahulPortrait} 
-              alt="Rahul Rajput" 
+              alt="Rahul Rajput Holographic Dossier Portrait" 
               className="dossier-portrait-img"
+              fetchPriority="high"
+              decoding="async"
             />
             <div className="dossier-scan-beam" />
             <div className="dossier-portrait-overlay" />
