@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { 
   Apple, 
   Smartphone, 
@@ -7,8 +7,6 @@ import {
   Images, 
   Pause, 
   Play, 
-  ChevronLeft, 
-  ChevronRight,
   Sparkles,
   Maximize2
 } from 'lucide-react';
@@ -18,18 +16,26 @@ import ScreenshotModal from './ScreenshotModal';
 export default function HorizontalProjectsShowcase() {
   const [filter, setFilter] = useState('all');
   const [isPaused, setIsPaused] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const [modalProject, setModalProject] = useState(null);
   const [modalIndex, setModalIndex] = useState(0);
-  const trackRef = useRef(null);
 
-  const filteredProjects = projects.filter((p) => {
+  // Exclude Kharcha Paani (displayed exclusively in the dedicated Web Projects / Admin section)
+  const mobileProjects = projects.filter((p) => p.id !== 'kharcha-paani');
+
+  const dualCount = mobileProjects.filter(p => p.playStore && p.appStore).length;
+  const aiCount = mobileProjects.filter(p => p.category.includes('AI') || p.stack.some(s => s.toLowerCase().includes('ai'))).length;
+
+  const filteredProjects = mobileProjects.filter((p) => {
     if (filter === 'dual') return p.playStore && p.appStore;
     if (filter === 'ai') return p.category.includes('AI') || p.stack.some(s => s.toLowerCase().includes('ai'));
     return true;
   });
 
-  // Duplicate items for seamless continuous infinite marquee
-  const displayItems = [...filteredProjects, ...filteredProjects];
+  // Ensure each track has enough cards to cleanly fill any screen resolution before looping
+  const displayProjects = filteredProjects.length > 0 && filteredProjects.length < 6
+    ? [...filteredProjects, ...filteredProjects]
+    : filteredProjects;
 
   const handleOpenModal = (project, idx = 0) => {
     setModalProject(project);
@@ -40,16 +46,129 @@ export default function HorizontalProjectsShowcase() {
     setModalProject(null);
   };
 
-  const scrollLeft = () => {
-    if (trackRef.current) {
-      trackRef.current.scrollBy({ left: -360, behavior: 'smooth' });
-    }
-  };
+  const renderProjectCard = (p, uniqueKey) => {
+    const primaryScreen = p.screenshots?.[0];
+    const isDualStore = p.appStoreUrl && p.playStoreUrl;
 
-  const scrollRight = () => {
-    if (trackRef.current) {
-      trackRef.current.scrollBy({ left: 360, behavior: 'smooth' });
-    }
+    return (
+      <div 
+        key={uniqueKey}
+        className="horizontal-project-card"
+        onClick={() => handleOpenModal(p, 0)}
+      >
+        {/* Card Top Brand Info */}
+        <div className="hz-card-head">
+          <div className="hz-brand-group">
+            {p.logo && (
+              <img 
+                src={p.logo} 
+                alt={`${p.name} Logo`} 
+                className="hz-app-logo"
+                loading="lazy"
+              />
+            )}
+            <div>
+              <h4 className="hz-app-title">{p.name}</h4>
+              <span className="hz-category-tag">{p.category}</span>
+            </div>
+          </div>
+
+          <div className="hz-badge-wrap">
+            {isDualStore ? (
+              <span className="hz-verified-badge dual">
+                <CheckCircle2 size={11} /> Dual Store
+              </span>
+            ) : (
+              <span className="hz-verified-badge">
+                <CheckCircle2 size={11} /> Live Store
+              </span>
+            )}
+          </div>
+        </div>
+
+        {/* Card Phone Preview */}
+        <div className="hz-device-preview-box">
+          <div className="hz-phone-bezel">
+            <div className="hz-phone-island" />
+            {primaryScreen ? (
+              <img 
+                src={primaryScreen.src} 
+                alt={`${p.name} Screen`} 
+                className="hz-screen-img"
+                loading="lazy"
+              />
+            ) : (
+              <div className="hz-screen-placeholder">
+                <Smartphone size={32} />
+              </div>
+            )}
+            <div className="hz-hover-overlay">
+              <div className="hz-hover-pill">
+                <Maximize2 size={13} />
+                <span>View Gallery ({p.screenshots?.length || 0})</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Card Description & Meta */}
+        <div className="hz-card-content">
+          <p className="hz-card-desc">{p.description}</p>
+
+          <div className="hz-tags-row">
+            {p.stack.slice(0, 4).map((tech) => (
+              <span key={tech} className="hz-tech-chip">{tech}</span>
+            ))}
+            {p.stack.length > 4 && (
+              <span className="hz-tech-chip more">+{p.stack.length - 4}</span>
+            )}
+          </div>
+        </div>
+
+        {/* Card Footer Store Actions */}
+        <div className="hz-card-footer" onClick={(e) => e.stopPropagation()}>
+          <div className="hz-store-links">
+            {p.appStoreUrl && (
+              <a 
+                href={p.appStoreUrl} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="hz-store-btn apple"
+                title="View on Apple App Store"
+              >
+                <Apple size={13} /> <span>iOS</span> <ArrowUpRight size={11} />
+              </a>
+            )}
+            {p.playStoreUrl && (
+              <a 
+                href={p.playStoreUrl} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="hz-store-btn google"
+                title="View on Google Play Store"
+              >
+                <Smartphone size={13} /> <span>Android</span> <ArrowUpRight size={11} />
+              </a>
+            )}
+            {!p.appStoreUrl && !p.playStoreUrl && (
+              <span className="hz-enterprise-label">Enterprise Deployment</span>
+            )}
+          </div>
+
+          {p.screenshots && p.screenshots.length > 0 && (
+            <button
+              type="button"
+              className="hz-gallery-trigger"
+              onClick={() => handleOpenModal(p, 0)}
+              title="View all screenshots"
+            >
+              <Images size={13} />
+              <span>{p.screenshots.length} Screens</span>
+            </button>
+          )}
+        </div>
+      </div>
+    );
   };
 
   return (
@@ -67,11 +186,11 @@ export default function HorizontalProjectsShowcase() {
             Production Mobile Applications.
           </h2>
           <p className="horizontal-main-subtitle">
-            Every application below is active in production, verifiable by package ID, and shipped to Google Play and Apple App Store.
+            Continuous showcase of shipped Flutter applications across Apple App Store and Google Play Console.
           </p>
         </div>
 
-        {/* Controls: Filter Chips + Auto-Scroll Play/Pause & Manual Arrows */}
+        {/* Controls: Filter Chips + Auto-Scroll Pause/Resume */}
         <div className="horizontal-header-controls">
           <div className="horizontal-filters" role="group" aria-label="Filter mobile projects">
             <button
@@ -79,21 +198,21 @@ export default function HorizontalProjectsShowcase() {
               className={`hz-filter-btn ${filter === 'all' ? 'active' : ''}`}
               onClick={() => setFilter('all')}
             >
-              All Apps ({projects.length})
+              All Apps ({mobileProjects.length})
             </button>
             <button
               type="button"
               className={`hz-filter-btn ${filter === 'dual' ? 'active' : ''}`}
               onClick={() => setFilter('dual')}
             >
-              Dual Store (8)
+              Dual Store ({dualCount})
             </button>
             <button
               type="button"
               className={`hz-filter-btn ${filter === 'ai' ? 'active' : ''}`}
               onClick={() => setFilter('ai')}
             >
-              AI & Health (4)
+              AI & Health ({aiCount})
             </button>
           </div>
 
@@ -106,167 +225,40 @@ export default function HorizontalProjectsShowcase() {
               aria-label={isPaused ? "Resume auto-scroll" : "Pause auto-scroll"}
             >
               {isPaused ? <Play size={14} /> : <Pause size={14} />}
-              <span>{isPaused ? 'Paused' : 'Auto-Scroll'}</span>
+              <span>{isPaused ? 'Resume Auto-Scroll' : 'Pause Auto-Scroll'}</span>
             </button>
-
-            <div className="hz-arrows">
-              <button
-                type="button"
-                className="hz-arrow-btn"
-                onClick={scrollLeft}
-                aria-label="Scroll left"
-              >
-                <ChevronLeft size={16} />
-              </button>
-              <button
-                type="button"
-                className="hz-arrow-btn"
-                onClick={scrollRight}
-                aria-label="Scroll right"
-              >
-                <ChevronRight size={16} />
-              </button>
-            </div>
           </div>
         </div>
       </div>
 
-      {/* Auto-Scroll Notice */}
+      {/* Auto-Scroll Indicator */}
       <div className="horizontal-scroll-hint">
-        <span className="pulse-indicator" />
-        <span>Continuous auto-scroll enabled · Hover over any project card to inspect</span>
+        <span className={`pulse-indicator ${isPaused || isHovered ? 'paused' : ''}`} />
+        <span>
+          {isPaused 
+            ? 'Auto-scroll is paused · Click resume to start looping' 
+            : isHovered 
+              ? 'Hovering card: auto-scroll paused for inspection' 
+              : 'Infinite continuous loop active · Hover over any card to inspect'}
+        </span>
       </div>
 
-      {/* Infinite Horizontal Carousel Track */}
+      {/* Infinite Seamless Two-Track Marquee Wrapper */}
       <div 
         className="horizontal-marquee-wrapper"
-        ref={trackRef}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
-        <div className={`horizontal-marquee-track ${isPaused ? 'is-paused' : ''}`}>
-          {displayItems.map((p, idx) => {
-            const primaryScreen = p.screenshots?.[0];
-            const isDualStore = p.appStoreUrl && p.playStoreUrl;
+        <div className={`horizontal-marquee-row ${isPaused || isHovered ? 'is-paused' : ''}`}>
+          {/* Track 1 */}
+          <div className="horizontal-marquee-track">
+            {displayProjects.map((p, idx) => renderProjectCard(p, `t1-${p.id}-${idx}`))}
+          </div>
 
-            return (
-              <div 
-                key={`${p.id}-${idx}`}
-                className="horizontal-project-card"
-                onClick={() => handleOpenModal(p, 0)}
-              >
-                {/* Card Top Brand Info */}
-                <div className="hz-card-head">
-                  <div className="hz-brand-group">
-                    {p.logo && (
-                      <img 
-                        src={p.logo} 
-                        alt={`${p.name} Logo`} 
-                        className="hz-app-logo"
-                        loading="lazy"
-                      />
-                    )}
-                    <div>
-                      <h4 className="hz-app-title">{p.name}</h4>
-                      <span className="hz-category-tag">{p.category}</span>
-                    </div>
-                  </div>
-
-                  <div className="hz-badge-wrap">
-                    {isDualStore ? (
-                      <span className="hz-verified-badge dual">
-                        <CheckCircle2 size={11} /> Dual Store
-                      </span>
-                    ) : (
-                      <span className="hz-verified-badge">
-                        <CheckCircle2 size={11} /> Live Store
-                      </span>
-                    )}
-                  </div>
-                </div>
-
-                {/* Card Phone Preview */}
-                <div className="hz-device-preview-box">
-                  <div className="hz-phone-bezel">
-                    <div className="hz-phone-island" />
-                    {primaryScreen ? (
-                      <img 
-                        src={primaryScreen.src} 
-                        alt={`${p.name} Screen`} 
-                        className="hz-screen-img"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div className="hz-screen-placeholder">
-                        <Smartphone size={32} />
-                      </div>
-                    )}
-                    <div className="hz-hover-overlay">
-                      <div className="hz-hover-pill">
-                        <Maximize2 size={13} />
-                        <span>View Gallery ({p.screenshots?.length || 0})</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Card Description & Meta */}
-                <div className="hz-card-content">
-                  <p className="hz-card-desc">{p.description}</p>
-
-                  <div className="hz-tags-row">
-                    {p.stack.slice(0, 4).map((tech) => (
-                      <span key={tech} className="hz-tech-chip">{tech}</span>
-                    ))}
-                    {p.stack.length > 4 && (
-                      <span className="hz-tech-chip more">+{p.stack.length - 4}</span>
-                    )}
-                  </div>
-                </div>
-
-                {/* Card Footer Store Actions */}
-                <div className="hz-card-footer" onClick={(e) => e.stopPropagation()}>
-                  <div className="hz-store-links">
-                    {p.appStoreUrl && (
-                      <a 
-                        href={p.appStoreUrl} 
-                        target="_blank" 
-                        rel="noreferrer" 
-                        className="hz-store-btn apple"
-                        title="View on Apple App Store"
-                      >
-                        <Apple size={13} /> <span>iOS</span> <ArrowUpRight size={11} />
-                      </a>
-                    )}
-                    {p.playStoreUrl && (
-                      <a 
-                        href={p.playStoreUrl} 
-                        target="_blank" 
-                        rel="noreferrer" 
-                        className="hz-store-btn google"
-                        title="View on Google Play Store"
-                      >
-                        <Smartphone size={13} /> <span>Android</span> <ArrowUpRight size={11} />
-                      </a>
-                    )}
-                    {!p.appStoreUrl && !p.playStoreUrl && (
-                      <span className="hz-enterprise-label">Enterprise Deployment</span>
-                    )}
-                  </div>
-
-                  {p.screenshots && p.screenshots.length > 0 && (
-                    <button
-                      type="button"
-                      className="hz-gallery-trigger"
-                      onClick={() => handleOpenModal(p, 0)}
-                      title="View all screenshots"
-                    >
-                      <Images size={13} />
-                      <span>{p.screenshots.length} Screens</span>
-                    </button>
-                  )}
-                </div>
-              </div>
-            );
-          })}
+          {/* Track 2 (Seamless Infinite Clone: Immediately follows Track 1) */}
+          <div className="horizontal-marquee-track" aria-hidden="true">
+            {displayProjects.map((p, idx) => renderProjectCard(p, `t2-${p.id}-${idx}`))}
+          </div>
         </div>
       </div>
 

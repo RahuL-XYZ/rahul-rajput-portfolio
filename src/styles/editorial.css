@@ -2173,27 +2173,30 @@ textarea:focus-visible {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   position: relative;
-  overflow-x: auto;
-  scrollbar-width: none;
+  overflow: hidden;
   padding: 20px 0 32px;
-  mask-image: linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
 }
 
-.horizontal-marquee-wrapper::-webkit-scrollbar {
-  display: none;
+.horizontal-marquee-row {
+  display: flex;
+  width: max-content;
+  user-select: none;
 }
 
 .horizontal-marquee-track {
   display: flex;
   gap: 24px;
-  width: max-content;
-  animation: continuousMarquee 45s linear infinite;
+  padding-right: 24px;
+  flex-shrink: 0;
+  animation: continuousMarquee 42s linear infinite;
   will-change: transform;
 }
 
-.horizontal-marquee-track:hover,
-.horizontal-marquee-track.is-paused {
+/* Pause animation on hover or explicit pause state */
+.horizontal-marquee-row.is-paused .horizontal-marquee-track,
+.horizontal-marquee-wrapper:hover .horizontal-marquee-track {
   animation-play-state: paused;
 }
 
@@ -2202,7 +2205,7 @@ textarea:focus-visible {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 
