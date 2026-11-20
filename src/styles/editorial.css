@@ -308,6 +308,22 @@ textarea:focus-visible {
   margin-bottom: 18px;
 }
 
+.card-avatar-img {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  border: 1px solid var(--line-subtle);
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.card-avatar-img:hover {
+  border-color: var(--accent);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
 .card-avatar-monogram {
   width: 48px;
   height: 48px;
