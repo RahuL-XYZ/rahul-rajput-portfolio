@@ -4,6 +4,7 @@ import { useTheme } from '../../hooks/useTheme';
 import EditorialHeader from './EditorialHeader';
 import EditorialHero from './EditorialHero';
 import HorizontalProjectsShowcase from './HorizontalProjectsShowcase';
+import EditorialWebShowcase from './EditorialWebShowcase';
 import EditorialProof from './EditorialProof';
 import EditorialPerson from './EditorialPerson';
 import EditorialContact from './EditorialContact';
@@ -27,6 +28,7 @@ export default function EditorialPortfolio() {
       <main id="content" className="editorial-main">
         <EditorialHero />
         <HorizontalProjectsShowcase />
+        <EditorialWebShowcase />
         <EditorialProof />
         <EditorialPerson />
         <EditorialContact />

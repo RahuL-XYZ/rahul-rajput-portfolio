@@ -38,9 +38,8 @@ export const terminalCommands = {
     '06 | Dine Visuals  - AI generative food photography studio (Play Store & App Store)',
     '07 | Scribeflo     - Real-time clinical AI scribe for doctors (Play Store & App Store)',
     '08 | Jainmatri     - Matrimonial matchmaking with privacy controls (Play Store & App Store)',
-    '09 | FoodIngram    - Multi-role on-demand delivery app',
-    '10 | Kharcha Paani (Mobile App) - Flutter Shared Expense & Debt Splitter',
-    '11 | Kharcha Paani (Admin Web)  - React 19 Admin Portal (https://kharchapaani-890b8.web.app/login)'
+    '09 | Kharcha Paani (Mobile App) - Flutter Shared Expense & Debt Splitter',
+    '10 | Kharcha Paani (Admin Web)  - React 19 Admin Portal (https://kharchapaani-890b8.web.app/login)'
   ],
   experience: [
     '=== PROFESSIONAL TIMELINE ===',
@@ -48,7 +47,7 @@ export const terminalCommands = {
     '   - Built and shipped 9 Play Store & 8 App Store releases across consumer and health domains',
     '   - Integrated Stripe payments, Firebase cloud services, and Riverpod architecture',
     '2022 - 2022:    Flutter Developer @ Imaginar Technologies',
-    '   - Developed multi-role on-demand food delivery architecture'
+    '   - Developed cross-platform mobile interfaces and state management pipelines'
   ],
   contact: [
     '=== COMMS FREQUENCIES ===',

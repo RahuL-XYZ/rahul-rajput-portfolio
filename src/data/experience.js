@@ -20,7 +20,7 @@ export const experiences = [
     period: 'MAY 2022 — NOV 2022',
     current: false,
     highlights: [
-      'FoodIngram: Implemented mobile UI flows and REST API integrations for a multi-role on-demand food delivery system spanning customer ordering, merchant management, and driver dispatch views.'
+      'Engineered cross-platform mobile UI flows and REST API integrations for multi-role on-demand application architectures spanning client ordering, merchant management, and delivery views.'
     ]
   }
 ];

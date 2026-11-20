@@ -61,7 +61,6 @@ import glowpeer2 from '../assets/projects/glowpeer_screen_2.png';
 import glowpeer3 from '../assets/projects/glowpeer_screen_3.png';
 import glowpeer4 from '../assets/projects/glowpeer_screen_4.png';
 import glowpeer5 from '../assets/projects/glowpeer_screen_5.png';
-import kharchaPaaniScreen from '../assets/projects/kharcha_paani_admin_screen.png';
 import kharcha1 from '../assets/projects/kharcha_paani_screen_1.jpg';
 import kharcha2 from '../assets/projects/kharcha_paani_screen_2.jpg';
 import kharcha3 from '../assets/projects/kharcha_paani_screen_3.jpg';
@@ -320,33 +319,11 @@ export const projects = [
     appStore: true
   },
   {
-    id: 'foodingram',
-    name: 'FoodIngram',
-    category: 'Food Delivery',
-    type: 'Multi-Role On-Demand App',
-    number: '10',
-    color: '#FFAB40',
-    accent: '#FF6D00',
-    logo: null,
-    screenshots: [],
-    role: 'Mobile UI & API Engineer — Built customer order flows, store management interfaces, and driver delivery routing screens.',
-    impact: 'Enterprise multi-tier architecture coordinating real-time orders between customer, merchant, and driver apps.',
-    playStoreUrl: null,
-    appStoreUrl: null,
-    packageId: null,
-    description: 'Worked on UI and API integration for a multi-role food delivery app at Imaginar Technologies, including separate modules for customers, shops, and delivery drivers.',
-    stack: ['Flutter', 'Multi-Role Architecture', 'REST APIs', 'Customer & Shop Modules', 'Delivery Tracking'],
-    icon: '🍽️',
-    metrics: 'Multi-Role Architecture (Customer / Merchant / Driver)',
-    playStore: false,
-    appStore: false
-  },
-  {
     id: 'kharcha-paani',
     name: 'Kharcha Paani',
     category: 'Fintech & Shared Living',
     type: 'Flutter Mobile App · iOS & Android',
-    number: '11',
+    number: '10',
     color: '#10B981',
     accent: '#059669',
     logo: kharchaPaaniLogo,
@@ -369,31 +346,6 @@ export const projects = [
     stack: ['Flutter', 'Dart', 'Riverpod', 'Cloud Firestore', 'Debt Minimization Algorithm', 'Firebase Auth', 'Charts & Analytics'],
     icon: '💰',
     metrics: 'Cloud Firestore Real-Time Sync · Minimum Debt Settlement Algorithm',
-    playStore: false,
-    appStore: false
-  },
-  {
-    id: 'kharcha-paani-admin',
-    name: 'Kharcha Paani — Web Admin Portal',
-    category: 'Web Platform & Cloud Operations',
-    type: 'React 19 & Tailwind Web Admin Dashboard',
-    number: '12',
-    color: '#059669',
-    accent: '#10B981',
-    logo: kharchaPaaniLogo,
-    isWeb: true,
-    browserUrl: 'https://kharchapaani-890b8.web.app/login',
-    liveUrl: 'https://kharchapaani-890b8.web.app/login',
-    githubUrl: 'https://github.com/RahuL-XYZ/Kharcha-Paani-Admin',
-    screenshots: [
-      { src: kharchaPaaniScreen, title: 'Kharcha Paani Web Admin Portal', caption: 'Administrative authentication, household auditing, and cross-group settlement management' }
-    ],
-    role: 'Full-Stack Web Engineer — Engineered the companion web administration portal for auditing household rooms, managing collectionGroup Firestore queries, and monitoring cross-group settlements.',
-    impact: 'Live production admin portal deployed on Firebase Hosting, actively managing shared household expense collections, user accounts, and financial settlement ledgers.',
-    description: 'A separate web administration portal built specifically to oversee and manage the Kharcha Paani ecosystem. Deployed on Firebase Hosting, it provides administrators with cross-household auditing, user account controls, and financial settlement ledgers.',
-    stack: ['React 19', 'Vite', 'Firebase Auth', 'Cloud Firestore', 'Tailwind CSS', 'Recharts', 'React Router'],
-    icon: '📊',
-    metrics: 'Live on Firebase Hosting · Real-Time Firestore Sync & Analytics',
     playStore: false,
     appStore: false
   }
