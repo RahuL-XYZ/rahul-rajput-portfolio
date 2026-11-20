@@ -52,9 +52,9 @@ export const terminalCommands = {
   ],
   contact: [
     '=== COMMS FREQUENCIES ===',
-    'Email:    Available via direct message / form below',
-    'LinkedIn: linkedin.com/in/rahul-rajput-flutter',
-    'GitHub:   github.com/rahulrajput',
+    'Email:    Available via direct message / form below (rahul77478@gmail.com)',
+    'LinkedIn: linkedin.com/in/rahul-rajput-155616188',
+    'GitHub:   github.com/RahuL-XYZ',
     'Status:   Ready for high-impact mobile development roles'
   ],
   resume: [

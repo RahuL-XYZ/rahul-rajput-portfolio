@@ -36,7 +36,7 @@ export default function ContactSection({ onPlaySound }) {
         type: 'success',
         message: 'Message prepared. Opening your email client to send.'
       });
-      const mailtoUrl = `mailto:rahulrajput.dev@gmail.com?subject=Mission%20Inquiry%20from%20${encodeURIComponent(formData.name)}&body=${encodeURIComponent(`From: ${formData.name} (${formData.email})\n\nMessage:\n${formData.message}`)}`;
+      const mailtoUrl = `mailto:rahul77478@gmail.com?subject=Mission%20Inquiry%20from%20${encodeURIComponent(formData.name)}&body=${encodeURIComponent(`From: ${formData.name} (${formData.email})\n\nMessage:\n${formData.message}`)}`;
       window.location.href = mailtoUrl;
     }, 600);
   };
@@ -69,7 +69,7 @@ export default function ContactSection({ onPlaySound }) {
 
             <div className="sv-contact-cards-list">
               <a 
-                href="mailto:rahulrajput.dev@gmail.com" 
+                href="mailto:rahul77478@gmail.com" 
                 className="contact-card-link"
               >
                 <div className="contact-icon-box">
@@ -77,12 +77,12 @@ export default function ContactSection({ onPlaySound }) {
                 </div>
                 <div className="contact-info-block">
                   <span className="contact-label">DIRECT EMAIL COMMS</span>
-                  <span className="contact-value">rahulrajput.dev@gmail.com</span>
+                  <span className="contact-value">rahul77478@gmail.com</span>
                 </div>
               </a>
 
               <a 
-                href="https://linkedin.com/in/rahul-rajput-flutter" 
+                href="https://www.linkedin.com/in/rahul-rajput-155616188" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="contact-card-link blue"
@@ -92,12 +92,12 @@ export default function ContactSection({ onPlaySound }) {
                 </div>
                 <div className="contact-info-block">
                   <span className="contact-label">PROFESSIONAL NETWORK</span>
-                  <span className="contact-value">linkedin.com/in/rahul-rajput-flutter</span>
+                  <span className="contact-value">linkedin.com/in/rahul-rajput-155616188</span>
                 </div>
               </a>
 
               <a 
-                href="https://github.com" 
+                href="https://github.com/RahuL-XYZ" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="contact-card-link"
@@ -107,7 +107,7 @@ export default function ContactSection({ onPlaySound }) {
                 </div>
                 <div className="contact-info-block">
                   <span className="contact-label">CODE REPOSITORY</span>
-                  <span className="contact-value">github.com/rahul-rajput-flutter</span>
+                  <span className="contact-value">github.com/RahuL-XYZ</span>
                 </div>
               </a>
 
