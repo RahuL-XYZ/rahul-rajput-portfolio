@@ -26,11 +26,11 @@ export default function EditorialHero() {
         </p>
 
         <div className="hero-ctas">
-          <a href="#demo" className="btn-primary">
-            Try the decision simulator <ArrowDown size={15} />
+          <a href="#work" className="btn-primary">
+            Explore Shipped Apps <ArrowDown size={15} />
           </a>
-          <a href="#work" className="btn-secondary">
-            See the shipped work
+          <a href="#contact" className="btn-secondary">
+            Get in touch
           </a>
         </div>
       </div>

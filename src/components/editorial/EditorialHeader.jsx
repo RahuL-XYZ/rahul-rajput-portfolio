@@ -15,10 +15,7 @@ export default function EditorialHeader({ theme, isDark, onToggleTheme }) {
 
         <nav className="ed-nav" aria-label="Main Navigation">
           <a href="#work" className="nav-link">Mobile Apps</a>
-          <a href="#web-projects" className="nav-link">Web & Systems</a>
-          <a href="#idea" className="nav-link">Philosophy</a>
-          <a href="#demo" className="nav-link">App Demo</a>
-          <a href="#proof" className="nav-link">Proof</a>
+          <a href="#proof" className="nav-link">Production Proof</a>
           <a href="#person" className="nav-link">About</a>
           <a href="#contact" className="nav-cta">Work with me</a>
 
