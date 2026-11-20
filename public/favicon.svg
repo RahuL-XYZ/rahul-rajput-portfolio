@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#0F172A"/>
+      <stop offset="100%" stopColor="#08080D"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#00F5FF"/>
+      <stop offset="100%" stopColor="#0284C7"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Shield -->
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <rect width="62" height="62" x="1" y="1" rx="13" fill="none" stroke="url(#cyanGrad)" stroke-width="1.5" stroke-opacity="0.4"/>
+  
+  <!-- Flutter Cyan Wings Accent -->
+  <path d="M48 10 H36 L18 28 L26 36 L48 14 Z" fill="url(#cyanGrad)" opacity="0.3"/>
+  
+  <!-- Geometric 'R' Monogram -->
+  <path d="M20 16 H34 C41.7 16 46 20.2 46 27 C46 32.5 42.5 36.3 36.8 37.4 L46.5 48 H38.5 L29.5 38 H27 V48 H20 V16 Z M27 22 V32.5 H33.5 C36.8 32.5 39 30.6 39 27.2 C39 23.8 36.8 22 33.5 22 H27 Z" fill="#FFFFFF"/>
+  <circle cx="45" cy="47" r="3.5" fill="#00F5FF"/>
+</svg>
