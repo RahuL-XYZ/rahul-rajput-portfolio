@@ -13,7 +13,7 @@ export default function ExperienceWindow({ onClose, onMinimize }) {
       <div className="experience-window">
         <div className="eyebrow">PROFESSIONAL TIMELINE / 2022 — PRESENT</div>
         <h2>
-          Building Production Apps<br />That Scale With Impact
+          Production Mobile<br />Engineering Timeline
           <span className="cyan-dot">.</span>
         </h2>
 

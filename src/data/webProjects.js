@@ -107,10 +107,10 @@ export const webApplications = [
     logo: null,
     browserUrl: 'rahulrajput.dev',
     role: 'Creator & UI Architect',
-    impact: 'Crafted a bespoke, zero-bloat portfolio featuring editorial typography, light/dark themes, device simulators, and sub-second load times.',
+    impact: 'Built a responsive portfolio featuring dual presentation modes, theme switching, interactive previews, and lightweight assets.',
     description: 'Designed and engineered this portfolio web app utilizing modern React 18, Vite, and a custom Vanilla CSS design system. Features dark obsidian and light linen themes, interactive mobile frame emulator, lightbox gallery, and responsive layout.',
     stack: ['React 18', 'Vite', 'Vanilla CSS Tokens', 'Responsive UI', 'Sub-second Lighthouse'],
-    metrics: '100% Bespoke Design Tokens · Zero CSS Framework Overhead',
+    metrics: 'Custom CSS Design Tokens · Modular Component Architecture',
     screenshots: [],
     liveUrl: 'https://github.com/RahuL-XYZ/rahul-rajput-portfolio',
     githubUrl: 'https://github.com/RahuL-XYZ/rahul-rajput-portfolio',
@@ -122,7 +122,7 @@ export const toolsAndOther = [
   {
     id: 'decision-simulator',
     name: 'Mobile Decision Simulator',
-    tagline: 'Interactive Architectural Trade-off Engine',
+    tagline: 'Interactive Architectural Evaluation Tool',
     category: 'Interactive Web Tool',
     number: 'T-01',
     description: 'In-browser interactive simulator embedded in the portfolio demonstrating real-time trade-off matrix evaluation between Riverpod vs BLoC, Clean Architecture vs MVC, and offline SQLite synchronization.',
@@ -152,10 +152,10 @@ export const toolsAndOther = [
   {
     id: 'clean-arch-boilerplate',
     name: 'Flutter Clean Architecture & Riverpod Starter Kit',
-    tagline: 'Production-Grade Reusable Mobile & Web Template',
+    tagline: 'Production Architecture Template for Flutter',
     category: 'Developer Tooling / Starter Kit',
     number: 'T-04',
-    description: 'Battle-tested repository foundation featuring MVVM + Clean Architecture layer separation (Domain, Data, Presentation), Dio HTTP interceptor error handling, and Riverpod dependency injection with code generation.',
+    description: 'A modular starter template with clear layer separation (Domain, Data, Presentation), Dio network interceptors, and Riverpod dependency injection with code generation.',
     stack: ['Clean Architecture', 'Riverpod 2.x', 'Dio Interceptors', 'Freezed', 'AutoRoute'],
     badge: 'Developer Tool'
   }

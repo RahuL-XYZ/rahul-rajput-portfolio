@@ -18,7 +18,7 @@ export default function SkillsWindow({ onClose, onMinimize }) {
             <FlutterLogo size={34} />
           </div>
           <div>
-            <span className="eyebrow">DEVELOPER ARSENAL</span>
+            <span className="eyebrow">TECHNICAL STACK</span>
             <h2>
               Flutter & Mobile<br />Engineering Stack.
             </h2>
