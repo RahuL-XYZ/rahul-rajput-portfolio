@@ -4,7 +4,7 @@ import { useTheme } from '../../hooks/useTheme';
 import EditorialHeader from './EditorialHeader';
 import EditorialHero from './EditorialHero';
 import EditorialBelief from './EditorialBelief';
-import EditorialWork from './EditorialWork';
+import HorizontalProjectsShowcase from './HorizontalProjectsShowcase';
 import EditorialWebProjects from './EditorialWebProjects';
 import EditorialProof from './EditorialProof';
 import EditorialPerson from './EditorialPerson';
@@ -29,7 +29,7 @@ export default function EditorialPortfolio() {
       <main id="content" className="editorial-main">
         <EditorialHero />
         <EditorialBelief />
-        <EditorialWork />
+        <HorizontalProjectsShowcase />
         <EditorialWebProjects />
         <EditorialProof />
         <EditorialPerson />
