@@ -33,28 +33,28 @@ export const webApplications = [
   },
   {
     id: 'calcounts-pro-web',
-    name: 'CalCounts Pro — Instructor Dashboard',
-    tagline: 'Tablet & Desktop Responsive Analytics Portal',
-    category: 'Web & Tablet Dashboard',
+    name: 'CalCounts Pro — Tablet Instructor Application',
+    tagline: 'Tablet-Optimized Client Analytics & Macro Tracking System',
+    category: 'Tablet Application & Dashboard',
     number: 'W-02',
     color: '#0284C7',
     accent: '#02569B',
     logo: calcountsProLogo,
-    browserUrl: 'dashboard.calcounts.com/instructor/analytics',
-    role: 'Frontend & Dashboard Architecture',
-    impact: 'Deployed for certified coaches and dieticians to monitor multi-client macro intake vs expenditure balance matrices in real time.',
-    description: 'Engineered a tablet and desktop optimized instructor dashboard enabling fitness coaches to monitor member progress, dietary adherence, and weight analytics through interactive data visualizations and Firebase live data synchronization.',
-    stack: ['Responsive Web / Tablet', 'Flutter Web', 'Firebase Firestore', 'Interactive Charts', 'REST APIs', 'State Management'],
-    metrics: 'Multi-Client Live Sync · Interactive Intake vs Burn Matrices',
+    browserUrl: 'play.google.com/store/apps/details?id=com.codiant.calcountsinstructor',
+    role: 'Flutter Developer — Designed tablet-first adaptive layouts, macro balance matrices, and high-performance interactive client progress charts.',
+    impact: 'Published on Google Play Store for fitness coaches and dieticians to monitor multi-client macro intake vs expenditure balance matrices on 10"+ Android tablets.',
+    description: 'Engineered an adaptive, tablet-first instructor dashboard enabling certified fitness coaches to manage client rosters, evaluate intake vs expenditure balance matrices, and inspect macro adherence charts on high-resolution tablet screens.',
+    stack: ['Flutter', 'Tablet Optimization', 'Data Visualizations', 'Firebase Firestore', 'State Management', 'Interactive Charts'],
+    metrics: 'Live on Google Play Store · Multi-Client Roster Management · Interactive Macro Visualizations',
     screenshots: [
-      { src: calcountsPro1, title: 'Instructor Day Dashboard', caption: 'Manage active, pending, and accepted client training requests in a desktop grid' },
+      { src: calcountsPro1, title: 'Instructor Day Dashboard', caption: 'Manage active, pending, and accepted client training requests in a tablet-optimized grid' },
       { src: calcountsPro2, title: 'Client Intake & Burn Table', caption: 'Weekly calories burned vs intake balance matrix with data visualizers' },
       { src: calcountsPro3, title: 'Member Nutrition Insights', caption: 'Target vs actual intake comparison for protein, carbs, and fats' },
-      { src: calcountsPro4, title: 'Tablet & Web Sign-In Experience', caption: 'Split landscape-optimized interface designed for high productivity' }
+      { src: calcountsPro4, title: 'Tablet Sign-In Experience', caption: 'Split landscape-optimized interface designed for fitness professionals' }
     ],
     liveUrl: 'https://play.google.com/store/apps/details?id=com.codiant.calcountsinstructor&hl=en_IN',
     githubUrl: null,
-    status: 'Live Production'
+    status: 'Live on Google Play'
   },
   {
     id: 'hiregroww-portal',
@@ -139,16 +139,7 @@ export const toolsAndOther = [
     stack: ['Node.js', 'Firebase Cloud Functions', 'FCM Push API', 'Stripe Webhooks', 'NoSQL Firestore'],
     badge: 'Production Backend'
   },
-  {
-    id: 'foodingram-routing',
-    name: 'FoodIngram Dispatch & Multi-Tier Coordination',
-    tagline: 'Consumer, Merchant & Driver Routing Architecture',
-    category: 'Enterprise Logistics',
-    number: 'T-03',
-    description: 'Multi-role on-demand dispatch coordination system linking three discrete interfaces: Customer order placement, Merchant kitchen dispatch queue, and Driver real-time delivery routing with order lifecycle state transitions.',
-    stack: ['Multi-Tier Systems', 'RESTful API Architecture', 'Order Lifecycle State Engine', 'Geolocation'],
-    badge: 'Enterprise Architecture'
-  },
+
   {
     id: 'clean-arch-boilerplate',
     name: 'Flutter Clean Architecture & Riverpod Starter Kit',

@@ -5,19 +5,34 @@ import {
   ArrowUpRight, 
   Github, 
   CheckCircle2, 
-  Sparkles,
-  Lock,
-  Maximize2,
-  LayoutDashboard
+  Sparkles, 
+  Lock, 
+  Maximize2, 
+  Smartphone, 
+  Tablet, 
+  Images 
 } from 'lucide-react';
 import kharchaPaaniLogo from '../../assets/projects/kharcha_paani_logo.png';
 import kharchaPaaniScreen from '../../assets/projects/kharcha_paani_admin_screen.png';
+import calcountsProLogo from '../../assets/projects/calcounts_pro_logo.png';
+import calcountsPro1 from '../../assets/projects/calcounts_pro_screen_1.png';
+import calcountsPro2 from '../../assets/projects/calcounts_pro_screen_2.png';
+import calcountsPro3 from '../../assets/projects/calcounts_pro_screen_3.png';
+import calcountsPro4 from '../../assets/projects/calcounts_pro_screen_4.png';
 import { webApplications } from '../../data/webProjects';
 import ScreenshotModal from './ScreenshotModal';
 
 export default function EditorialWebShowcase() {
   const [modalProject, setModalProject] = useState(null);
   const [modalIndex, setModalIndex] = useState(0);
+  const [activeTabletThumb, setActiveTabletThumb] = useState(0);
+
+  const tabletScreens = [
+    { src: calcountsPro1, title: 'Instructor Day Dashboard', caption: 'Manage active, pending, and accepted client training requests in a tablet-optimized grid' },
+    { src: calcountsPro2, title: 'Client Intake & Burn Table', caption: 'Weekly calories burned vs intake balance matrix with data visualizers' },
+    { src: calcountsPro3, title: 'Member Nutrition Insights', caption: 'Target vs actual intake comparison for protein, carbs, and fats' },
+    { src: calcountsPro4, title: 'Tablet Sign-In Experience', caption: 'Split landscape-optimized interface designed for fitness professionals' }
+  ];
 
   const kharchaAdmin = webApplications.find(w => w.id === 'kharcha-paani-admin') || {
     name: 'Kharcha Paani — Web Admin Portal',
@@ -33,7 +48,17 @@ export default function EditorialWebShowcase() {
     ]
   };
 
-  const companionWebApps = webApplications.filter(w => w.id !== 'kharcha-paani-admin');
+  const calcountsPro = webApplications.find(w => w.id === 'calcounts-pro-web') || {
+    name: 'CalCounts Pro — Tablet Instructor Application',
+    tagline: 'Tablet-Optimized Client Analytics & Macro Tracking System',
+    category: 'Tablet Application & Dashboard',
+    liveUrl: 'https://play.google.com/store/apps/details?id=com.codiant.calcountsinstructor&hl=en_IN',
+    description: 'Engineered an adaptive, tablet-first instructor dashboard enabling certified fitness coaches to manage client rosters, evaluate intake vs expenditure balance matrices, and inspect macro adherence charts on high-resolution tablet screens.',
+    stack: ['Flutter', 'Tablet Optimization', 'Data Visualizations', 'Firebase Firestore', 'State Management', 'Interactive Charts'],
+    screenshots: tabletScreens
+  };
+
+  const companionWebApps = webApplications.filter(w => w.id !== 'kharcha-paani-admin' && w.id !== 'calcounts-pro-web');
 
   const handleOpenScreens = (project, idx = 0) => {
     setModalProject(project);
@@ -51,16 +76,16 @@ export default function EditorialWebShowcase() {
         <div className="web-section-head">
           <div className="section-eyebrow-pill">
             <Globe size={12} />
-            <span>WEB ARCHITECTURE & ADMIN SYSTEMS</span>
+            <span>WEB ARCHITECTURE & TABLET SYSTEMS</span>
           </div>
-          <h2>Production Web Applications & Portals.</h2>
+          <h2>Production Web Applications & Tablet Systems.</h2>
           <p className="web-section-subtitle">
-            Companion administrative dashboards, candidate evaluation portals, and web analytics platforms built with modern React ecosystems.
+            Companion administrative dashboards, tablet-optimized fitness systems, and cloud management platforms built with modern React and Flutter ecosystems.
           </p>
         </div>
 
-        {/* Featured Flagship Web Application: Kharcha Paani Web Admin */}
-        <div className="featured-web-card">
+        {/* 1. Featured Flagship Web Application: Kharcha Paani Web Admin */}
+        <div className="featured-web-card" id="kharcha-admin-card">
           <div className="featured-web-header">
             <div className="web-brand-group">
               <img 
@@ -168,6 +193,126 @@ export default function EditorialWebShowcase() {
                       <span>View Full Resolution</span>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 2. Featured Tablet Application: CalCounts Pro */}
+        <div className="featured-web-card tablet-featured" id="calcounts-tablet-card">
+          <div className="featured-web-header">
+            <div className="web-brand-group">
+              <img 
+                src={calcountsProLogo} 
+                alt="CalCounts Pro Logo" 
+                className="web-brand-logo"
+                loading="lazy"
+              />
+              <div>
+                <div className="web-meta-row">
+                  <span className="web-flagship-tag tablet-tag">
+                    <Tablet size={11} /> FEATURED TABLET SYSTEM
+                  </span>
+                  <span className="web-verified-pill play">
+                    <CheckCircle2 size={11} /> Live on Google Play Store
+                  </span>
+                </div>
+                <h3 className="web-app-title">CalCounts Pro — Tablet Instructor Application</h3>
+                <p className="web-app-tagline">Tablet-Optimized Client Analytics & Macro Tracking System</p>
+              </div>
+            </div>
+
+            <div className="web-action-links">
+              <a 
+                href="https://play.google.com/store/apps/details?id=com.codiant.calcountsinstructor&hl=en_IN" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="web-primary-btn play-btn"
+                title="View on Google Play Store"
+              >
+                <Smartphone size={14} /> <span>View on Google Play</span> <ArrowUpRight size={13} />
+              </a>
+
+              <button 
+                type="button" 
+                onClick={() => handleOpenScreens(calcountsPro, activeTabletThumb)}
+                className="web-secondary-btn"
+                title="View all 4 tablet screenshots in full resolution"
+              >
+                <Images size={14} /> <span>View 4 Tablet Screens</span>
+              </button>
+            </div>
+          </div>
+
+          <div className="featured-web-body">
+            {/* Left Column: Tablet Architecture & Details */}
+            <div className="featured-web-info">
+              <p className="featured-web-desc">
+                Engineered an adaptive, tablet-first instructor dashboard enabling certified fitness coaches and dieticians to monitor multi-client macro intake vs expenditure balance matrices, review daily workout adherence, and manage active training queues in real time.
+              </p>
+
+              <div className="web-architecture-box tablet-arch">
+                <div className="arch-tag">
+                  <Sparkles size={12} />
+                  <span>Tablet Architecture & Features</span>
+                </div>
+                <ul className="web-arch-list">
+                  <li><strong>Tablet-First Responsive Grid:</strong> Custom multi-column landscape layout designed for high productivity on 10"+ screens.</li>
+                  <li><strong>Intake vs. Burn Matrix:</strong> Interactive caloric expenditure vs dietary intake data visualization tables.</li>
+                  <li><strong>Nutrition Adherence:</strong> Deep-dive macro analytics tracking protein, carbohydrate, and fat targets.</li>
+                  <li><strong>Client Training Queue:</strong> Real-time status workflow for active, pending, and accepted member requests.</li>
+                </ul>
+              </div>
+
+              <div className="web-stack-pills">
+                {['Flutter', 'Tablet Optimization', 'Data Visualizations', 'Firebase Firestore', 'State Management', 'Interactive Charts'].map(tech => (
+                  <span key={tech} className="modern-stack-tag">{tech}</span>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Column: Tablet Frame Mockup with Interactive Screen Switcher */}
+            <div className="featured-web-browser">
+              <div 
+                className="tablet-window-frame"
+                onClick={() => handleOpenScreens(calcountsPro, activeTabletThumb)}
+                title="Click to view full-resolution tablet screenshot"
+              >
+                {/* Tablet Hardware Top Bezel */}
+                <div className="tablet-hardware-top">
+                  <span className="tablet-camera-dot" />
+                </div>
+
+                {/* Tablet Screen Capture */}
+                <div className="tablet-screen-wrap">
+                  <img 
+                    src={tabletScreens[activeTabletThumb].src} 
+                    alt={tabletScreens[activeTabletThumb].title} 
+                    className="tablet-screen-img"
+                    loading="lazy"
+                  />
+                  <div className="browser-hover-glass">
+                    <div className="hover-pill">
+                      <Maximize2 size={13} />
+                      <span>{tabletScreens[activeTabletThumb].title} (Click to expand)</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Tablet Quick Switcher Thumbnails */}
+                <div className="tablet-screen-strip" onClick={(e) => e.stopPropagation()}>
+                  {tabletScreens.map((screen, idx) => (
+                    <button
+                      key={idx}
+                      type="button"
+                      className={`tablet-thumb-btn ${activeTabletThumb === idx ? 'active' : ''}`}
+                      onClick={() => setActiveTabletThumb(idx)}
+                      title={`Preview: ${screen.title}`}
+                    >
+                      <img src={screen.src} alt={screen.title} />
+                    </button>
+                  ))}
                 </div>
               </div>
             </div>

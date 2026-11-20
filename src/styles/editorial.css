@@ -2798,8 +2798,123 @@ textarea:focus-visible {
   transition: opacity 0.2s ease;
 }
 
-.browser-window-frame:hover .browser-hover-glass {
+.browser-window-frame:hover .browser-hover-glass,
+.tablet-window-frame:hover .browser-hover-glass {
   opacity: 1;
+}
+
+/* Tablet Featured Card & Device Frame */
+.featured-web-card.tablet-featured {
+  margin-top: 36px;
+  border-top: 2px solid #0284C7;
+}
+
+.web-flagship-tag.tablet-tag {
+  background: rgba(2, 132, 199, 0.12);
+  color: #0284C7;
+  border: 1px solid rgba(2, 132, 199, 0.28);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.web-verified-pill.play {
+  color: #059669;
+}
+
+.web-primary-btn.play-btn {
+  background: #0284C7;
+}
+
+.web-primary-btn.play-btn:hover {
+  background: #0369A1;
+}
+
+.web-architecture-box.tablet-arch {
+  border-left-color: #0284C7;
+}
+
+.tablet-window-frame {
+  background: #0E1217;
+  border: 10px solid #1F242E;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.tablet-window-frame:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.5);
+}
+
+.tablet-hardware-top {
+  height: 12px;
+  background: #171B22;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #232832;
+}
+
+.tablet-camera-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #0A0D12;
+  border: 1px solid #2D333F;
+}
+
+.tablet-screen-wrap {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  background: #0B0E14;
+}
+
+.tablet-screen-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.tablet-screen-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding: 10px 12px;
+  background: #14171F;
+  border-top: 1px solid #232832;
+}
+
+.tablet-thumb-btn {
+  border: 1.5px solid #2A303C;
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  aspect-ratio: 16 / 10;
+  transition: all 0.2s ease;
+}
+
+.tablet-thumb-btn:hover {
+  border-color: #38BDF8;
+}
+
+.tablet-thumb-btn.active {
+  border-color: #38BDF8;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
+}
+
+.tablet-thumb-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Companion Web Grid */
